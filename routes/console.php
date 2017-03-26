@@ -12,6 +12,8 @@ use Illuminate\Foundation\Inspiring;
 | simple approach to interacting with each command's IO methods.
 |
 */
+Route::resource('admin/users','AdminUsersController');
+
 
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());

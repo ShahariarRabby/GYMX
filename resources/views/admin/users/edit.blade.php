@@ -6,7 +6,7 @@
     {!! Form::model($user,['method'=>'PATCH','action'=>["AdminUsersController@update",$user->id],'files'=>true]) !!}
 
     <div class="col-sm-3 col-12" >
-        <img src="{{asset($user->photo ? $user->photo->file:($user->role_id==1?"images/2.png":"images/1.png"))}}" alt="{{$user->name}}" class="img-responsive img-rounded">
+        <img src="{{asset($user->photo ? ("images/".($user->photo->file)):($user->role_id==1?"images/2.png":"images/1.png"))}}" class="img-responsive img-rounded">
         {{--{!! Form::model($user,['method'=>'PATCH','action'=>["AdminUsersController@update",$user->id],'files'=>true]) !!}--}}
         <div style="overflow: hidden" class="form-group">
             {!! Form::label('photo_id','Edit Photo') !!}
@@ -39,10 +39,10 @@
         {{--{!! Form::file('photo_id',null,['class'=>'form-control']) !!}--}}
     {{--</div>--}}
 
-    <div class="form-group">
-        {!! Form::label('role_id','Role') !!}
-        {!! Form::select('role_id',[''=>'Choose Option']+$roles,null,['class'=>'form-control']) !!}
-    </div>
+        <div class="form-group">
+        {!! Form::label('role','Role') !!}
+            {!! Form::select('role',array('User'=>'User','Admin'=>'Admin'),'User',['class'=>'form-control']) !!}
+        </div>
 
     <div class="form-group">
         {!! Form::label('is_active','Status') !!}
