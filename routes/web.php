@@ -18,6 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/admin', function (){
-    return view('admin.index');
-});
+//Route::get('/admin', function (){
+//    return view('admin.index');
+//});
+
+Route::resource('admin/users','AdminUsersController');
+
+//Route::get('/logout' , 'Auth\LoginController@logout');

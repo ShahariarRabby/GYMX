@@ -26,6 +26,7 @@
         <strong>User Deleted</strong>
     </div>
   @endif
+
 <table class="table table-hover table-responsive">
   <thead>
     <tr>
@@ -45,10 +46,11 @@
     <tr>
       <th scope="row">{{$user->id}}</th>
       <th  ><img height="50px" width="50px" class="img-circle" src="{{asset($user->photo ? $user->photo->file:($user->role_id==1?"images/2.png":"images/1.png"))}}" alt="{{$user->name}}"></th>
-      <td><a href="{{route('admin.users.edit',$user->id)}}">{{$user->name}}</a></td>
+      <td><a href="">{{$user->name}}</a></td>
+        {{--{{route('admin.users.edit',$user->id)}}--}}
       <td>{{$user->email}}</td>
-      <td>{{$user->role->name}}</td>
-      <td>{{$user->is_active ==1?'Active':'Not Active' }}</td>
+      <td>{{$user->role}}</td>
+      <td>{{$user->is_active}}</td>
       <td>{{$user->	created_at->diffForHumans()}}</td>
       <td>{{$user->	updated_at->diffForHumans()}}</td>
     </tr>
