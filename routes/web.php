@@ -22,7 +22,18 @@ Route::get('/home', 'HomeController@index');
 //    return view('admin.index');
 //});
 Route::get('/logout', 'Auth\LoginController@logout');
-Route::resource('/admin/users','AdminUsersController');
+
+Route::group(['middleware'=>'admin'],function (){
+    Route::resource('/admin/users','AdminUsersController');
+
+});
+
+
+
+
+
+
+
 //Route::get('/admin', function () {
 //    return view('admin.users.index');
 //});
