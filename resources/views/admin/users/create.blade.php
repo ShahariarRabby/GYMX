@@ -10,10 +10,10 @@
         {!! Form::label('Name','Name') !!}
         {!! Form::text('name',null,['class'=>'form-control']) !!}
     </div>
-    <div class="form-group">
-        {!! Form::label('role_id','Name') !!}
-        {!! Form::text('role_id',null,['class'=>'form-control']) !!}
-    </div>
+    {{--<div class="form-group">--}}
+        {{--{!! Form::label('role_id','Name') !!}--}}
+        {{--{!! Form::text('role_id',null,['class'=>'form-control']) !!}--}}
+    {{--</div>--}}
 
     <div class="form-group">
         {!! Form::label('email','Email') !!}
@@ -40,6 +40,10 @@
     {{--{!! Form::select('role_id',array('User'=>'User','Admin'=>'Admin'),'User',['class'=>'form-control']) !!}--}}
     {{--</div>--}}
 
+    <div class="form-group">
+        {!! Form::label('role_id','Status') !!}
+        {!! Form::select('role_id',array('Admin'=>'Admin','User'=>'User'),'User',['class'=>'form-control']) !!}
+    </div>
     <div class="form-group">
         {!! Form::label('is_active','Status') !!}
         {!! Form::select('is_active',array(1=>'Active',0=>'Not Active'),0,['class'=>'form-control']) !!}

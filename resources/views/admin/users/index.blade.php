@@ -49,7 +49,7 @@
       <td><a href="{{ url('admin/users/' .$user->id . '/edit') }}">{{$user->name}}</a></td>
         {{--{{route('admin.users.edit',$user->id)}}--}}
       <td>{{$user->email}}</td>
-      <td>{{$user->role}}</td>
+      <td>{{$user->profile->role}}</td>
       <td>{{$user->is_active}}</td>
       <td>{{$user->	created_at->diffForHumans()}}</td>
       <td>{{$user->	updated_at->diffForHumans()}}</td>

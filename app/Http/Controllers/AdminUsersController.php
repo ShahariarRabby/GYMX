@@ -23,6 +23,7 @@ class AdminUsersController extends Controller
     public function index()
     {
         //
+
         $users = User::all();
         return view('admin.users.index',compact('users'));
     }
@@ -101,9 +102,11 @@ class AdminUsersController extends Controller
     {
         //
         $user = User::findOrFail($id);
-        // $roles = Role::lists('name','id')->all();
+     $roles = Profile::findOrFail($user->profile_id);
+         $roles=$roles->role;
 
-        return view('admin.users.edit',compact('user'));
+
+        return view('admin.users.edit',compact('user','roles'));
     }
 
 
@@ -113,6 +116,13 @@ class AdminUsersController extends Controller
     {
         //
         $user = User::findOrFail($id);
+
+        $profile = Profile::findOrFail($user->profile_id);
+        $profile->role = $request['role_id'];
+        $profile->save();
+//         $profile -> update(
+//             'role' = $request['role_id'],
+//    );
 
         if(trim($request->password )==""){
             $input = $request->except('password');
@@ -146,6 +156,8 @@ class AdminUsersController extends Controller
             $photo=Photo::create(['file'=>$name]);
             $input['photo_id'] = $photo->id;
         }
+       // $input['profile_id'] = $profile->id;
+
         $user ->update($input);
 
         Session::flash('Update_user','User Update_user');

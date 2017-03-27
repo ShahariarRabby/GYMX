@@ -8,7 +8,7 @@
     <div class="col-sm-3 col-12" >
         <img src="{{asset($user->photo ? ("images/".($user->photo->file)):($user->role_id==1?"images/2.png":"images/1.png"))}}" class="img-responsive img-rounded">
         {{--{!! Form::model($user,['method'=>'PATCH','action'=>["AdminUsersController@update",$user->id],'files'=>true]) !!}--}}
-        <div style="overflow: hidden" class="form-group">
+        <div class="form-group">
             {!! Form::label('photo_id','Edit Photo') !!}
             {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
         </div>
@@ -40,9 +40,10 @@
     {{--</div>--}}
 
         <div class="form-group">
-        {!! Form::label('role','Role') !!}
-            {!! Form::select('role',array('User'=>'User','Admin'=>'Admin'),null,['class'=>'form-control']) !!}
+            {!! Form::label('role_id','Status') !!}
+            {!! Form::select('role_id',array(''=>'Choose option','Admin'=>'Admin','User'=>'User'),$roles,['class'=>'form-control']) !!}
         </div>
+
 
     <div class="form-group">
         {!! Form::label('is_active','Status') !!}
