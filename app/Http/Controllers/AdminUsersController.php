@@ -6,6 +6,7 @@ use App\Http\Requests\UsersEditRequest;
 use App\Http\Requests\UsersRequest;
 use App\Photo;
 //use App\Role;
+use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,10 @@ class AdminUsersController extends Controller
     public function create()
     {
         //
-       // $roles = Role::lists('name','id')->all();
-      //  return view('admin.users.create',compact('roles'));
-        return view('admin.users.create');
+        // $roles = Role::lists('name','id')->all();
+        //  return view('admin.users.create',compact('roles'));
+        $roles = Profile::pluck('role','id')->all();
+        return view('admin.users.create',compact('roles'));
     }
 
     /**
@@ -47,16 +49,23 @@ class AdminUsersController extends Controller
      */
     public function store(UsersRequest $request)
     {
-        //UsersRequest
-        //  User::create( $request->all());
+//        $role = $request->role_id;
+//        Profile::create($role);
+        //  $input['profile_id'] = '1';
+        //  $roles = 'adm';
+        //  $role=Profile::create(['name'=>'1']);
+        //  $input['role_id'] = $role->id;
+
+        $profile= Profile::create([
+            'role' => $request['role_id'],
+
+        ]);
+
         if(trim($request->password )==""){
             $input = $request->except('password');
-
         }else{
             $input = $request->all();
-
         }
-
         if ($file = $request->file('photo_id')){
             $name = time() . $file->getClientOriginalName();
             $file->move('images',$name);
@@ -64,21 +73,11 @@ class AdminUsersController extends Controller
             $input['photo_id'] = $photo->id;
         }
         $input['password'] = bcrypt($request->password);
+        $input['profile_id'] = $profile->id;
         User::create($input);
-//        $user = new User();
-//        $user->name = $request->name;
-//        $user->email = $request->email;
-//        $user->password = $request->password;
-//        $user->role_id = $request->role_id;
-//        $user->	is_active = $request->	is_active;
-//        $user->	photo_id = $request->	photo_id;
+
         Session::flash('create_user','User Update_user');
-
-//        $user->save();
         return redirect('/admin/users');
-
-        //  return $request->all();
-
     }
 
     /**
@@ -102,7 +101,7 @@ class AdminUsersController extends Controller
     {
         //
         $user = User::findOrFail($id);
-       // $roles = Role::lists('name','id')->all();
+        // $roles = Role::lists('name','id')->all();
 
         return view('admin.users.edit',compact('user'));
     }
@@ -180,3 +179,4 @@ class AdminUsersController extends Controller
 
     }
 }
+

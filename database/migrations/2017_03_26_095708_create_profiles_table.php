@@ -15,14 +15,16 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('photo_id');
-            $table->integer('package_id');
-            $table->integer('payment_id');
-            $table->integer('reputation_id');
-            $table->integer('recharge_id');
+
+            $table->string('role')->default('User');
+            $table->integer('photo_id')->nullable();
+            $table->integer('package_id')->nullable();
+            $table->integer('payment_id')->nullable();
+            $table->integer('reputation_id')->nullable();
+            $table->integer('recharge_id')->nullable();
             $table->string('gender')->default('none');
-            $table->integer('height');
-            $table->integer('weight');
+            $table->integer('height')->nullable();
+            $table->integer('weight')->nullable();
             $table->timestamps();
         });
     }
@@ -37,3 +39,4 @@ class CreateProfilesTable extends Migration
         Schema::dropIfExists('profiles');
     }
 }
+
