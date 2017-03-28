@@ -8,8 +8,16 @@ class Profile extends Model
 {
     //
     protected $fillable = [
-        'role', 'photo_id', 'package_id','reputation_id','recharge_id','gender','height', 'weight', 'created_at','updated_at',
+        'role', 'photo_id', 'package_id','reputation_id',
+        'recharge_id','gender','height', 'weight', 'created_at','updated_at',
+        'facebook','bloodGroup','phone',
     ];
+
+
+
+    public function user(){
+        return $this->hasOne('App\User');
+    }
 }
 
 

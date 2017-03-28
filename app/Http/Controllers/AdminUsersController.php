@@ -102,7 +102,7 @@ class AdminUsersController extends Controller
     {
         //
         $user = User::findOrFail($id);
-     $roles = Profile::findOrFail($user->profile_id);
+        $roles = Profile::findOrFail($user->profile_id);
          $roles=$roles->role;
 
 

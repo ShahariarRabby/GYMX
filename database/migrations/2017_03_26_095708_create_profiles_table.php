@@ -15,16 +15,16 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
-
             $table->string('role')->default('User');
+            $table->string('gender')->default('none');
+            $table->string('facebook')->default('https://fb.com/');
+            $table->decimal('height')->nullable();
+            $table->decimal('weight')->nullable();
             $table->integer('photo_id')->nullable();
             $table->integer('package_id')->nullable();
             $table->integer('payment_id')->nullable();
             $table->integer('reputation_id')->nullable();
             $table->integer('recharge_id')->nullable();
-            $table->string('gender')->default('none');
-            $table->integer('height')->nullable();
-            $table->integer('weight')->nullable();
             $table->timestamps();
         });
     }

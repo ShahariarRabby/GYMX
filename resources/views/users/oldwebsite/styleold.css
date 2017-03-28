@@ -1,0 +1,250 @@
+body {
+  background-color: #FAFBFC;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.navcolor {
+  background-color: transparent;
+  color: black;
+}
+
+.werapper .sidebar {
+  display: none;
+  z-index: 11;
+}
+
+.row .sidebar {
+  box-shadow: 5px 5px 35px black;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  list-style: none;
+}
+.row .sidebar .card {
+  border: 0;
+  background: rgba(255, 255, 255, 0);
+  width: 100%;
+}
+.row .sidebar .card a {
+  padding: 0;
+}
+.row .sidebar .card .cardimg img {
+  height: 100%;
+  width: 100%;
+}
+.row .pagecontent {
+  padding-left: 100px;
+}
+.row .sidebarmanu {
+  margin: 0 auto;
+  padding: 0;
+}
+.row li {
+  list-style: none;
+  text-align: center;
+}
+.row li a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 0;
+}
+.row li a:hover {
+  background-color: green;
+}
+
+.none .row .sidebar {
+  box-shadow: 0 0 0 0;
+  width: 70px;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: width .5s;
+          transition: width .5s;
+}
+.none .row .sidebar .card {
+  border: 0;
+  width: 100%;
+}
+.none .row .sidebar .card .cardimg img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.none .row .sidebar .card .card-block {
+  display: none;
+}
+.none .row .sidebar .sidebarmanu {
+  padding: 100px 0 0 5px;
+}
+.none .row .sidebar .sidebarmanu li {
+  list-style: none;
+  text-align: center;
+  overflow: hidden;
+}
+.none .row .sidebar .sidebarmanu li a {
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  padding: 0;
+}
+.none .row .sidebar .sidebarmanu li a span {
+  display: none;
+}
+.none .row .sidebar:hover {
+  box-shadow: 5px 5px 35px black;
+  width: 100%;
+}
+.none .row .sidebar:hover .sidebarmanu {
+  margin: 0 auto;
+  padding: 0;
+}
+.none .row .sidebar:hover li {
+  list-style: none;
+  text-align: center;
+}
+.none .row .sidebar:hover li a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 0;
+  -webkit-transition: background-color .5s;
+          transition: background-color .5s;
+}
+.none .row .sidebar:hover li a:hover {
+  background-color: #F6F7F9;
+}
+.none .row .sidebar:hover li a span {
+  display: inline-block;
+}
+.none .row .sidebar:hover li .card {
+  border: 0;
+  background: rgba(255, 255, 255, 0);
+  width: 100%;
+}
+.none .row .sidebar:hover li .card a {
+  padding: 0;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform .8s;
+          transition: transform .8s;
+}
+.none .row .sidebar:hover li .card a:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.none .row .sidebar:hover li .card .cardimg img {
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  padding: 0;
+}
+.none .row .pagecontent {
+  padding: 0px;
+}
+
+.sidebarmanu .sub-menu {
+  display: none;
+}
+
+.countdown-container {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+}
+
+.clock-item .inner {
+  height: 0px;
+  padding-bottom: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.clock-canvas {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  height: 0px;
+  padding-bottom: 100%;
+}
+
+.text {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: -50px;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  text-shadow: 1px 1px 1px black;
+  width: 100%;
+}
+
+.text .val {
+  font-size: 50px;
+}
+
+.text .type-time {
+  font-size: 20px;
+}
+
+.usercard .userimgcard {
+  position: absolute;
+}
+.usercard .userimgcard img {
+  width: 100%;
+  height: 300px;
+}
+.usercard .userimg {
+  position: absolute;
+  height: 250px;
+  width: 100%;
+  text-align: center;
+  top: 175px;
+}
+.usercard .userimg img {
+  height: 100%;
+  width: 250px;
+  border-radius: 50%;
+}
+
+.usersummery {
+  padding-left: 100px;
+  padding-right: 100px;
+  color: red;
+}
+.usersummery .usersidebar .col-6 {
+  padding: 0;
+  margin: 0;
+}
+.usersummery .usersidebar .col-6 .row {
+  margin: 0;
+  padding: 0;
+}
+.usersummery .usersidebar .col-6 .row .col-12 img {
+  width: 50%;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 15px black;
+  -webkit-transition: -webkit-transform .5s, box-shadow .5s;
+          transition: transform .5s, box-shadow .5s;
+}
+.usersummery .usersidebar .col-6 .row .col-12 img:hover {
+  -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+          transform: scale(1.5);
+  box-shadow: 5px 5px 35px black;
+}
+.usersummery .usersidebar .col-6 .row .col-12 h6, .usersummery .usersidebar .col-6 .row .col-12 h4 {
+  display: inline;
+}
+
+/*# sourceMappingURL=style.css.map */

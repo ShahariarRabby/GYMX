@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileEditReques;
+use App\Profile;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use function Sodium\compare;
 
 class UsersControler extends Controller
 {
@@ -14,6 +19,7 @@ class UsersControler extends Controller
     public function index()
     {
         //
+        return view('users.index');
     }
 
     /**
@@ -24,6 +30,23 @@ class UsersControler extends Controller
     public function create()
     {
         //
+        $user = Profile::findOrFail(5);
+
+         $users = $user->user->id;
+   return      $users = User::findOrfail($users);
+
+      //  $user = $user->id;
+     //   $profile =
+
+   //    echo $profile = DB::table('profiles')->where('role', '=', 'admin' )->id;
+//        foreach ($profile as $profile){
+//            $users = DB::table('users')->where('profile_id', '=', $profile )->get();
+//            echo $users;
+//        }
+
+     //  $profile = profile::;
+   //return     $profile->user->name;
+       // return view('users.create');
     }
 
     /**
@@ -32,7 +55,7 @@ class UsersControler extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProfileEditReques $request)
     {
         //
     }
@@ -57,6 +80,12 @@ class UsersControler extends Controller
     public function edit($id)
     {
         //
+        $user = User::findOrFail($id);
+        $profile = Profile::findOrFail($user->profile_id);
+
+
+      return view('users.edit',compact('user','profile'));
+
     }
 
     /**
@@ -66,9 +95,22 @@ class UsersControler extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProfileEditReques $request, $id)
     {
         //
+//$request->all();
+         $user = User::findOrFail($id);
+        $profile= Profile::findOrFail($user->profile_id);
+
+
+            $input = $request->all();
+            $input['password'] = bcrypt($request->password);
+
+
+         $user ->update($input);
+         $profile ->update($input);
+           return $input;
+
     }
 
     /**

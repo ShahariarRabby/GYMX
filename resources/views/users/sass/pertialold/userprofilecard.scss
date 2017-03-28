@@ -1,0 +1,64 @@
+
+
+.usercard{
+
+    .userimgcard{
+        position: absolute;
+        img{
+            width: 100%;
+            height: 300px;
+        }
+    }
+    .userimg{
+        position: absolute;
+       height: 250px;
+        width: 100%;
+        text-align: center;
+        top: 175px;
+       // padding: 0;
+        
+        img{
+            height: 100%;
+            width: 250px;
+            border-radius: 50%;
+
+        }
+    }
+}
+
+.usersummery{
+    padding-left: 100px;
+    padding-right: 100px;
+            color: red;
+    
+    .usersidebar{
+        .col-6{
+              padding: 0;
+                margin: 0;
+            .row{
+            margin: 0;
+                padding: 0;
+                .col-12{
+                img{
+                    width: 50%;
+                    height: 200px;
+                    border-radius: 50%;
+                    box-shadow: 5px 5px 15px black;
+                    transition: transform .5s, box-shadow .5s;
+                    &:hover{
+                        transform: scale(1.5);
+                       box-shadow: 5px 5px 35px black;
+
+                    }
+                }
+                
+                    h6,h4{
+                        display: inline;  
+                    }
+                }
+            }
+        }
+
+    }
+    
+}

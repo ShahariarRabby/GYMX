@@ -1,0 +1,408 @@
+body {
+  background-color: #F0F0F0;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+  background: -webkit-linear-gradient(top, red, #1fae66);
+  background: linear-gradient(to bottom, red, #1fae66);
+  border-radius: 4px;
+}
+
+.userprofile {
+  position: absolute;
+}
+.userprofile .usersummery .spacer {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  border-top: 3px solid #1fae66;
+  margin-bottom: 25px;
+  padding: 15px 15px 0 15px;
+  overflow: hidden;
+}
+.userprofile .usersummery .spacer .usersmr .userimg {
+  margin-bottom: 50px;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 1s;
+          transition: transform 1s;
+}
+.userprofile .usersummery .spacer .usersmr .userimg:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.userprofile .usersummery .spacer .usersmr .buttons button {
+  width: 100%;
+  border: none;
+}
+.userprofile .usersummery .spacer .usersmr .buttons #msg {
+  background: #6A6A6A;
+  -webkit-transition: background 1s;
+          transition: background 1s;
+}
+.userprofile .usersummery .spacer .usersmr .buttons #msg:hover {
+  background: #515151;
+}
+.userprofile .usersummery .spacer .usersmr .buttons #edit {
+  background: #1fae66;
+  -webkit-transition: background 1s;
+          transition: background 1s;
+}
+.userprofile .usersummery .spacer .usersmr .buttons #edit:hover {
+  background: #17834d;
+}
+
+#table {
+  font-size: 80%;
+}
+
+#usercotent .spacer {
+  height: 100%;
+  background-color: white;
+}
+#usercotent .spacer #tabs .tabmanu {
+  list-style: none;
+  margin: 0;
+  padding: 7px 0;
+  background: #1fae66;
+  position: relative;
+}
+#usercotent .spacer #tabs .tabmanu li {
+  display: inline-block;
+  padding: 0;
+}
+#usercotent .spacer #tabs .tabmanu li a {
+  position: relative;
+  color: white;
+  border: none;
+  -webkit-transition: all .3s ease 0s;
+          transition: all .3s ease 0s;
+  padding: 7px 18px;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.15) !important;
+  margin: 0;
+  text-decoration: none;
+}
+#usercotent .spacer #tabs .tabmanu li a:hover {
+  background: rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+#usercotent .spacer #tabs .tabmanu li a span {
+  width: 100%;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  text-align: center;
+  visibility: visible;
+  font-size: 16px;
+  color: white;
+}
+
+#tabs-1 {
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+#tabs-1 .container .userhead .htag {
+  width: 100%;
+  padding: 5px 25px;
+}
+#tabs-1 .container .userhead .htag h3 {
+  float: left;
+}
+#tabs-1 .container .userhead .htag .btn {
+  float: right;
+  background: #1fae66;
+  color: white;
+  -webkit-transition: background 1s, box-shadow .5s;
+          transition: background 1s, box-shadow .5s;
+}
+#tabs-1 .container .userhead .htag .btn:hover {
+  background: #17834d;
+  box-shadow: 0px 1px 8px gray;
+}
+#tabs-1 .container .userhead .htag a.btn {
+  margin-right: 5px;
+}
+#tabs-1 .container .userdetails {
+  padding-bottom: 30px;
+}
+
+.expacv {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.actskill {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+}
+.actskill .acvscrole {
+  width: 100%;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.actskill .acvscrole::-webkit-scrollbar {
+  width: 2px;
+  height: 5px;
+}
+.actskill .acvscrole::-webkit-scrollbar-thumb {
+  background-color: #1fae66;
+}
+.actskill .bar h6 {
+  color: #333;
+}
+.actskill .bar .progress {
+  margin-bottom: 40px;
+  color: red;
+}
+
+nav {
+  box-shadow: 2px 2px 20px gray;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border-bottom .5s;
+          transition: border-bottom .5s;
+}
+nav:hover {
+  box-shadow: 2px 2px 5px gray;
+}
+
+#tabs-2 {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+#tabs-2 h3 {
+  padding-left: 15px;
+}
+
+#tabs-3 {
+  padding-top: 10px;
+}
+#tabs-3 .row {
+  padding-left: 20px;
+}
+#tabs-3 h3 {
+  padding-left: 15px;
+}
+#tabs-3 .membercard {
+  width: 100%;
+  padding: 15px 0px;
+}
+#tabs-3 .membercard .member ul {
+  padding: 0 0 0 0 !important;
+  list-style: none;
+}
+#tabs-3 .membercard .member ul li {
+  display: block;
+}
+#tabs-3 .membercard .member ul li img {
+  height: 200px;
+  width: 100%;
+}
+
+#tabs-4 {
+  width: 100%;
+  padding: 15px 25px 15px 30px;
+}
+#tabs-4 .widget-title {
+  padding-bottom: 15px;
+}
+#tabs-4 .recharge {
+  margin-bottom: 15px;
+}
+#tabs-4 .recharge .btn {
+  background: #1fae66;
+  color: white;
+  -webkit-transition: background 1s, box-shadow .5s;
+          transition: background 1s, box-shadow .5s;
+}
+#tabs-4 .recharge .btn:hover {
+  background: #17834d;
+  box-shadow: 0px 1px 8px gray;
+}
+
+#tabs-5 {
+  margin-top: 15px;
+}
+#tabs-5 * {
+  -webkit-transition: all .5s ease-in-out;
+          transition: all .5s ease-in-out;
+}
+#tabs-5 .dashbord .site-stats {
+  list-style: none;
+  padding: 0 !important;
+}
+#tabs-5 .dashbord .site-stats li {
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+  margin: 0;
+}
+#tabs-5 .dashbord .site-stats li:hover {
+  background: #d9d9d9;
+  box-shadow: 2px 2px 5px gray;
+}
+#tabs-5 .dashbord .site-stats li:nth-child(2n) {
+  background: #f2f2f2;
+}
+#tabs-5 .dashbord .site-stats li:nth-child(2n):hover {
+  background: #d9d9d9;
+  box-shadow: 2px 2px 5px gray;
+}
+@-webkit-keyframes Animation {
+  100% {
+    margin-left: -450px;
+  }
+}
+#tabs-5 .dashbord .dashdetails .marquee {
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+#tabs-5 .dashbord .dashdetails .marquee .animtext {
+  width: 100vw;
+  margin-left: 658px;
+  -webkit-animation: Animation 8s linear  infinite;
+          animation: Animation 8s linear  infinite;
+}
+#tabs-5 .dashbord .dashdetails .alert-block:hover {
+  box-shadow: 0px 0px 15px gray;
+}
+
+#tabs-1 .form-control {
+  border: none;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+  background: none;
+}
+#tabs-1 .form-control:disabled {
+  background: none;
+  border-radius: 0;
+  border: none;
+}
+#tabs-1 .form-control:focus {
+  border: none;
+  border-bottom: 1px solid #1fae66;
+}
+#tabs-1 .expacv .expin {
+  list-style: none;
+}
+#tabs-1 .expacv .expin .form-control {
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+}
+
+#sidebar {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  list-style: none;
+  box-shadow: 0 0 0 0;
+  width: 70px;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: width .5s;
+          transition: width .5s;
+}
+#sidebar .card {
+  border: 0;
+  width: 100%;
+  background: none;
+}
+#sidebar .card .cardimg img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+#sidebar .card .card-block {
+  display: none;
+}
+#sidebar .sidebarmanu {
+  padding: 100px 0 0 5px;
+}
+#sidebar .sidebarmanu li {
+  list-style: none;
+  text-align: center;
+  overflow: hidden;
+}
+#sidebar .sidebarmanu li a {
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  padding: 0;
+}
+#sidebar .sidebarmanu li a span {
+  display: none;
+}
+#sidebar:hover {
+  box-shadow: 5px 5px 35px black;
+  background: white;
+  width: 100%;
+}
+#sidebar:hover .sidebarmanu {
+  margin: 0 auto;
+  padding: 0;
+}
+#sidebar:hover li {
+  list-style: none;
+  text-align: center;
+}
+#sidebar:hover li a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 0;
+  -webkit-transition: background-color 1s ease-out;
+          transition: background-color 1s ease-out;
+}
+#sidebar:hover li a:hover {
+  background-color: #27d97f;
+}
+#sidebar:hover li a span {
+  display: inline-block;
+}
+#sidebar:hover li .card {
+  border: 0;
+  background: rgba(255, 255, 255, 0);
+  width: 100%;
+}
+#sidebar:hover li .card a {
+  padding: 0;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform .8s;
+          transition: transform .8s;
+}
+#sidebar:hover li .card a:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+#sidebar:hover li .card .cardimg img {
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  padding: 0;
+}
+#sidebar .sidebarmanu .sub-menu {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
