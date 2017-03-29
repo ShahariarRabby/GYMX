@@ -1,276 +1,64 @@
 @extends('layouts.users')
 @section('tabs1')
-    {{--{!! Form::model($user,['method'=>'PATCH','action'=>["UsersControler@update",'class'=>"container about",$user->id]]) !!}--}}
+    <div id="tabs-5">
 
-        {!! Form::open(['method'=>'POST','action'=>"AdminUsersController@store",'class'=>"container about",'files'=>true]) !!}
-        {{--<form class="container about">--}}
-        {{----}}
-        <div class="row userhead">
+        <div class="row">
+            <div class="col-12">
+                <div class="container dashbord">
+                    <div class="row">
+                        <div class="col-12 col-sm-4">
+                            <ul class="site-stats">
+                                <li>
+                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>Active</strong>
+                                        <br><small>My account status</small></div>
+                                </li>
 
-            <div class="htag">
-                <h3 class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profile</h3>
-                <button class="btn ">Submit</button>
-                <a  class="btn" href="{{url('users/create')}}">View</a>
-            </div>
-        </div>
+                                <li>
+                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>Tue, 11 Apr, 2017 12:00 pm</strong>
+                                        <br><small>Disconnect date</small></div>
+                                </li>
+                                <!--<li class="divider"></li>-->
 
+                                <li>
+                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>0 Taka</strong>
+                                        <br><small>Current balance</small></div>
+                                </li>
 
-
-        <div class="row userheaddetails">
-            <div class="container ">
-                <div method="" action="" class="row ">
-
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class=" row form-group">
-                            <lable class="col-5 col-form-label">
-                                Name:
-                            </lable>
-                            <div class="col-7">
-                                <input class="form-control" type="name" name="name" value="" id="example-text-input">
-                            </div>
+                                <li>
+                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>1 Mbps</strong>
+                                        <br><small>Package</small></div>
+                                </li>
+                            </ul>
                         </div>
 
-
-
-
-                        <div class="row form-group">
-                            <lable class="col-5 col-form-label">
-                                Height:
-                            </lable>
-                            <div class="col-7">
-                                <input class="form-control" type="number_format" name="height" value="" id="" required>
-                            </div>
-                        </div>
-
-
-                        <div class="row form-group">
-                            <lable class="col-5 col-form-label">
-                                Weight:
-                            </lable>
-                            <div class="col-7">
-                                <input class="form-control" type="number_format" name="weight" value="" id="" required>
-                            </div>
-                        </div>
-
-                        {{--<div class="row form-group">--}}
-                            {{--<lable class="col-5 col-form-label">--}}
-                                {{--Birthday:--}}
-                            {{--</lable>--}}
-                            {{--<div class="col-7">--}}
-                                {{--<input class="form-control" type="date" name="dob" value="" id="" required>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        <div class="row form-group">
-                            <lable class="col-5 col-form-label">
-                                Gender:
-                            </lable>
-                            <div class="col-7">
-                                <select class="form-control" name="gender" id="exampleSelect1">
-                                    <option value="0">I don't know</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Male">Male</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <lable class="col-5 col-form-label">
-                                Facebook:
-                            </lable>
-                            <div class="col-7">
-                                <input class="form-control" name="facebook" type="url" value="fb.com/" id="">
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12">
-
-
-                        <div class="row form-group">
-                            <lable class="col-5 col-form-label">
-                                Password:
-                            </lable>
-                            <div class="col-7">
-                                <input type="password"  class="form-control" id="inputPassword3" placeholder="Password">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <lable class="col-5 col-form-label">
-                                Confirm Password:
-                            </lable>
-                            <div class="col-7">
-                                <input type="password" name="password" class="form-control" id="inputPasswordCon" placeholder="Password">
-                            </div>
-                        </div>
-
-
-
-                        <div class="row form-group">
-                            <lable class="col-5 col-form-label">
-                                Blood Group:
-                            </lable>
-                            <div class="col-7">
-                                <input class="form-control" name="bloodGroup" type="text" value="" id="" required>
-                            </div>
-                        </div>
-
-
-                        <div class="row form-group">
-                            <lable class="col-5 col-form-label">
-                                BMI:
-                            </lable>
-                            <div class="col-7">
-                                <input class="form-control" type="number" value="2.22" id="" disabled>
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <lable class="col-5 col-form-label">
-                                Phone:
-                            </lable>
-                            <div class="col-7">
-                                <input class="form-control" name="phone" type="tel" value="" id="example-tel-input" required>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!--****************************************************************-->
-
-
-                <!--****************************************************************-->
-
-                <div class="row actskill">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-7 col-md-7 col-12">
-                                <div class="col-12">
-                                    <h3 class=""><i class="fa fa-globe"></i> ACTIVITY</h3> </div>
-                                <div class="col-12">
-
-                                    <div class="acvscrole">
-                                        <div>
-                                            <h5>123</h5>
-                                            <p>qqqqqqqqqq</p>
-                                        </div>
-
-                                        <div>
-                                            <h5>123</h5>
-                                            <p>qqqqqqqgggg1gggggggggggggggggggggggqqq11111gggggqqq11111111</p>
-                                        </div>
-                                        <div>
-                                            <h5>123</h5>
-                                            <p>qqqqqqqqqq</p>
-                                        </div>
-                                        <div>
-                                            <h5>123</h5>
-                                            <p>qqqqqqqqqq</p>
-                                        </div>
-                                        <div>
-                                            <h5>123</h5>
-                                            <p>qqqqqqqqqq</p>
-                                        </div>
-                                        <div>
-                                            <h5>123</h5>
-                                            <p>qqqqqqqqqq</p>
-                                        </div>
-                                        <div>
-                                            <h5>123</h5>
-                                            <p>qqqqqqqqqq</p>
-                                        </div>
-                                        <div>
-                                            <h5>123</h5>
-                                            <p>qqqqqqqqqq</p>
-                                        </div>
-                                        <div>
-                                            <h5>123</h5>
-                                            <p>qqqqqqqqqq</p>
-                                        </div>
-                                        <div>
-                                            <h5>123</h5>
-                                            <p>qqqqqqqqqq</p>
-                                        </div>
-                                        <div>
-                                            <h5>123</h5>
-                                            <p>qqqqqqqqqq</p>
-                                        </div>
-
-                                    </div>
+                        <div class="col-12 col-sm-8 dashdetails">
+                            <div class=" marquee">
+                                <div class="animtext">
+                                    Goodbye leazy life. let's CHALLENCGE YOURSELF!!!!
                                 </div>
-
-                            </div>
-
-                            <div class="col-lg-5 col-md-5 col-12 bar">
-                                <div class="col-12">
-                                    <h3 class=""><i class="fa fa-flask"></i> SKILL</h3>
-                                </div>
-
-                                <div class="col-12">
-                                    <h6>Weight Lift</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-12">
-                                    <h6>Weight Lift</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-12">
-                                    <h6>Weight Lift</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-12">
-                                    <h6>Weight Lift</h6>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-
-
                             </div>
 
 
+                            <div class="alert alert-danger alert-block">
+                                <h4 class="alert-heading" style="color:red !important;">Attention!</h4>
+                                <span class="badge badge-danger">24 days 10 hours 2 minitues</span> remaining to disconnect. Please recharge account and schedule next connectivity to avoid disconnection. </div>
+                            <div class="alert alert-success alert-block">
+                                Dear valued subscriber,
+                                <br> To recharge your account and activate package please follow these steps:
+                                <br> 1. Click "Payment". Put your scratch card no or bKash .
+                                <br> 2. Click "Active".
+                            </div>
+                            <div class="alert alert-warning alert-block">
+                                To avoid disconnection please recharge and activate package in advance before your account is being suspended. If suspended please call 8585.
+                            </div>
                         </div>
                     </div>
                 </div>
 
-
-
-
             </div>
         </div>
-        {!! Form::close() !!}
-
-        {{--if(isset($_GET['source'])){--}}
-        {{--$source= $_GET['source'];--}}
-        {{--switch($source){--}}
-        {{--case 1:--}}
-        {{--include "userpartial/edituser.php" ;--}}
-        {{--break;               --}}
-        {{--default:--}}
-        {{--include "userpartial/showuser.php" ;--}}
-        {{--break;--}}
-        {{--} --}}
-        {{--}else{--}}
-        {{--include "userpartial/showuser.php" ;--}}
-        {{--}--}}
 
 
-
-
-
+    </div>
 
     @endsection

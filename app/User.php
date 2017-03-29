@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -35,8 +36,16 @@ class User extends Authenticatable
         return $this->belongsTo('App\Profile','profile_id');
     }
 
-    public function isAdmin(){
+    public function qq(){
         if($this->role == "Admin"){
+            return true;
+        }
+
+        return false;
+    }
+
+    public function isAdmin(){
+        if($this->id == Auth::id()){
             return true;
         }
 

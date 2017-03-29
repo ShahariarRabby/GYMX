@@ -370,6 +370,8 @@
 </header>
 
 
+
+
 <div class="container">
     <div class="row userprofile">
         <div class="col-lg-3 col-md-3 col-12 usersummery">
@@ -413,261 +415,21 @@
                 </div>
             </div>
         </div>
+
         <div class="col-lg-9 col-md-8 col-12" id="usercotent">
             <div class="spacer">
                 <div id="tabs">
                     <ul class="tabmanu">
-                        <li><a href="#tabs-5">Dashbord<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
-                        <li><a href="#tabs-1">Profile<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
-                        <li><a href="#tabs-2">Tasks<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
-                        <li><a href="#tabs-3">Membes<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
-                        <li><a href="#tabs-4">Payment Hisory<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
+                        <li><a href="{{url('/summery')}}">Dashbord<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
+                        <li><a href="{{url('/profile')}}">Profile<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
+                        <li><a href="{{url('/task')}}">Tasks<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
+                        <li><a href="{{url('/members')}}">Membes<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
+                        <li><a href="{{url('/payment')}}">Payment Hisory<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
                     </ul>
 
-                    <div id="tabs-1">
                     @yield('tabs1')
-                    </div>
-
-                    <div id="tabs-2">
-                        <div class="container">
-
-                            <div class="row">
-
-                                <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-bolt mgr-10 profile-icon"></i> Task</h3>
-
-                            </div>
-
-                            <div class="row">
-                                <table class="table table-striped table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Logo / Photos</th>
-                                        <th>Start Date</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td><img height="80" src="img/year-1.jpg" alt="example image"></td>
-                                        <td class="center">2017/02/03</td>
-                                        <td class="center">
-                                            <span class="label label-success">Finish</span>
-                                        </td>
-                                        <td class="menu-action rounded-btn">
-                                            <a class="btn menu-icon vd_bg-green">
-                                                <i class="fa fa-eye"></i>
-                                            </a>
-                                            <a class="btn menu-icon vd_bg-yellow">
-                                                <i class="fa fa-pencil"></i>
-                                            </a>
-                                            <a class="btn menu-icon vd_bg-red">
-                                                <i class="fa fa-times"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="tabs-3">
-                        <div class="container">
-                            <div class="row">
-                                <h3 class=""><i class="fa fa-users mgr-10 profile-icon"></i> Group Member</h3></div>
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-2 membercard">
-                                    <div class="member">
-                                        <ul class="">
-                                            <li>
-                                                <a href="#">
-                                                    <span class="menu-icon"><img src="img/year-1.jpg" alt="example image"></span>
-                                                </a>
-                                                <span class="menu-text"> name
-                                                            <span class="menu-info">
-                                                                <span class="menu-action">
-                                                                    <span>
-                                                                        <i class="fa fa-check"></i>
-                                                                    </span>
-                                                                </span>
-                                                            </span>
-                                                        </span>
-                                            </li>
-                                        </ul>
-                                    </div>
 
 
-
-                                </div>
-
-
-
-
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-                    <div id="tabs-4">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12 recharge">
-                                    <h5>Recharge Balance</h5>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-12">
-                                            <div class="input-group">
-
-                                                        <span class="input-group-addon">
-                                                            <label>Card</label>
-                                                        </span>
-                                                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="#####">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8 col-12">
-                                            <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <label>bKash</label>
-                                                        </span>
-                                                <input type="text" class="form-control" placeholder="Phone Number">
-                                                <input type="text" class="form-control" placeholder="Transection ID">
-                                                <button type="submit" class="btn">Submit</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="widget-title">
-                                        <h5>Current Balance: 0 Taka</h5>
-
-                                        <!--<span class="label label-info"></span>-->
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="">
-                                        <table class="table table-bordered table-striped table-hover">
-                                            <thead>
-                                            <tr>
-                                                <th>Type</th>
-                                                <th>Debit (Taka)</th>
-                                                <th>Credit (Taka)</th>
-                                                <th>Balance (Taka)</th>
-                                                <th>Time</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td class="b">Enable Package</td>
-                                                <td class="text-right">700</td>
-                                                <td class="text-right"></td>
-                                                <td class="text-right">0</td>
-                                                <td>Sat, 11 Mar, 2017 9:31 pm</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="b"> Card</td>
-                                                <td class="text-right"></td>
-                                                <td class="text-right">350</td>
-                                                <td class="text-right">700</td>
-                                                <td>Sat, 11 Mar, 2017 9:31 pm</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="b"> Card</td>
-                                                <td class="text-right"></td>
-                                                <td class="text-right">350</td>
-                                                <td class="text-right">350</td>
-                                                <td>Sat, 11 Mar, 2017 9:30 pm</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="b">Enable Package</td>
-                                                <td class="text-right">700</td>
-                                                <td class="text-right"></td>
-                                                <td class="text-right">0</td>
-                                                <td>Sat, 7 Jan, 2017 5:26 pm</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="b"> Card</td>
-                                                <td class="text-right"></td>
-                                                <td class="text-right">700</td>
-                                                <td class="text-right">700</td>
-                                                <td>Sat, 7 Jan, 2017 5:26 pm</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div id="tabs-5">
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="container dashbord">
-                                    <div class="row">
-                                        <div class="col-12 col-sm-4">
-                                            <ul class="site-stats">
-                                                <li>
-                                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>Active</strong>
-                                                        <br><small>My account status</small></div>
-                                                </li>
-
-                                                <li>
-                                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>Tue, 11 Apr, 2017 12:00 pm</strong>
-                                                        <br><small>Disconnect date</small></div>
-                                                </li>
-                                                <!--<li class="divider"></li>-->
-
-                                                <li>
-                                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>0 Taka</strong>
-                                                        <br><small>Current balance</small></div>
-                                                </li>
-
-                                                <li>
-                                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>1 Mbps</strong>
-                                                        <br><small>Package</small></div>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="col-12 col-sm-8 dashdetails">
-                                            <div class=" marquee">
-                                                <div class="animtext">
-                                                    Goodbye leazy life. let's CHALLENCGE YOURSELF!!!!
-                                                </div>
-                                            </div>
-
-
-                                            <div class="alert alert-danger alert-block">
-                                                <h4 class="alert-heading" style="color:red !important;">Attention!</h4>
-                                                <span class="badge badge-danger">24 days 10 hours 2 minitues</span> remaining to disconnect. Please recharge account and schedule next connectivity to avoid disconnection. </div>
-                                            <div class="alert alert-success alert-block">
-                                                Dear valued subscriber,
-                                                <br> To recharge your account and activate package please follow these steps:
-                                                <br> 1. Click "Payment". Put your scratch card no or bKash .
-                                                <br> 2. Click "Active".
-                                            </div>
-                                            <div class="alert alert-warning alert-block">
-                                                To avoid disconnection please recharge and activate package in advance before your account is being suspended. If suspended please call 8585.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -704,44 +466,44 @@
 
 
 
-<script>
-    $(function () {
-        var $tabs = $("#tabs").tabs();
+{{--<script>--}}
+    {{--$(function () {--}}
+        {{--var $tabs = $("#tabs").tabs();--}}
 
-        $tabs.tabs({
-            hide: {
-                effect: "slide",
-                direction: "down",
-                duration: 500
-            },
-            show: {
-                effect: "slide",
-                direction: "up",
-                duration: 500
-            },
-            beforeActivate: function (event, ui) {
-                setTimeout(function () {
-                    /* Do something after hide */
-                    $tabs.animate({
-                        top: "500px"
-                    }, function () {
-                        $tabs.animate({
-                            top: "0px"
-                        })
-                    });
-                    $tabs.toggleClass('switch');
-                }, 500);
-            }
-        });
+        {{--$tabs.tabs({--}}
+            {{--hide: {--}}
+                {{--effect: "slide",--}}
+                {{--direction: "down",--}}
+                {{--duration: 500--}}
+            {{--},--}}
+            {{--show: {--}}
+                {{--effect: "slide",--}}
+                {{--direction: "up",--}}
+                {{--duration: 500--}}
+            {{--},--}}
+            {{--beforeActivate: function (event, ui) {--}}
+                {{--setTimeout(function () {--}}
+                    {{--/* Do something after hide */--}}
+                    {{--$tabs.animate({--}}
+                        {{--top: "500px"--}}
+                    {{--}, function () {--}}
+                        {{--$tabs.animate({--}}
+                            {{--top: "0px"--}}
+                        {{--})--}}
+                    {{--});--}}
+                    {{--$tabs.toggleClass('switch');--}}
+                {{--}, 500);--}}
+            {{--}--}}
+        {{--});--}}
 
 
-        function getSelectedTabIndex() {
-            $tabIndex = $tabs.tabs('option', 'selected');
-            var $selected = $("#tabs ul>li a").eq($tabIndex).attr('href');
-            return $selected;
-        }
-    });
-</script>
+        {{--function getSelectedTabIndex() {--}}
+            {{--$tabIndex = $tabs.tabs('option', 'selected');--}}
+            {{--var $selected = $("#tabs ul>li a").eq($tabIndex).attr('href');--}}
+            {{--return $selected;--}}
+        {{--}--}}
+    {{--});--}}
+{{--</script>--}}
 <script>
     $('#password, #confirm_password').on('keyup', function () {
         if ($('#password').val() != "" || $('#confirm_password').val() !="") {

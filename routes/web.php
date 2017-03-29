@@ -11,8 +11,18 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/name', function () {
+    $user=Auth::id();
+
+
+   // $pro = $user->profile->all();
+   // return dd($pro);
+    return dd($user);
 });
 
 
@@ -26,9 +36,11 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 //Route::group(['middleware'=>'admin'],function (){
     Route::resource('/admin/users','AdminUsersController');
-    Route::resource('/users','UsersControler');
+Route::group(['middleware'=>'admin'],function (){
 
-//});
+Route::resource('/users','UsersControler');
+
+});
 
 
 
@@ -44,3 +56,20 @@ Route::get('/logout', 'Auth\LoginController@logout');
 //});
 
 //Route::get('/logout' , 'Auth\LoginController@logout');
+
+
+ROute::get('/summery','UserContant@index');
+ROute::get('/task','UserContant@task');
+ROute::get('/profile','UserContant@profile');
+ROute::get('/members','UserContant@members');
+ROute::get('/payment','UserContant@payment');
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,6 @@
 @extends('layouts.users')
 @section('tabs1')
+    <div id="tabs-1">
     {!! Form::model($profile,['class'=>"container about",'method'=>'PATCH','action'=>["UsersControler@update",$user->id]]) !!}
 
     {{--{!! Form::open(['method'=>'POST','action'=>"AdminUsersController@store",'class'=>"container about",'files'=>true]) !!}--}}
@@ -278,7 +279,7 @@
     {{--}--}}
 
 
-
+    </div>
 
 
 

@@ -6,6 +6,7 @@ use App\Http\Requests\ProfileEditReques;
 use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use function Sodium\compare;
 
@@ -80,11 +81,16 @@ class UsersControler extends Controller
     public function edit($id)
     {
         //
-        $user = User::findOrFail($id);
-        $profile = Profile::findOrFail($user->profile_id);
+        if($id == Auth::id()){
+            $user = User::findOrFail($id);
+            $profile = Profile::findOrFail($user->profile_id);
 
 
-      return view('users.edit',compact('user','profile'));
+            return view('users.edit',compact('user','profile'));
+        }
+        return redirect(url('users/'.Auth::id().'/edit'));
+       // return redirect(404);
+
 
     }
 
@@ -99,6 +105,7 @@ class UsersControler extends Controller
     {
         //
 //$request->all();
+
          $user = User::findOrFail($id);
         $profile= Profile::findOrFail($user->profile_id);
 
