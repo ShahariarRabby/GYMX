@@ -15,9 +15,7 @@ class AddSomeCollumnToUserTable extends Migration
     {
         Schema::table('profiles', function (Blueprint $table) {
             //
-            $table->string('facebook');
-            $table->string('bloodGroup');
-            $table->string('phone');
+
         });
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfileEditReques;
 use App\Profile;
 use App\User;
+use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -114,6 +115,26 @@ class UsersControler extends Controller
             $input['password'] = bcrypt($request->password);
 
 
+
+
+
+        if ($file = $request->file('photo_id')){
+
+            if($user->photo_id !=""){
+                unlink(public_path().'/images/'.$user->photo->file);
+                $photo = Photo::findOrFail($user->photo_id);
+                $photo->delete();
+            }
+
+
+
+            //  $input = $request->all();
+
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images',$name);
+            $photo=Photo::create(['file'=>$name]);
+            $input['photo_id'] = $photo->id;
+        }
          $user ->update($input);
          $profile ->update($input);
            return $input;

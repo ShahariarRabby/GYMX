@@ -47,7 +47,7 @@
 
     <div class="form-group">
         {!! Form::label('is_active','Status') !!}
-        {!! Form::select('is_active',array(1=>'Active',0=>'Not Active'),null,['class'=>'form-control']) !!}
+        {!! Form::select('is_active',array('Active'=>'Active','Not Active'=>'Not Active'),null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group  col-sm-6">
         {!! Form::submit('Update User',['class'=>'btn btn-primary   col-sm-11']) !!}

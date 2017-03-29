@@ -17,7 +17,11 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->string('role')->default('User');
             $table->string('gender')->default('none');
-            $table->string('facebook')->default('https://fb.com/');
+            $table->string('bio')->default('none');
+            $table->date('dob')->nullable();
+            $table->string('bloodGroup')->nullable();;
+            $table->string('phone')->nullable();;
+          $table->string('facebook')->default('https://fb.com/');
             $table->decimal('height')->nullable();
             $table->decimal('weight')->nullable();
             $table->integer('photo_id')->nullable();

@@ -70,7 +70,7 @@ class AdminUsersController extends Controller
         if ($file = $request->file('photo_id')){
             $name = time() . $file->getClientOriginalName();
             $file->move('images',$name);
-            $photo=Photo::create(['file'=>$name]);
+            $photo= Photo::create(['file'=>$name]);
             $input['photo_id'] = $photo->id;
         }
         $input['password'] = bcrypt($request->password);
@@ -133,16 +133,15 @@ class AdminUsersController extends Controller
 
         }
 
-        if($user->photo_id !=""){
-            unlink(public_path().'/images/'.$user->photo->file);
-        }
 
 
 
 
         if ($file = $request->file('photo_id')){
 
+
             if($user->photo_id !=""){
+                unlink(public_path().'/images/'.$user->photo->file);
                 $photo = Photo::findOrFail($user->photo_id);
                 $photo->delete();
             }

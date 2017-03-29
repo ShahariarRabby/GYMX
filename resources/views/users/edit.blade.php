@@ -1,7 +1,7 @@
 @extends('layouts.users')
 @section('tabs1')
     <div id="tabs-1">
-    {!! Form::model($profile,['class'=>"container about",'method'=>'PATCH','action'=>["UsersControler@update",$user->id]]) !!}
+    {!! Form::model($profile,['class'=>"container about",'method'=>'PATCH','action'=>["UsersControler@update",$user->id],'files'=>true]) !!}
 
     {{--{!! Form::open(['method'=>'POST','action'=>"AdminUsersController@store",'class'=>"container about",'files'=>true]) !!}--}}
     {{--<form class="container about">--}}
@@ -10,7 +10,7 @@
 
         <div class="htag">
             <h3 class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profile</h3>
-            <button class="btn ">Submit</button>
+            <button class="btn">Submit</button>
             <a  class="btn" href="{{url('users/create')}}">View</a>
         </div>
     </div>
@@ -40,7 +40,7 @@
                             Height:
                         </lable>
                         <div class="col-7">
-                            {!! Form::number('height',null,['class'=>'form-control','required']) !!}
+                            {!! Form::number('height',null,['class'=>'form-control','required','step'=>"any"]) !!}
 
                             {{--<input class="form-control" type="number_format" name="height" value="" id="" required>--}}
                         </div>
@@ -52,9 +52,9 @@
                             Weight:
                         </lable>
                         <div class="col-7">
-                            {!! Form::number('weight',null,['class'=>'form-control','required']) !!}
+                            {!! Form::number('weight',null,['class'=>'form-control','required','step'=>"any"]) !!}
 
-                            {{--<input class="form-control" type="number_format" name="weight" value="" id="" required>--}}
+                            {{--<input class="form-control" type="number" name="weight" value="" id="" required>--}}
                         </div>
                     </div>
 
@@ -85,10 +85,16 @@
                             Facebook:
                         </lable>
                         <div class="col-7">
-                            {!! Form::text('facebook',null,['class'=>'form-control','required']) !!}
+                            {!! Form::text('facebook',"https://fb.com/",['class'=>'form-control','required']) !!}
                         </div>
                     </div>
 
+                    <div class=" row form-group">
+                        {!! Form::label('photo_id','Edit Photo',['class'=>'col-5 col-form-label']) !!}
+                        <div class="col-7">
+                            {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
+                        </div>
+                    </div>
 
 
                 </div>
@@ -123,6 +129,18 @@
                             {!! Form::text('bloodGroup',null,['class'=>'form-control','required']) !!}
 
                         </div>
+
+
+                    </div>
+
+                    <div class="row form-group">
+                        <lable class="col-5 col-form-label">
+                            Date Of Birth:
+                        </lable>
+                        <div class="col-7">
+                            {!! Form::date('dob',null,['class'=>'form-control']) !!}
+
+                        </div>
                     </div>
 
 
@@ -144,7 +162,22 @@
 
                             {{--<input class="form-control" name="phone" type="tel" value="" id="example-tel-input" required>--}}
                         </div>
+
+
+
                     </div>
+
+                    <div class="row form-group">
+                        <lable class="col-5 col-form-label">
+                            Bio:
+                        </lable>
+                        <div class="col-7">
+                            {!! Form::text('bio',null,['class'=>'form-control','required']) !!}
+
+                            {{--<input class="form-control" name="phone" type="tel" value="" id="example-tel-input" required>--}}
+                        </div>
+                    </div>
+
                 </div>
 
             </div>

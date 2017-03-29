@@ -45,7 +45,8 @@
   @foreach($users as $user)
     <tr>
       <th scope="row">{{$user->id}}</th>
-      <th  ><img height="50px" width="50px" class="img-circle" src="{{asset($user->photo ? ("images/".($user->photo->file)):($user->profile->role=="Admin"?"images/2.png":"images/1.png"))}}" alt="{{$user->name}}"></th>
+      <th  ><img height="50px" width="50px" class="img-circle"
+                 src="{{asset($user->photo ? ("images/".($user->photo->file)):($user->profile->gender=="Male"?"images/2.png":"images/1.png"))}}" alt="{{$user->name}}"></th>
       <td><a href="{{ url('admin/users/' .$user->id . '/edit') }}">{{$user->name}}</a></td>
         {{--{{route('admin.users.edit',$user->id)}}--}}
       <td>{{$user->email}}</td>

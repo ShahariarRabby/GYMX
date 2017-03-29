@@ -41,8 +41,8 @@
 
             </ul>
             {{--<form class="form-inline my-2 my-lg-0">--}}
-                {{--<input class="form-control mr-sm-2" type="text" placeholder="Search">--}}
-                {{--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--}}
+            {{--<input class="form-control mr-sm-2" type="text" placeholder="Search">--}}
+            {{--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--}}
             {{--</form>--}}
             {{----}}
             <ul class=" form-inline my-2 my-lg-0" style="list-style: none" >
@@ -65,14 +65,14 @@
         </div>
     </nav>
 
-{{--**********************************************************************************************************************************--}}
+    {{--**********************************************************************************************************************************--}}
 
     <div class="col-2 sidebar" id="sidebar">
         <ul class="sidebarmanu">
             <li>
                 <div class="card">
                     <a href="index.php#tabs-1">
-                        <div class="cardimg"><img class="card-img-top" src="{{asset(Auth::User()->photo ? ("images/".(Auth::User()->photo->file)):(Auth::User()->profile->gender=="Male"?"images/2.png":"images/1.png"))}}" alt="{{Auth::User()->name}}"></div>
+                        <div class="cardimg"><img class="card-img-top" src="img/year-1.jpg" alt="Card image cap"></div>
                     </a>
                 </div>
             </li>
@@ -120,8 +120,50 @@
 
 <div class="container">
     {{--<div class="row userprofile">--}}
-    @yield('userSummery')
-    @include('users.userSummery')
+    {!! Form::model($user,['method'=>'PATCH','action'=>["AdminUsersController@update"],'files'=>true]) !!}
+    <div class="row userprofile">
+        <div class="col-lg-3 col-md-3 col-12 usersummery">
+            <div class="spacer">
+                <div class="row usersmr">
+                    <div class="col-12 img">
+                        <img class="userimg" src="{{asset($user->photo ? ("images/".($user->photo->file)):($user->profile->role=="Admin"?"images/2.png":"images/1.png"))}}" alt="{{$user->name}}">
+                    </div>
+                    <div class="col-12 buttons">
+                        <button class="" id="msg">Edit</button>
+                    </div>
+                </div>
+
+                <div class="row reating">
+                    <div class="col-12">
+                        <h4>{{$user->name}}</h4>
+                        <p>bio Ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="tabeldata">
+                            <table class="table table-striped table-hover" id="table">
+                                <tbody>
+                                <tr>
+                                    <td style="">Status</td>
+                                    <td><span class="label label-success">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>User Rating</td>
+                                    <td><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Member Since</td>
+                                    <td> Jan 07, 2017 </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {!! Form::Close() !!}
+
         <div class="col-lg-9 col-md-8 col-12" id="usercotent">
             <div class="spacer">
                 <div id="tabs">
@@ -173,42 +215,42 @@
 
 
 {{--<script>--}}
-    {{--$(function () {--}}
-        {{--var $tabs = $("#tabs").tabs();--}}
+{{--$(function () {--}}
+{{--var $tabs = $("#tabs").tabs();--}}
 
-        {{--$tabs.tabs({--}}
-            {{--hide: {--}}
-                {{--effect: "slide",--}}
-                {{--direction: "down",--}}
-                {{--duration: 500--}}
-            {{--},--}}
-            {{--show: {--}}
-                {{--effect: "slide",--}}
-                {{--direction: "up",--}}
-                {{--duration: 500--}}
-            {{--},--}}
-            {{--beforeActivate: function (event, ui) {--}}
-                {{--setTimeout(function () {--}}
-                    {{--/* Do something after hide */--}}
-                    {{--$tabs.animate({--}}
-                        {{--top: "500px"--}}
-                    {{--}, function () {--}}
-                        {{--$tabs.animate({--}}
-                            {{--top: "0px"--}}
-                        {{--})--}}
-                    {{--});--}}
-                    {{--$tabs.toggleClass('switch');--}}
-                {{--}, 500);--}}
-            {{--}--}}
-        {{--});--}}
+{{--$tabs.tabs({--}}
+{{--hide: {--}}
+{{--effect: "slide",--}}
+{{--direction: "down",--}}
+{{--duration: 500--}}
+{{--},--}}
+{{--show: {--}}
+{{--effect: "slide",--}}
+{{--direction: "up",--}}
+{{--duration: 500--}}
+{{--},--}}
+{{--beforeActivate: function (event, ui) {--}}
+{{--setTimeout(function () {--}}
+{{--/* Do something after hide */--}}
+{{--$tabs.animate({--}}
+{{--top: "500px"--}}
+{{--}, function () {--}}
+{{--$tabs.animate({--}}
+{{--top: "0px"--}}
+{{--})--}}
+{{--});--}}
+{{--$tabs.toggleClass('switch');--}}
+{{--}, 500);--}}
+{{--}--}}
+{{--});--}}
 
 
-        {{--function getSelectedTabIndex() {--}}
-            {{--$tabIndex = $tabs.tabs('option', 'selected');--}}
-            {{--var $selected = $("#tabs ul>li a").eq($tabIndex).attr('href');--}}
-            {{--return $selected;--}}
-        {{--}--}}
-    {{--});--}}
+{{--function getSelectedTabIndex() {--}}
+{{--$tabIndex = $tabs.tabs('option', 'selected');--}}
+{{--var $selected = $("#tabs ul>li a").eq($tabIndex).attr('href');--}}
+{{--return $selected;--}}
+{{--}--}}
+{{--});--}}
 {{--</script>--}}
 <script>
     $('#password, #confirm_password').on('keyup', function () {
