@@ -55,5 +55,3 @@ $user = Auth::User();
         </div>
     </div>
 {!! Form::Close() !!}
-
-    {{--@endsection--}}

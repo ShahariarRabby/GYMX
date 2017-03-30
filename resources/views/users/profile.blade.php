@@ -2,6 +2,7 @@
 @section('tabs1')
 
 <div id="tabs-1">
+
     <style>
         .padding{
             padding-top: 15px !important;
@@ -12,6 +13,7 @@
             margin-bottom: 10px;
             border-bottom: 1px solid #eee;        }
     </style>
+
 
 <div class="container about">
 <div class="row userhead">

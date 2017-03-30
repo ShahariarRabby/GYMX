@@ -21,10 +21,10 @@ class UserContant extends Controller
         public function profile(){
             $user = Auth::User();
 
-            $H = $user->profile->height;
-            $W = $user->profile->weight;
-            $BMI = $W/($H*$H);
-            $IdealWeight =(0.5 * $BMI +11.5)*$H*$H;
+//            $H = $user->profile->height;
+//            $W = $user->profile->weight;
+//            $BMI = $W/($H*$H);
+//            $IdealWeight =(0.5 * $BMI +11.5)*$H*$H;
           //  $Calorie_Needs_per_Day =66.67+(13.75*$W)+(5*$H)-(6.76*$age);
            // return $height.'<br>'.$weight;
         return view('users.profile',compact('user'));

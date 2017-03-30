@@ -6,21 +6,34 @@
     {{--{!! Form::open(['method'=>'POST','action'=>"AdminUsersController@store",'class'=>"container about",'files'=>true]) !!}--}}
     {{--<form class="container about">--}}
     {{----}}
+
+
+
+
     <div class="row userhead">
 
         <div class="htag">
             <h3 class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profile</h3>
             <button class="btn">Submit</button>
-            <a  class="btn" href="{{url('users/create')}}">View</a>
+            <a  class="btn" href="{{url('/profile')}}">View</a>
         </div>
     </div>
 
 
 
-
     <div class="row userheaddetails">
         <div class="container ">
-            <div method="" action="" class="row ">
+
+
+            <style>
+                .userheaddetail{
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    margin-bottom: 10px;
+                    border-bottom: 1px solid #eee;        }
+            </style>
+
+            <div method="" action="" class="row userheaddetail">
 
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class=" row form-group">
@@ -144,14 +157,14 @@
                     </div>
 
 
-                    <div class="row form-group">
-                        <lable class="col-5 col-form-label">
-                            BMI:
-                        </lable>
-                        <div class="col-7">
-                            <input class="form-control" type="number" value="2.22" id="" disabled>
-                        </div>
-                    </div>
+                    {{--<div class="row form-group">--}}
+                        {{--<lable class="col-5 col-form-label">--}}
+                            {{--BMI:--}}
+                        {{--</lable>--}}
+                        {{--<div class="col-7">--}}
+                            {{--<input class="form-control" type="number" value="2.22" id="" disabled>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                     <div class="row form-group">
                         <lable class="col-5 col-form-label">
@@ -191,7 +204,7 @@
                     <div class="row">
                         <div class="col-lg-7 col-md-7 col-12">
                             <div class="col-12">
-                                <h3 class=""><i class="fa fa-globe"></i> ACTIVITY</h3> </div>
+                                <h3 class=""><i class="fa fa-globe"></i> MESSAGE</h3> </div>
                             <div class="col-12">
 
                                 <div class="acvscrole">
