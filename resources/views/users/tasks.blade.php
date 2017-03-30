@@ -1,4 +1,7 @@
 @extends('layouts.users')
+@section('title')
+    Task
+    @endsection
 @section('tabs1')
 
 <div id="tabs-2">
@@ -14,33 +17,54 @@
             <table class="table table-striped table-hover">
                 <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Logo / Photos</th>
-                    <th>Start Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>Photos</th>
+                    <th>Name</th>
+                    <th>Details</th>
+                    <th>End Date</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><img height="80" src="img/year-1.jpg" alt="example image"></td>
-                    <td class="center">2017/02/03</td>
-                    <td class="center">
-                        <span class="label label-success">Finish</span>
+                @foreach($task as $task)
+                <tr class="boxshadow">
+                    <td>
+                        <style>
+                            .boxshadow{
+                                box-shadow:  none;
+                                transition:height 1s,  box-shadow .5s;
+
+                            }
+                        .boxshadow:hover{
+                            height: 100px;
+                         box-shadow:  5px 5px  50px 5px  #888888;
+
+                        }
+                        .taskimg{
+                            height: 50px;
+                        }
+
+                        </style>
+                        @if($task->id %2 == 0)
+                        <img class="taskimg" src="{{asset('images/2.png')}}" alt="{{$task->name}}">
+                            @else
+                            <img class="taskimg" src="{{asset('images/3.png')}}" alt="{{$task->name}}">
+                            @endif
                     </td>
-                    <td class="menu-action rounded-btn">
-                        <a class="btn menu-icon vd_bg-green">
-                            <i class="fa fa-eye"></i>
-                        </a>
-                        <a class="btn menu-icon vd_bg-yellow">
-                            <i class="fa fa-pencil"></i>
-                        </a>
-                        <a class="btn menu-icon vd_bg-red">
-                            <i class="fa fa-times"></i>
-                        </a>
+
+                    <td class="center">{{$task->name}}</td>
+
+                    <td class="center">
+                        {{$task->details}}
+                    </td>
+
+                    <td class="center">
+                        <?php
+                        $date = date_create($task->created_at);
+                        $date = date_add($date, date_interval_create_from_date_string('2 days'));
+                        echo date_format($date, 'Y-m-d');
+                            ?>
                     </td>
                 </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

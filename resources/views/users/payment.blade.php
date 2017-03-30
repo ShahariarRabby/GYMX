@@ -1,4 +1,7 @@
 @extends('layouts.users')
+@section('title')
+    Payments
+@endsection
 @section('tabs1')
 
 <div id="tabs-4">

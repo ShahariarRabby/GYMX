@@ -37,15 +37,21 @@ $user = Auth::User();
                             </tr>
                             <tr>
                                 <td>Member Since</td>
+                                <td>
                                 <?php
-                                use Carbon\Carbon;
                                 $user1 = \Illuminate\Support\Facades\Auth::user();
-                                    $user1 = $user1->created_at->toDateTimeString();
-                                $user1 = Carbon::now();
+                                $date = date_create($user1->created_at);
+//                                $date = date_add($date, date_interval_create_from_date_string('2 days'));
+                                echo date_format($date, 'd-m-y');
 
-                                $newYearPST = $user1 ->toFormattedDateString();
+//                                use Carbon\Carbon;
+//                                $user1 = \Illuminate\Support\Facades\Auth::user();
+//                              echo      $user1 = $user1->created_at->toDateTimeString();
+//                                $user1 = Carbon::now();
+
+//                                $newYearPST = $user1 ->toFormattedDateString();
                                         ?>
-                                <td> {{$newYearPST}} </td>
+                                </td>
                             </tr>
                             </tbody>
                         </table>

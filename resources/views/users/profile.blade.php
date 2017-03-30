@@ -1,4 +1,7 @@
 @extends('layouts.users')
+@section('title')
+    {{$user->name}}
+@endsection
 @section('tabs1')
 
 <div id="tabs-1">
@@ -65,12 +68,28 @@ Weight:
 
 <div class="row padding">
 <lable class="col-5">
-Package:
+Age:
 </lable>
-<div class="col-7">Your name</div>
+<div class="col-7">{{$age}}</div>
 </div>
 
-
+    <div class="row padding">
+        <lable class="col-5">
+            BMI:
+        </lable>
+        <div class="col-7">{{$BMI}}
+            @if($BMI < 18.5)
+                <span >(Underweight)<i class="fa fa-exclamation-triangle"  style='color: red; margin-left: 5px;' aria-hidden="true"></i></span>
+            @elseif($BMI >18.5 && 25> $BMI)
+                <span >(Normal weight)<i class="fa fa-thumbs-up" style='color: green; margin-left: 5px;' aria-hidden="true"></i></span>
+            @elseif($BMI > 24.9 && 30 > $BMI)
+                <span>(Overweight)<i class="fa fa-exclamation-triangle"  style='color: red; margin-left: 5px;' aria-hidden="true"></i></i></span>
+            @else
+                <span>(Obesity)<i class="fa fa-exclamation-triangle"  style='color: red; margin-left: 5px;' aria-hidden="true"></i></span>
+            @endif
+            <a href="http://www.calculator.net/calorie-calculator.html">Calorie information</a>
+        </div>
+    </div>
 
 
 </div>
@@ -92,7 +111,17 @@ User Email:
 <div class="col-7">{{$user->email}}</div>
 </div>
 
-<div class="row padding">
+    <div class="row padding">
+        <lable class="col-5">
+            Package:
+        </lable>
+        <div class="col-7">Your name</div>
+    </div>
+
+
+
+
+    <div class="row padding">
 <lable class="col-5">
 Blood Group:
 </lable>
@@ -101,12 +130,7 @@ Blood Group:
 
 
 
-<div class="row padding">
-<lable class="col-5">
-BMI:
-</lable>
-<div class="col-7">Your name</div>
-</div>
+
 
 <div class="row padding">
 <lable class="col-5">
@@ -122,7 +146,21 @@ Phone:
         <div class="col-7">{{$user->profile->facebook}}</div>
     </div>
 
+
+    <div class="row padding">
+        <lable class="col-5">
+            Location:
+        </lable>
+        <div class="col-7">Dhaka</div>
+    </div>
+
+
+
+
 </div>
+
+
+
 </div>
 <!--****************************************************************-->
 

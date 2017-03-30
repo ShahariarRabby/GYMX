@@ -1,4 +1,7 @@
 @extends('layouts.users')
+@section('title')
+    Update Profile
+@endsection
 @section('tabs1')
     <div id="tabs-1">
     {!! Form::model($profile,['class'=>"container about",'method'=>'PATCH','action'=>["UsersControler@update",$user->id],'files'=>true]) !!}

@@ -37,21 +37,21 @@ class User extends Authenticatable
         return $this->belongsTo('App\Profile','profile_id');
     }
 
-    public function qq(){
-        if($this->role == "Admin"){
-            return true;
-        }
-
-        return false;
-    }
-
     public function isAdmin(){
-        if($this->id == Auth::id()){
+        if($this->profile->role == "Admin"){
             return true;
         }
 
         return false;
     }
+
+//    public function isLogin(){
+//        if(Auth::id()){
+//            return true;
+//        }
+//
+//        return false;
+//    }
 
 
 }

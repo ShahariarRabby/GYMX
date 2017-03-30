@@ -1,5 +1,8 @@
 
 @extends('layouts.users')
+@section('title')
+    Members
+@endsection
 @section('tabs1')
 
 

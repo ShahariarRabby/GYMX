@@ -28,18 +28,24 @@ Route::get('/name', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');
 //Route::get('/admin', function (){
 //    return view('admin.index');
 //});
 Route::get('/logout', 'Auth\LoginController@logout');
 
-//Route::group(['middleware'=>'admin'],function (){
-    Route::resource('/admin/users','AdminUsersController');
 Route::group(['middleware'=>'admin'],function (){
+    Route::resource('/admin/users','AdminUsersController');
 
+    });
+
+Route::group(['middleware'=>'UserAccess'],function (){
 Route::resource('/users','UsersControler');
-
+    ROute::get('/home','UserContant@index');
+    ROute::get('/task','UserContant@task');
+    ROute::get('/profile','UserContant@profile');
+    ROute::get('/members','UserContant@members');
+    ROute::get('/payment','UserContant@payment');
 });
 
 
@@ -58,11 +64,7 @@ Route::resource('/users','UsersControler');
 //Route::get('/logout' , 'Auth\LoginController@logout');
 
 
-ROute::get('/summery','UserContant@index');
-ROute::get('/task','UserContant@task');
-ROute::get('/profile','UserContant@profile');
-ROute::get('/members','UserContant@members');
-ROute::get('/payment','UserContant@payment');
+
 
 
 
