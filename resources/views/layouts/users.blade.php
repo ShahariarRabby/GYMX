@@ -235,6 +235,64 @@
 
     });
 </script>
+@if(Session::has('invalid'))
+    <script>
+        $.confirm({
+            title: '<i class="fa fa-exclamation-triangle" style="color: red" aria-hidden="true"> &nbsp; Sorry!</i>',
+            content: '<strong>Invalid Card Sequence <br><small>Call 8585 for help</small> </strong>',
+            type: 'red',
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'Try again',
+                    btnClass: 'btn-red',
+                    action: function () {
+                    }
+                },
+                close: function () {
+                }
+            }
+        });
+    </script>
+@endif
+
+@if(Session::has('cardok'))
+    <script>
+        $.confirm({
+            title: '<i class="fa fa-money" style="color: green" aria-hidden="true"> &nbsp; Congrats!</i>',
+            content: '<strong>your recharge is successful</strong>',
+            type: 'green',
+            typeAnimated: true,
+            buttons: {
+                close: function () {
+                }
+            }
+        });
+    </script>
+@endif
+
+@if(Session::has('bkash'))
+    <script>
+        $.confirm({
+            icon: 'fa fa-spinner fa-spin',
+            title: 'Wait!',
+            content: 'Sit back, we are processing your request in 24hour!<br>For help call 8585',
+            type: 'purple',
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'OK !',
+                    btnClass: 'btn-purple',
+                    action: function () {
+                    }
+                },
+                close: function () {
+                }
+            }
+
+        });
+    </script>
+@endif
 </body>
 
 </html>

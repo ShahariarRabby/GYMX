@@ -20,6 +20,8 @@ class CreatePaymentsTable extends Migration
             $table->string('Type')->nullable();
             $table->integer('Debit')->nullable();
             $table->integer('Balance')->nullable();
+            $table->integer('bkash_id')->nullable()->unique();
+            $table->string('card_id')->nullable()->unique();
             $table->timestamps();
         });
     }

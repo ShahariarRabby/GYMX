@@ -16,11 +16,10 @@
                     <div class="row">
 
 
-                        <div class="col-lg-5 col-12">
+                        <div class="col-lg-4 col-12">
                             {!! Form::open(['method'=>'POST','action'=>"UserContant@payments"]) !!}
                             <div class="input-group">
-                                <input type="text" class="form-control" name="number"
-                                       aria-label="Text input with checkbox" placeholder="Card No" required>
+                                <input type="text" class="form-control" name="number" placeholder="Card No" required>
                                 <button type="submit" class="btn" style="height: 45px">Card</button>
                             </div>
 
@@ -28,11 +27,13 @@
                         </div>
 
 
-                        <div class="col-lg-7 col-12">
-                            {!! Form::open(['method'=>'POST','action'=>"UserContant@payments"]) !!}
-                            <div class="input-group">
-                                <input class="form-control" required="required" name="phone" placeholder="Mobile No"  type="text">
-                                <input type="text" class="form-control" placeholder="Transection ID" required>
+                        <div class="col-lg-8 col-12">
+                            {!! Form::open(['method'=>'POST','action'=>"UserContant@paymentsbKash"]) !!}
+                            <div class="input-group row">
+                                <input type="text" class="form-control col-md-2 col-4" name="amount" placeholder="Amount" required>
+                                <input type="text" class="form-control col-md-5 col-4" name="phone" placeholder="Mobile No" required>
+                                <input type="text" class="form-control col-md-5 col-4" name="t_id" placeholder="Transection ID" required>
+
                                 <button type="submit" class="btn" style="height: 45px">bKash</button>
                             </div>
                             {!! Form::close() !!}
@@ -42,26 +43,7 @@
 
                     </div>
 
-                    @if(Session::has('invalid'))
-                        <script>
-                            $.confirm({
-                                title: '<i class="fa fa-exclamation-triangle" style="color: red" aria-hidden="true"> &nbsp; Sorry!</i>',
-                                content: '<strong>Invalid Card Sequence <br><small>Call 8585 for help</small> </strong>',
-                                type: 'red',
-                                typeAnimated: true,
-                                buttons: {
-                                    tryAgain: {
-                                        text: 'Try again',
-                                        btnClass: 'btn-red',
-                                        action: function () {
-                                        }
-                                    },
-                                    close: function () {
-                                    }
-                                }
-                            });
-                        </script>
-                    @endif
+
 
                 </div>
 

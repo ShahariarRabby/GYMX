@@ -36,9 +36,8 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::group(['middleware'=>'admin'],function (){
     Route::resource('/admin/users','AdminUsersController');
-
+    Route::resource('/admin/bkash','AdminBkashController');
     });
-
 Route::group(['middleware'=>'UserAccess'],function (){
 Route::resource('/users','UsersControler');
     ROute::get('/home','UserContant@index');
@@ -47,6 +46,7 @@ Route::resource('/users','UsersControler');
     ROute::get('/members','UserContant@members');
     ROute::get('/payment','UserContant@payment');
     ROute::post('/card','UserContant@payments');
+    ROute::post('/bkash','UserContant@paymentsbKash');
 });
 
 

@@ -13,5 +13,7 @@ class Payment extends Model
         'Debit',
         'Balance',
         'Type',
+        'bkash_id',
+        'card_id',
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bkash;
 use App\Card;
 use App\Payment;
 use App\Task;
@@ -107,7 +108,7 @@ class UserContant extends Controller
                 'Balance' => $balance,
                 'Type' => 'Card',
             ]);
-
+            Session::flash('cardok','Payment Card');
 //            return view('users.payment',compact($balance));
 return redirect('/payment');
 
@@ -121,6 +122,18 @@ return redirect('/payment');
 //     return  $count-> sum('amount');
     }
 
+    public function paymentsbKash(Request $request)
+    {
+            $bikash =  $request->all();
+            $bikash['user_id'] = Auth::id();
+             Bkash::create($bikash);
+            Session::flash('bkash','Payment');
+             return redirect('/payment');
+
+
+
+
+    }
 
 
 }

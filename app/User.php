@@ -36,6 +36,9 @@ class User extends Authenticatable
     public function profile(){
         return $this->belongsTo('App\Profile','profile_id');
     }
+   public function bkash(){
+        return $this->hasOne('App\Bkash');
+    }
 
     public function isAdmin(){
         if($this->profile->role == "Admin"){

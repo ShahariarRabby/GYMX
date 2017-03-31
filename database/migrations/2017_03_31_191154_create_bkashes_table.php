@@ -15,6 +15,11 @@ class CreateBkashesTable extends Migration
     {
         Schema::create('bkashes', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('amount');
+            $table->string('phone',15);
+            $table->string('t_id',10);
+            $table->string('status',10)->default('Waiting');
             $table->timestamps();
         });
     }
