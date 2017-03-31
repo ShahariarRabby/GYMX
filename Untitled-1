@@ -1,0 +1,118 @@
+@extends('layouts.users')
+@section('title')
+Payments
+@endsection
+@section('tabs1')
+
+<div id="tabs-4">
+<div class="container">
+<div class="row">
+<div class="col-12 recharge">
+<h5>Recharge Balance</h5>
+
+{!! Form::open(['method'=>'POST','action'=>"UserContant@payments"]) !!}
+
+<div class="row">
+
+<div class="col-lg-4 col-12">
+
+<div class="input-group">
+
+<span class="input-group-addon">
+<label>Card</label>
+</span>
+<input type="text" class="form-control" name="number"
+aria-label="Text input with checkbox" placeholder="#####">
+</div>
+
+</div>
+<div class="col-lg-8 col-12">
+<div class="input-group">
+<span class="input-group-addon">
+<label>bKash</label>
+</span>
+<input type="text" class="form-control" placeholder="Phone Number">
+<input type="text" class="form-control" placeholder="Transection ID">
+<button type="submit" class="btn">Submit</button>
+</div>
+</div>
+
+
+</div>
+{!! Form::close() !!}
+@if(Session::has('invalid'))
+<script>
+$.confirm({
+title: '<i class="fa fa-exclamation-triangle" style="color: red" aria-hidden="true"> &nbsp; Sorry!</i>',
+content: '<strong>Invalid Card Sequence <br><small>Call 8585 for help</small> </strong>',
+type: 'red',
+typeAnimated: true,
+buttons: {
+tryAgain: {
+text: 'Try again',
+btnClass: 'btn-red',
+action: function () {
+}
+},
+close: function () {
+}
+}
+});
+</script>
+@endif
+
+</div>
+
+<div class="col-12">
+<div class="widget-title">
+<h5>Current Balance: {{$balance}} Taka</h5>
+
+<!--<span class="label label-info"></span>-->
+</div>
+</div>
+
+<div class="col-12">
+<div class="">
+<table class="table table-bordered table-striped table-hover">
+<thead>
+<tr>
+<th>Type</th>
+<th>Debit (Taka)</th>
+<th>Credit (Taka)</th>
+<th>Balance (Taka)</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+@foreach($paymentTable as $paymentTable)
+<tr>
+<td class="b">{{$paymentTable->Type}}</td>
+<td class="text-right">{{$paymentTable->Debit}}</td>
+<td class="text-right">{{$paymentTable->Credit}}</td>
+<td class="text-right">{{$paymentTable->Balance}}</td>
+<td>
+<?php
+$defaultTimeZone = 'UTC';
+$date = date_create($paymentTable->created_at);
+echo date_format($date, 'l d-m-y');
+?>
+
+
+</td>
+</tr>
+@endforeach
+<tr>
+</tbody>
+
+
+</table>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+@endsection

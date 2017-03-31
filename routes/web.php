@@ -46,6 +46,7 @@ Route::resource('/users','UsersControler');
     ROute::get('/profile','UserContant@profile');
     ROute::get('/members','UserContant@members');
     ROute::get('/payment','UserContant@payment');
+    ROute::post('/card','UserContant@payments');
 });
 
 

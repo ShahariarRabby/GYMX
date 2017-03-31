@@ -1,68 +1,116 @@
-@extends('layouts.admin')
-@section('header')
-    Edit User
+@extends('layouts.users')
+@section('title')
+Payments
 @endsection
-@section('content')
-    {!! Form::model($user,['method'=>'PATCH','action'=>["AdminUsersController@update",$user->id],'files'=>true]) !!}
+@section('tabs1')
 
-    <div class="col-sm-3 col-12" >
-        <img src="{{asset($user->photo ? ("images/".($user->photo->file)):($user->role_id==1?"images/2.png":"images/1.png"))}}" class="img-responsive img-rounded">
-        {{--{!! Form::model($user,['method'=>'PATCH','action'=>["AdminUsersController@update",$user->id],'files'=>true]) !!}--}}
-        <div class="form-group">
-            {!! Form::label('photo_id','Edit Photo') !!}
-            {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
+<div id="tabs-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 recharge">
+                <h5>Recharge Balance</h5>
+
+                {!! Form::open(['method'=>'POST','action'=>"UserContant@payments"]) !!}
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-12">
+
+                        <div class="input-group">
+
+                            <span class="input-group-addon">
+                                <label>Card</label>
+                            </span>
+                            <input type="text" class="form-control" name="number"
+                                   aria-label="Text input with checkbox" placeholder="#####">
+                        </div>
+
+                    </div>
+                    <div class="col-lg-8 col-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <label>bKash</label>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Phone Number">
+                            <input type="text" class="form-control" placeholder="Transection ID">
+                            <button type="submit" class="btn">Submit</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                {!! Form::close() !!}
+                @if(Session::has('invalid'))
+                <script>
+                    $.confirm({
+                        title: '<i class="fa fa-exclamation-triangle" style="color: red" aria-hidden="true"> &nbsp; Sorry!</i>',
+                        content: '<strong>Invalid Card Sequence <br><small>Call 8585 for help</small> </strong>',
+                        type: 'red',
+                        typeAnimated: true,
+                        buttons: {
+                            tryAgain: {
+                                text: 'Try again',
+                                btnClass: 'btn-red',
+                                action: function () {
+                                }
+                            },
+                            close: function () {
+                            }
+                        }
+                    });
+                </script>
+                @endif
+
+            </div>
+
+            <div class="col-12">
+                <div class="widget-title">
+                    <h5>Current Balance: {{$balance}} Taka</h5>
+
+                    <!--<span class="label label-info"></span>-->
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Debit (Taka)</th>
+                                <th>Credit (Taka)</th>
+                                <th>Balance (Taka)</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($paymentTable as $paymentTable)
+                            <tr>
+                                <td class="b">{{$paymentTable->Type}}</td>
+                                <td class="text-right">{{$paymentTable->Debit}}</td>
+                                <td class="text-right">{{$paymentTable->Credit}}</td>
+                                <td class="text-right">{{$paymentTable->Balance}}</td>
+                                <td>
+                                    <?php
+$defaultTimeZone = 'UTC';
+$date = date_create($paymentTable->created_at);
+echo date_format($date, 'l d-m-y');
+?>
+
+
+                                </td>
+                            </tr>
+                            @endforeach
+                            <tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
         </div>
-        {{--{!! Form::Close() !!}--}}
-
     </div>
 
-    <div class="col-sm-9 col-12">
+</div>
 
-    @include('includes.form_errors')
-    <div class="form-group">
-        {!! Form::label('Name','Name') !!}
-        {!! Form::text('name',null,['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('email','Email') !!}
-        {!! Form::email('email',null,['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('password','Password') !!}
-        {!! Form::password('password',['class'=>'form-control','placeholder'=>"Password"]) !!}
-    </div>
-
-    {{--<div class="form-group">--}}
-        {{--{!! Form::label('photo_id','Photo') !!}--}}
-        {{--{!! Form::file('photo_id',null,['class'=>'form-control']) !!}--}}
-    {{--</div>--}}
-
-        <div class="form-group">
-            {!! Form::label('role_id','Status') !!}
-            {!! Form::select('role_id',array(''=>'Choose option','Admin'=>'Admin','User'=>'User'),$roles,['class'=>'form-control']) !!}
-        </div>
-
-
-    <div class="form-group">
-        {!! Form::label('is_active','Status') !!}
-        {!! Form::select('is_active',array('Active'=>'Active','Not Active'=>'Not Active'),null,['class'=>'form-control']) !!}
-    </div>
-    <div class="form-group  col-sm-6">
-        {!! Form::submit('Update User',['class'=>'btn btn-primary   col-sm-11']) !!}
-
-    </div>
-
-
-
-    {!! Form::Close() !!}
-    {!! Form::open(['method'=>'Delete','action'=>["AdminUsersController@destroy",$user->id]]) !!}
-
-
-    <div class="form-group  col-sm-6">
-        {!! Form::submit('Delete User',['class'=>'btn btn-danger col-sm-11']) !!}
-    </div>
-    {!! Form::Close() !!}
-    </div>
+</div>
 @endsection

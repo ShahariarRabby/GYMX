@@ -86,7 +86,6 @@ class UsersControler extends Controller
             $user = User::findOrFail($id);
             $profile = Profile::findOrFail($user->profile_id);
 
-
             return view('users.edit',compact('user','profile'));
         }
         return redirect(url('users/'.Auth::id().'/edit'));
@@ -112,14 +111,9 @@ class UsersControler extends Controller
 
 
             $input = $request->all();
+
             $input['password'] = bcrypt($request->password);
-
-
-
-
-
         if ($file = $request->file('photo_id')){
-
             if($user->photo_id !=""){
                 unlink(public_path().'/images/'.$user->photo->file);
                 $photo = Photo::findOrFail($user->photo_id);
@@ -135,6 +129,7 @@ class UsersControler extends Controller
             $photo=Photo::create(['file'=>$name]);
             $input['photo_id'] = $photo->id;
         }
+
          $user ->update($input);
          $profile ->update($input);
            return $input;

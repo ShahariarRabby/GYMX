@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Card;
+use App\Payment;
 use App\Task;
 use App\User;
 use Carbon\Carbon;
@@ -9,6 +11,7 @@ use DateInterval;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class UserContant extends Controller
 {
@@ -77,7 +80,45 @@ class UserContant extends Controller
     }
 
            public function payment(){
-        return view('users.payment');
+     $paymentTable = Payment::orderBy('created_at','desc')->whereUser_id(Auth::id())->get();
+          $balance =   $paymentTable ->pluck('Balance')->first();
+
+
+        return view('users.payment',compact('balance','paymentTable'));
+    }
+
+    public function payments(Request $request){
+
+        $number =  $request->number;
+        $check = Card::find($number);
+
+        if ($check){
+            $Credit = $check->amount;
+            $check->status = Auth::id();
+            $check->save();
+             $userPayment = Payment::whereUser_id(Auth::id());
+            $DebitSum=   $userPayment ->sum('Debit');
+            $CreditSum=   $userPayment ->sum('Credit');
+            $balance = $Credit +$CreditSum   - $DebitSum;
+
+            $Credits= Payment::create([
+                'Credit' =>$Credit,
+                'user_id' => Auth::id(),
+                'Balance' => $balance,
+                'Type' => 'Card',
+            ]);
+
+//            return view('users.payment',compact($balance));
+return redirect('/payment');
+
+        }else{
+            Session::flash('invalid','Payment Card');
+            return redirect('/payment');
+
+        }
+   //  return   $count = Card::whereAmount(350)->sum('amount');
+//       $count = Card::whereStatus(5424);
+//     return  $count-> sum('amount');
     }
 
 
