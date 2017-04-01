@@ -47,12 +47,44 @@
 
                 </div>
 
-                <div class="col-12">
-                    <div class="widget-title">
-                        <h5>Current Balance: {{$balance}} Taka</h5>
 
-                        <!--<span class="label label-info"></span>-->
+
+
+                <div class="col-12">
+
+
+                    {{--{!! Form::model($package,['method'=>'PATCH','action'=>["UserContant@enablePackage"]]) !!}--}}
+                    {!! Form::open(['method'=>'POST','action'=>"UserContant@enablePackage"]) !!}
+
+                    <div class="widget-title row" style="padding-right: 18px;">
+
+                        <h5 class="col-5">Current Balance: {{$balance}} Taka</h5>
+
+                        <div class="form-group col-5" style="padding-right: 0px">
+                            {!! Form::select('package_id',[''=>'Choose Option']+$package,null,['class'=>'form-control','style'=>'height: 45px','required'])!!}
+
+                            {{--{!! Form::select('role_id',array(''=>'Choose option','Admin'=>'Admin','User'=>'User'),$package,['class'=>'form-control','style'=>'height: 45px']) !!}--}}
+                        </div>
+                        <div id="enablePackBtn" class="form-group col-2" style="padding-left: 0px">
+                            <style>
+                               #enablePackBtn .btn {
+                                    background: #1fae66;
+                                    color: white;
+                                    -webkit-transition: background 1s, box-shadow .5s;
+                                    transition: background 1s, box-shadow .5s;
+                                }
+                               #enablePackBtn  .btn:hover {
+                                    background: #17834d;
+                                    box-shadow: 0px 1px 8px gray;
+                                }
+
+                            </style>
+                            <button type="submit" class="btn" style="height: 45px">Enable Pack</button>
                     </div>
+
+
+                    </div>
+                    {!! Form::Close() !!}
                 </div>
 
                 <div class="col-12">

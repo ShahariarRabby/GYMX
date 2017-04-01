@@ -57,6 +57,9 @@
 
 
         {!! Form::Close() !!}
+
+
+
         {!! Form::open(['method'=>'Delete','action'=>["AdminUsersController@destroy",$user->id]]) !!}
 
 

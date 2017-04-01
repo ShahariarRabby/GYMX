@@ -48,23 +48,44 @@ class AdminBkashController extends Controller
 
 
         $bkash = Bkash::findOrFail($id);
-        $amount = $bkash->amount;
+           $amountP = $bkash->amount;
         $input = $request->all();
+        $amount = $bkash->amount;
         $bkash->update($input);
         $check = $input['status'];
         if ($check == 'Approved') {
+        $test1 = Payment::whereBkash_id($id)->get();
 
-
-            $test1 = Payment::whereBkash_id($id)->get();
             $test = 0;
 
             foreach ($test1 as $test) {
                 $test = $test->id;
-
             }
 
-            $test = Payment::find($test);
+            $test3 = Payment::find($test);
+            $amount=$request['amount'] ;
 
+
+                $request['Credit'] = $amount;
+        //    return $amount;
+            $amountu = $request->all();
+
+            if ($test3){
+                $test3->update($amountu);
+
+                $test3 = Payment::find($test);
+               $amount=$test3->Credit ;
+                $Credit = $amount;
+                $userPayment = Payment::whereUser_id($bkash->user->id);
+
+                $DebitSum = $userPayment->sum('Debit');
+                 $CreditSum = $userPayment->sum('Credit');
+                $balance = $CreditSum - $DebitSum;
+                $request['Balance'] = $balance;
+                $amountu = $request->all();
+
+                $test3->update($amountu);
+            }
 
             if ($test == null) {
                 $Credit = $amount;

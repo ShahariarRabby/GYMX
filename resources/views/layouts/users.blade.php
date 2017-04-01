@@ -235,6 +235,9 @@
 
     });
 </script>
+
+
+
 @if(Session::has('invalid'))
     <script>
         $.confirm({
@@ -255,6 +258,53 @@
         });
     </script>
 @endif
+
+
+
+@if(Session::has('packageFail'))
+    <script>
+        $.confirm({
+            title: '<i class="fa fa-handshake-o" style="color: red" aria-hidden="true"> &nbsp; Sorry!!</i>',
+            content: '<strong>Not Enough Balance<br><small>Call 8585 for help</small> </strong>',
+            type: 'red',
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'Ok',
+                    btnClass: 'btn-red',
+                    action: function () {
+                    }
+                }
+            }
+        });
+    </script>
+@endif
+
+
+
+
+
+@if(Session::has('packagedone'))
+    <script>
+        $.confirm({
+            title: '<i class="fa fa-handshake-o" style="color: #366FA0" aria-hidden="true"> &nbsp; Thank You!!</i>',
+            content: '<strong>Package Enabled!<br><small>Call 8585 for help</small> </strong>',
+            type: 'blue',
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'Ok',
+                    btnClass: 'btn-blue',
+                    action: function () {
+                    }
+                }
+            }
+        });
+    </script>
+@endif
+
+
+
 
 @if(Session::has('cardok'))
     <script>

@@ -22,6 +22,11 @@ class Profile extends Model
     public function age() {
         return $this->dob->diffInYears(\Carbon::now());
     }
+
+    public function package(){
+        return $this->belongsTo('App\Package','package_id');
+    }
+
 }
 
 

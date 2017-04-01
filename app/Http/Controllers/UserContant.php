@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Bkash;
 use App\Card;
+use App\Package;
 use App\Payment;
+use App\Profile;
 use App\Task;
 use App\User;
 use Carbon\Carbon;
@@ -50,8 +52,12 @@ class UserContant extends Controller
             $i = $H -$h1;
 
             $M =($h1 * .3048) +($i * .254);
+            $BMI = 0;
+if ($W !=0)
+{
+    $BMI = $W/($M*$M);
 
-            $BMI = $W/($M*$M);
+}
             $BMI = number_format($BMI, 2, '.', '');
 //            if ($BMI < 18.5){
 //               $msg = "" ;
@@ -81,11 +87,18 @@ class UserContant extends Controller
     }
 
            public function payment(){
-     $paymentTable = Payment::orderBy('created_at','desc')->whereUser_id(Auth::id())->get();
-          $balance =   $paymentTable ->pluck('Balance')->first();
+               $paymentTableFind = Payment::whereUser_id(Auth::id());
+               $paymentTable = $paymentTableFind->orderBy('created_at','desc')->get();
+             //  $balance =   $paymentTable ->pluck('Balance')->first();
+
+               $userPayment = Payment::whereUser_id(Auth::id());
+               $DebitSum=   $userPayment ->sum('Debit');
+               $CreditSum=   $userPayment ->sum('Credit');
+               $balance =$CreditSum   - $DebitSum;
+               $package = Package::pluck('name','id')->all();
 
 
-        return view('users.payment',compact('balance','paymentTable'));
+        return view('users.payment',compact('balance','paymentTable','package'));
     }
 
     public function payments(Request $request){
@@ -94,24 +107,30 @@ class UserContant extends Controller
         $check = Card::find($number);
 
         if ($check){
-            $Credit = $check->amount;
-            $check->status = Auth::id();
-            $check->save();
-             $userPayment = Payment::whereUser_id(Auth::id());
-            $DebitSum=   $userPayment ->sum('Debit');
-            $CreditSum=   $userPayment ->sum('Credit');
-            $balance = $Credit +$CreditSum   - $DebitSum;
+            if ($check->status==""){
 
-            $Credits= Payment::create([
-                'Credit' =>$Credit,
-                'user_id' => Auth::id(),
-                'Balance' => $balance,
-                'Type' => 'Card',
-            ]);
-            Session::flash('cardok','Payment Card');
+                $Credit = $check->amount;
+                $check->status = Auth::id();
+                $check->save();
+                $userPayment = Payment::whereUser_id(Auth::id());
+                $DebitSum=   $userPayment ->sum('Debit');
+                $CreditSum=   $userPayment ->sum('Credit');
+                $balance = $Credit +$CreditSum   - $DebitSum;
+
+                $Credits= Payment::create([
+                    'Credit' =>$Credit,
+                    'user_id' => Auth::id(),
+                    'Balance' => $balance,
+                    'Type' => 'Card',
+                    'card_id' => $number,
+                ]);
+                Session::flash('cardok','Payment Card');
 //            return view('users.payment',compact($balance));
-return redirect('/payment');
+                return redirect('/payment');
+            }
 
+            Session::flash('invalid','Payment Card');
+            return redirect('/payment');
         }else{
             Session::flash('invalid','Payment Card');
             return redirect('/payment');
@@ -124,11 +143,44 @@ return redirect('/payment');
 
     public function paymentsbKash(Request $request)
     {
+
             $bikash =  $request->all();
             $bikash['user_id'] = Auth::id();
-             Bkash::create($bikash);
+        $profile =  Bkash::create($bikash);
+        $data['bkash_id'] = $profile->id;
+             Payment::create(
+                 [
+                     'user_id' => Auth::id(),
+                     'Type' => 'Bkash',
+                     'bkash_id' => $data['bkash_id'],
+                 ]
+             );
             Session::flash('bkash','Payment');
              return redirect('/payment');
+    }
+
+
+    public function enablePackage(Request $request)
+    {
+        $input =  $request->get('package_id');
+        $request['user_id'] = Auth::id();
+        $package = Package::findOrFail($input);
+        $request['Debit'] = $package->amount;
+        $request['Type'] = 'Enable '.$package->name;
+        $userPayment = Payment::whereUser_id(Auth::id());
+
+        $DebitSum = $userPayment->sum('Debit');
+        $CreditSum = $userPayment->sum('Credit');
+        $balance = $CreditSum - $DebitSum-$package->amount;
+        $request['Balance'] = $balance;
+        if($balance>=0){
+            Payment::create($request->all());
+            Session::flash('packagedone','Payment');
+            return redirect('/payment');
+        }else{
+            Session::flash('packageFail','packagecng');
+            return redirect('/payment');
+        }
 
 
 

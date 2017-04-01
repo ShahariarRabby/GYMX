@@ -23,6 +23,10 @@
             {!! Form::label('Transaction','Transaction Id: ',['style'=>'margin-right : 20px']) !!}
             {!! Form::label('Transaction',$bkash->t_id) !!}
         </div>
+    <div class="form-group">
+            {!! Form::label('Transaction','Transaction Id: ',['style'=>'margin-right : 20px']) !!}
+            {!! Form::number('amount',null,['class'=>'form-control col-2']) !!}
+        </div>
 
         <div class="form-group col-4">
             {!! Form::label('status','Status: ',['class'=>'Col']) !!}
