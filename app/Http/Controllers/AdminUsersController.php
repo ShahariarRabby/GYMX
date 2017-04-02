@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UsersEditRequest;
 use App\Http\Requests\UsersRequest;
+use App\Package;
+use App\Payment;
 use App\Photo;
 //use App\Role;
 use App\Profile;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
@@ -30,16 +34,14 @@ class AdminUsersController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     * @Working
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
-        // $roles = Role::lists('name','id')->all();
-        //  return view('admin.users.create',compact('roles'));
+        $package = Package::pluck('name','id')->all();
         $roles = Profile::pluck('role','id')->all();
-        return view('admin.users.create',compact('roles'));
+        return view('admin.users.create',compact('roles','package'));
     }
 
     /**
@@ -50,16 +52,14 @@ class AdminUsersController extends Controller
      */
     public function store(UsersRequest $request)
     {
-//        $role = $request->role_id;
-//        Profile::create($role);
-        //  $input['profile_id'] = '1';
-        //  $roles = 'adm';
-        //  $role=Profile::create(['name'=>'1']);
-        //  $input['role_id'] = $role->id;
-
+        $input =  $request->get('package_id');
+        $package = Package::findOrFail($input);
+        $time = $package->time;
+        $discontinued = carbon::now()->addDays($time);
         $profile= Profile::create([
             'role' => $request['role_id'],
-
+            'package_id' =>'1',
+            'discontinued'=>$discontinued,
         ]);
 
 
@@ -102,13 +102,14 @@ class AdminUsersController extends Controller
      */
     public function edit($id)
     {
-        //
         $user = User::findOrFail($id);
         $roles = Profile::findOrFail($user->profile_id);
-         $roles=$roles->role;
+        $roles=$roles->role;
 
+        $package = Package::pluck('name','id')->all();
+        $userPackage = Package::whereId($user->profile->package_id)->pluck('name','id')->all();
 
-        return view('admin.users.edit',compact('user','roles'));
+        return view('admin.users.edit',compact('user','roles','package','userPackage'));
     }
 
 
@@ -117,14 +118,43 @@ class AdminUsersController extends Controller
     public function update(UsersEditRequest $request, $id)
     {
         //
+
         $user = User::findOrFail($id);
 
         $profile = Profile::findOrFail($user->profile_id);
         $profile->role = $request['role_id'];
+
+
+        if ($request['package_id']!=""){
+            $profile->package_id = $request['package_id'];
+            $package = Package::findOrFail( $profile->package_id);
+            $time = $package->time;
+            $discontinued = carbon::now()->addDays($time);
+            $profile->discontinued = $discontinued;
+        }
+
+
+        if($request['Credit']!=null){
+            $Credit=$request['Credit'];
+            $userPayment = Payment::whereUser_id($id);
+            $DebitSum=   $userPayment ->sum('Debit');
+            $CreditSum=   $userPayment ->sum('Credit');
+            $balance = $Credit +$CreditSum   - $DebitSum;
+
+
+            Payment::create(
+                [
+                    'user_id' => $id,
+                    'Type' => 'Admin',
+                    'Credit' => $Credit,
+                    'Balance' => $balance,
+                ]
+            );
+        }
+
+
         $profile->save();
-//         $profile -> update(
-//             'role' = $request['role_id'],
-//    );
+
 
         if(trim($request->password )==""){
             $input = $request->except('password');
@@ -140,8 +170,6 @@ class AdminUsersController extends Controller
 
 
         if ($file = $request->file('photo_id')){
-
-
             if($user->photo_id !=""){
                 unlink(public_path().'/images/'.$user->photo->file);
                 $photo = Photo::findOrFail($user->photo_id);
@@ -150,14 +178,14 @@ class AdminUsersController extends Controller
 
 
 
-            //  $input = $request->all();
+
 
             $name = time() . $file->getClientOriginalName();
             $file->move('images',$name);
             $photo=Photo::create(['file'=>$name]);
             $input['photo_id'] = $photo->id;
         }
-       // $input['profile_id'] = $profile->id;
+
 
         $user ->update($input);
 
@@ -165,7 +193,6 @@ class AdminUsersController extends Controller
 
 
         return redirect('/admin/users');
-        //return $request->all();
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Chat;
 use App\Http\Requests\ProfileEditReques;
 use App\Profile;
 use App\User;
@@ -82,11 +83,12 @@ class UsersControler extends Controller
     public function edit($id)
     {
         //
+        $message = Chat::orderBy('updated_at','desc')->get();
         if($id == Auth::id()){
             $user = User::findOrFail($id);
             $profile = Profile::findOrFail($user->profile_id);
 
-            return view('users.edit',compact('user','profile'));
+            return view('users.edit',compact('user','profile','message'));
         }
         return redirect(url('users/'.Auth::id().'/edit'));
        // return redirect(404);

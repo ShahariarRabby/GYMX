@@ -119,6 +119,7 @@ if ($W !=0)
     }
 
            public function payment(){
+
                $paymentTableFind = Payment::whereUser_id(Auth::id());
                $paymentTable = $paymentTableFind->orderBy('created_at','desc')->get();
              //  $balance =   $paymentTable ->pluck('Balance')->first();
@@ -192,7 +193,6 @@ if ($W !=0)
 
     public function enablePackage(Request $request)
     {
-
         $input =  $request->get('package_id');
        $profile = Auth::user()->profile->id;
        $profile = Profile::findOrFail($profile);
@@ -244,7 +244,7 @@ if ($W !=0)
         $request['name']=Auth::user()->name;
         $message =  $request->all();
        Chat::create($message);
-        return redirect('/profile');
+        return redirect('/profile#chat');
 
 
 

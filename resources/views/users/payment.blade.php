@@ -61,7 +61,9 @@
                         <h5 class="col-5">Current Balance: {{$balance}} Taka</h5>
 
                         <div class="form-group col-5" style="padding-right: 0px">
-                            {!! Form::select('package_id',[''=>'Choose Option']+$package,null,['class'=>'form-control','style'=>'height: 45px','required'])!!}
+                            {!! Form::select('package_id',array(''=>'Choose option','2'=>'Starter (1month - 700 taka)','3'=>'Intermediate (6 month - 4000tk)','4'=>'Professional (1year - 7000tk)'),null,['class'=>'form-control','style'=>'height: 45px','required']) !!}
+
+                            {{--{!! Form::select('package_id',[''=>'Choose Option']+$package,null,['class'=>'form-control','style'=>'height: 45px','required'])!!}--}}
 
                             {{--{!! Form::select('role_id',array(''=>'Choose option','Admin'=>'Admin','User'=>'User'),$package,['class'=>'form-control','style'=>'height: 45px']) !!}--}}
                         </div>
@@ -102,18 +104,17 @@
                             <tbody>
                             @foreach($paymentTable as $paymentTable)
                                 <tr>
-                                    <td class="b">{{$paymentTable->Type}}</td>
-                                    <td class="text-right">{{$paymentTable->Debit}}</td>
-                                    <td class="text-right">{{$paymentTable->Credit}}</td>
-                                    <td class="text-right">{{$paymentTable->Balance}}</td>
+                                    <td class="text-center">{{$paymentTable->Type}}</td>
+                                    <td class="text-center">{{$paymentTable->Debit}}</td>
+                                    <td class="text-center">{{$paymentTable->Credit}}</td>
+                                    <td class="text-center">{{$paymentTable->Balance}}</td>
                                     <td>
                                         <?php
-                                        $defaultTimeZone = 'UTC';
-                                        $date = date_create($paymentTable->created_at);
-                                        echo date_format($date, 'l d-m-y');
+                                        $date = $paymentTable->created_at;
+                                        $date= Carbon\Carbon::parse($date);
+                                        $date= date_create($date);
+                                        echo date_format($date,"D H:i dMY");
                                         ?>
-
-
                                     </td>
                                 </tr>
                             @endforeach

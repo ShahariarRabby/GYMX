@@ -34,14 +34,21 @@
             {!! Form::password('password',['class'=>'form-control','placeholder'=>"Password"]) !!}
         </div>
 
-        {{--<div class="form-group">--}}
-        {{--{!! Form::label('photo_id','Photo') !!}--}}
-        {{--{!! Form::file('photo_id',null,['class'=>'form-control']) !!}--}}
-        {{--</div>--}}
+
+        <div class="form-group">
+            {!! Form::label('Credit','Add Credit') !!}
+            {!! Form::number('Credit',null,['class'=>'form-control','placeholder'=>"Add some amount"]) !!}
+        </div>
+
 
         <div class="form-group">
             {!! Form::label('role_id','Status') !!}
             {!! Form::select('role_id',array(''=>'Choose option','Admin'=>'Admin','User'=>'User'),$roles,['class'=>'form-control']) !!}
+        </div>
+
+         <div class="form-group">
+            {!! Form::label('role_id','Package') !!}
+             {!! Form::select('package_id',[''=>'Choose Option']+$package,null,['class'=>'form-control'])!!}
         </div>
 
 
@@ -53,7 +60,6 @@
             {!! Form::submit('Update User',['class'=>'btn btn-primary   col-sm-11']) !!}
 
         </div>
-
 
 
         {!! Form::Close() !!}

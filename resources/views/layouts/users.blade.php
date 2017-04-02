@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+
+        ?>
 <html lang="en">
 
 <head>
@@ -44,19 +47,17 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="/">Navbar</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="/">Link</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
+
 
             </ul>
             {{--<form class="form-inline my-2 my-lg-0">--}}
@@ -96,34 +97,42 @@
                 </div>
             </li>
 
-            <li id=""><a href="index.php#tabs-1"><i class="fa fa-user-circle" aria-hidden="true"></i><span>Account Setting</span></a></li>
-            <li><a href=""><i class="fa fa-cogs" aria-hidden="true"></i><span>Account Setting</span></a></li>
-            <li><a href=""><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Account Setting</span></a></li>
-
 
 
             <li class="submanu" id="">
-                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i><span>Account Setting</span></a>
+                <a href="#"><i class="fa  fa-user-circle" aria-hidden="true"></i><span>  {{ Auth::user()->name }}</span></a>
                 <ul class="sub-menu" id="submanu">
-                    <li><a href="#">Submenu item</a></li>
-                    <li><a href="#">Submenu item</a></li>
-                    <li><a href="#">Submenu item</a></li>
+                    <li><a href="{{url('/profile')}}">View Profile</a></li>
+                    <li><a href="{{url('/users/'.Auth::id().'/edit')}}">Edit Profile</a></li>
+
                 </ul>
 
             </li>
 
 
+            <li id=""><a href="{{url('/profile#chat')}}"><i class="fa fa-comments-o" aria-hidden="true"></i><span>Check Message &nbsp;</span></a></li>
+            <li><a href="{{url('/members')}}"><i class="fa fa-users" aria-hidden="true"></i><span>Group Members</span></a></li>
+            <li><a href="{{url('/task')}}"><i class="fa fa-thumb-tack" aria-hidden="true"></i><span>Works todo &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</span></a></li>
 
-            <li class="submanu"><a href=""><i class="fa fa-diamond" aria-hidden="true"></i>
-                    <span>Account Setting</span>   </a>
+            {{--<li class=""><a href=""><i class="fa fa-thumb-tack" aria-hidden="true"></i>--}}
+                    {{--<span>Account Setting</span>   </a>--}}
 
-                <ul class="sub-menu" id="">
-                    <li><a href="#">Submenu item</a></li>
-                    <li><a href="#">Submenu item</a></li>
-                    <li><a href="#">Submenu item</a></li>
-                </ul>
+                {{--<ul class="sub-menu" id="">--}}
+                    {{--<li><a href="#">Submenu item</a></li>--}}
+                    {{--<li><a href="#">Submenu item</a></li>--}}
+                    {{--<li><a href="#">Submenu item</a></li>--}}
+                {{--</ul>--}}
 
             </li>
+
+            <li><a href="{{url('/payment')}}"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Payments &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></a></li>
+
+
+
+
+
+
+
         </ul>
     </div>
 
@@ -144,12 +153,21 @@
         <div class="col-lg-9 col-md-8 col-12" id="usercotent">
             <div class="spacer">
                 <div id="tabs">
+                    {{--<style>--}}
+                        {{--span.none {--}}
+                            {{--display: none;--}}
+                        {{--}--}}
+                        {{--.tabmanu li a:active{--}}
+                            {{--color: black !important;--}}
+                        {{--}--}}
+
+                    {{--</style>--}}
                     <ul class="tabmanu">
-                        <li><a href="{{url('/home')}}">Dashbord<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
-                        <li><a href="{{url('/profile')}}">Profile<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
-                        <li><a href="{{url('/task')}}">Tasks<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
-                        <li><a href="{{url('/members')}}">Membes<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
-                        <li><a href="{{url('/payment')}}">Payment Hisory<span class="menu-active"><i class="fa fa-caret-up"></i></span></a></li>
+                        <li><a href="{{url('/home')}}"class="manuoption dash">Dashbord<span id="dash" class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
+                        <li><a href="{{url('/profile')}}"class="manuoption pro">Profile<span id="pro"  class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
+                        <li><a href="{{url('/task')}}"class="manuoption task">Tasks<span id="task" class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
+                        <li><a href="{{url('/members')}}" class="manuoption mem">Membes<span id="mem" class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
+                        <li><a href="{{url('/payment')}}"class="manuoption pay">Payment Hisory<span id="pay" class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
                     </ul>
 
                     @yield('tabs1')
@@ -342,6 +360,73 @@
 
         });
     </script>
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            alert(123);
+            if($('span').hasClass('none')){
+                $('span').addClass('none');
+                $('#dash').removeClass('none');
+            }
+
+
+
+
+        });
+
+
+        $(".pro").click(function() {
+            if($('span').hasClass('none')){
+                $('span').addClass('none');
+                $('#pro').removeClass('none');
+            }
+
+
+        });
+
+
+
+        $(".task").click(function() {
+            if($('span').hasClass('none')){
+                $('span').addClass('none');
+                $('#task').removeClass('none');
+            }
+
+
+        });
+
+
+
+        $(".mem").click(function() {
+            if($('span').hasClass('none')){
+                $('span').addClass('none');
+                $('#mem').removeClass('none');
+            }
+
+
+        });
+
+
+
+        $(".pay").click(function() {
+            if($('span').hasClass('none')){
+                $('span').addClass('none');
+                $('#pay').removeClass('none');
+            }
+
+
+        });
+
+
+
+    </script>
+
+
+
+
 @endif
 </body>
 

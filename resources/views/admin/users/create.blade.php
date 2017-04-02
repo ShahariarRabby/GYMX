@@ -44,9 +44,18 @@
         {!! Form::label('role_id','Status') !!}
         {!! Form::select('role_id',array('Admin'=>'Admin','User'=>'User'),'User',['class'=>'form-control']) !!}
     </div>
+
+
+    <div class="form-group">
+        {!! Form::label('role_id','Package') !!}
+        {!! Form::select('package_id',[''=>'Choose Option']+$package,null,['class'=>'form-control','style'=>'height: 45px','required'])!!}
+    </div>
+
+
+
     <div class="form-group">
         {!! Form::label('is_active','Status') !!}
-        {!! Form::select('is_active',array('Active'=>'Active','Not Active'=>'Not Active'),0,['class'=>'form-control']) !!}
+        {!! Form::select('is_active',array('Active'=>'Active','Not Active'=>'Not Active'),null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::submit('Create User',['class'=>'btn btn-primary']) !!}

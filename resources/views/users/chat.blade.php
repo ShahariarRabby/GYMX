@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-7 col-md-7 col-12">
                 <div class="col-12">
-                    <h3 class=""><i class="fa fa-globe"></i> Message</h3> </div>
+                    <h3 class=""><i class="fa fa-commenting"></i> Message</h3> </div>
                 <div class="col-12">
 
 
@@ -22,7 +22,7 @@
                     </script>
 
 
-                    <div class="acvscrole xx" id="#now_playing">
+                    <div class="acvscrole xx" id="chat">
                         @foreach($message as $message)
                             <div class="xx">
                                 <h5>{{$message->name}} <small><small><small>{{$message->created_at->diffForHumans()}}</small></small></small> </h5>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 {!! Form::open(['method'=>'POST','action'=>"UserContant@chat"]) !!}
-                <input class="form-control" type="text" autocomplete="off" required value="" id="" name="message" placeholder="Type a message">
+                <input class="form-control" type="text" autocomplete="off" required value="" id="" name="message"  placeholder="Type a message">
                 {!! Form::close() !!}
 
 
@@ -69,9 +69,9 @@
 
 
                 <div class="col-12">
-                    <h6>Weight Lift</h6>
+                    <h6>Weight Lift1</h6>
                     <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
 
