@@ -89,30 +89,37 @@
 
     <div class="col-2 sidebar" id="sidebar">
         <ul class="sidebarmanu">
-            <li>
+            <li class="" id="">
                 <div class="card">
-                    <a href="index.php#tabs-1">
+                    <a href="{{url('/profile')}}">
                         <div class="cardimg"><img class="card-img-top" src="{{asset(Auth::User()->photo ? ("images/".(Auth::User()->photo->file)):(Auth::User()->profile->gender=="Male"?"images/2.png":"images/1.png"))}}" alt="{{Auth::User()->name}}"></div>
                     </a>
+
                 </div>
+
+                {{--<ul class="sub-menu" id="submanu">--}}
+                    {{--<li><a href="{{url('/profile')}}">View Profile</a></li>--}}
+                    {{--<li><a href="{{url('/users/'.Auth::id().'/edit')}}">Edit Profile</a></li>--}}
+
+                {{--</ul>--}}
             </li>
 
 
 
             <li class="submanu" id="">
-                <a href="#"><i class="fa  fa-user-circle" aria-hidden="true"></i><span>  {{ Auth::user()->name }}</span></a>
+                <a href="{{url('/profile')}}"><i class="fa  fa-user-circle" aria-hidden="true"></i><span>&nbsp;{{ Auth::user()->name }}</span></a>
                 <ul class="sub-menu" id="submanu">
-                    <li><a href="{{url('/profile')}}">View Profile</a></li>
-                    <li><a href="{{url('/users/'.Auth::id().'/edit')}}">Edit Profile</a></li>
+                    <li><a href="{{url('/profile')}}"><i class="fa fa-eye" aria-hidden="true"></i> &nbsp;View Profile</a></li>
+                    <li><a href="{{url('/users/'.Auth::id().'/edit')}}"><i class="fa fa-pencil" aria-hidden="true"></i> &nbsp; Edit Profile</a></li>
 
                 </ul>
 
             </li>
 
 
-            <li id=""><a href="{{url('/profile#chat')}}"><i class="fa fa-comments-o" aria-hidden="true"></i><span>Check Message &nbsp;</span></a></li>
-            <li><a href="{{url('/members')}}"><i class="fa fa-users" aria-hidden="true"></i><span>Group Members</span></a></li>
-            <li><a href="{{url('/task')}}"><i class="fa fa-thumb-tack" aria-hidden="true"></i><span>Works todo &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</span></a></li>
+            <li id=""><a href="{{url('/profile#chat')}}"><i class="fa fa-comments-o" aria-hidden="true"></i><span>&nbsp;Check Message &nbsp;</span></a></li>
+            <li><a href="{{url('/members')}}"><i class="fa fa-users" aria-hidden="true"></i><span>&nbsp;Group Members</span></a></li>
+            <li><a href="{{url('/task')}}"><i class="fa fa-thumb-tack" aria-hidden="true"></i><span>&nbsp;Works todo &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</span></a></li>
 
             {{--<li class=""><a href=""><i class="fa fa-thumb-tack" aria-hidden="true"></i>--}}
                     {{--<span>Account Setting</span>   </a>--}}
@@ -125,7 +132,7 @@
 
             </li>
 
-            <li><a href="{{url('/payment')}}"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Payments &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></a></li>
+            <li><a href="{{url('/payment')}}"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>&nbsp;Payments &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></a></li>
 
 
 
