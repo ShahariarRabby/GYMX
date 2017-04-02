@@ -33,7 +33,7 @@ $user = Auth::User();
                             </tr>
                             <tr>
                                 <td>Package</td>
-                                <td><span class="label label-success">{{$user->is_active}}</span></td>
+                                <td><span class="label label-success">{{$user->profile->package->name}}</span></td>
                             </tr>
                             <tr>
                                 <td>Member Since</td>

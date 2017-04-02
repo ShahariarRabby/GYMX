@@ -24,8 +24,8 @@ class CreateProfilesTable extends Migration
           $table->string('facebook')->default('https://fb.com/');
             $table->decimal('height')->nullable();
             $table->decimal('weight')->nullable();
-            $table->integer('photo_id')->nullable();
-            $table->integer('package_id')->nullable();
+            $table->dateTime('discontinued')->nullable();
+            $table->integer('package_id')->nullable()->default(1);
             $table->integer('payment_id')->nullable();
             $table->integer('reputation_id')->nullable();
             $table->integer('recharge_id')->nullable();

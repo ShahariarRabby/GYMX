@@ -12,23 +12,34 @@
                         <div class="col-12 col-sm-4">
                             <ul class="site-stats">
                                 <li>
-                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>Active</strong>
+                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>{{$user->is_active }}</strong>
                                         <br><small>My account status</small></div>
                                 </li>
 
                                 <li>
-                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>Tue, 11 Apr, 2017 12:00 pm</strong>
+                                    <?php
+                                            ?>
+                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>
+                                            <?php
+
+                                            use Carbon\Carbon;$date = $user->profile->discontinued;
+                                            $date = date_create($date);
+                                            echo date_format($date, 'l d-m-y h:m A');
+
+                               ?>
+
+                                        </strong>
                                         <br><small>Disconnect date</small></div>
                                 </li>
                                 <!--<li class="divider"></li>-->
 
                                 <li>
-                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>0 Taka</strong>
+                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>{{$balance}} Taka</strong>
                                         <br><small>Current balance</small></div>
                                 </li>
 
                                 <li>
-                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>1 Mbps</strong>
+                                    <div class="cc"><i class="fa fa-arrow-right"></i> <strong>{{$user->profile->package->name}}</strong>
                                         <br><small>Package</small></div>
                                 </li>
                             </ul>
@@ -41,16 +52,83 @@
                                 </div>
                             </div>
 
+                            <script>
+                                function loadUser() {
+                                    $.get("/dis",function (data) {
+                                        $(".xx").html(data);
 
-                            <div class="alert alert-danger alert-block">
+                                    });
+
+                                }
+                                setInterval(function () {
+                                    loadUser();
+                                },900);
+
+                            </script>
+
+
+
+                            <div class="alert alert-danger alert-block xx">
                                 <h4 class="alert-heading" style="color:red !important;">Attention!</h4>
-                                <span class="badge badge-danger">24 days 10 hours 2 minitues</span> remaining to disconnect. Please recharge account and schedule next connectivity to avoid disconnection. </div>
+                                <span class="badge badge-danger" style="padding: 15px;width: 100%;font-size: 15px">
+                                    <?php
+                                  $discontinued =  $user->profile->discontinued;
+                                  $now =Carbon::now();
+                                    $discontinued=  Carbon::parse($discontinued);
+//
+                                    $discontinued = $discontinued->diffInSeconds($now);
+                                    $var = 31536000;
+
+
+                                  $year = $discontinued/$var;
+                                    $main = $discontinued%$var;
+                                     $month = $main/(86400*30);
+                                     $main = $main%(86400*30);
+                                    $day = $main/(86400);
+                                    $main = $main%(86400);
+                                    $hour = $main/(3600);
+                                    $main = $main%(3600);
+                                    $min = $main/(60);
+                                    $sec = $main%(60);
+
+
+                                    $year = floor($year);
+                                    $month = floor($month);
+                                    $day = floor($day);
+                                    $hour = floor($hour);
+                                    $min = floor($min);
+                                    if($year!=0){
+                                        echo $year . " year ";
+                                    }
+                                   if($month!=0){
+                                        echo $month . " month ";
+                                    }
+                                    if($day!=0){
+                                        echo $day . " days ";
+                                    }
+                                    if($hour!=0){
+                                        echo $hour . " hour ";
+                                    }
+                                    if($min !=0){
+                                        echo $min . " minutes ";
+                                    }
+                                    if($sec!=0){
+                                        echo $sec . " seconds ";
+                                    }
+                                    ?>
+                                </span>
+                                remaining to disconnect. Please recharge account and schedule next connectivity to avoid disconnection.
+                            </div>
+
+
+
                             <div class="alert alert-success alert-block">
                                 Dear valued subscriber,
                                 <br> To recharge your account and activate package please follow these steps:
                                 <br> 1. Click "Payment". Put your scratch card no or bKash .
                                 <br> 2. Click "Active".
                             </div>
+
                             <div class="alert alert-warning alert-block">
                                 To avoid disconnection please recharge and activate package in advance before your account is being suspended. If suspended please call 8585.
                             </div>

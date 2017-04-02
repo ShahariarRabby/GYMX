@@ -48,6 +48,7 @@ Route::resource('/users','UsersControler');
     ROute::post('/card','UserContant@payments');
     ROute::post('/package','UserContant@enablePackage');
     ROute::post('/bkash','UserContant@paymentsbKash');
+    ROute::post('/chat','UserContant@chat');
     //********************************************************
     // fake route
     //****************************************
@@ -60,6 +61,13 @@ Route::resource('/users','UsersControler');
     });
     ROute::get('/bkash',function (){
         return redirect('/payment');
+    });
+
+    ROute::get('/xxx',function (){
+        return view('home');
+    });
+    ROute::get('/dis',function (){
+        return view('users.discontinued');
     });
 });
 

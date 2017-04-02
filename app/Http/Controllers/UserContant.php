@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bkash;
 use App\Card;
+use App\Chat;
 use App\Package;
 use App\Payment;
 use App\Profile;
@@ -14,14 +15,43 @@ use DateInterval;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class UserContant extends Controller
 {
     //
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|int
+     */
     public function index(){
         $user = Auth::User();
-        return view('users.index',compact('user'));
+
+        $userPayment = Payment::whereUser_id(Auth::id());
+        $DebitSum=   $userPayment ->sum('Debit');
+        $CreditSum=   $userPayment ->sum('Credit');
+        $balance =$CreditSum   - $DebitSum;
+
+
+        $discontinued = $user->profile->discontinued;
+//        $discontinued=  Carbon::parse($discontinued);
+//        $now =Carbon::now();
+//      return  $discontinued = $discontinued->diffInMinutes($now);
+
+
+
+
+//
+//        $date = new DateTime;
+//        $date->modify('+30 days');
+//     return   $formatted_date = $date->format('Y-m-d H:i:s');
+//
+//        $result = DB::table('db_user')->where('id_user','=',Session::get('id_user'))->where('last_activity','>=',$formatted_date)->get();
+//
+//
+
+
+        return view('users.index',compact('user','balance'));
     }
 
         public function task(){
@@ -33,6 +63,8 @@ class UserContant extends Controller
     }
 
         public function profile(){
+
+            $message = Chat::orderBy('updated_at','desc')->get();
 
             $user = Auth::User();
 
@@ -73,7 +105,7 @@ if ($W !=0)
 //            $IdealWeight =(0.5 * $BMI +11.5)*$H*$H;
           //  $Calorie_Needs_per_Day =66.67+(13.75*$W)+(5*$H)-(6.76*$age);
            // return $height.'<br>'.$weight;
-      return view('users.profile',compact('user','age','BMI','msg'));
+      return view('users.profile',compact('user','age','BMI','msg','message'));
     }
 
 
@@ -136,9 +168,7 @@ if ($W !=0)
             return redirect('/payment');
 
         }
-   //  return   $count = Card::whereAmount(350)->sum('amount');
-//       $count = Card::whereStatus(5424);
-//     return  $count-> sum('amount');
+
     }
 
     public function paymentsbKash(Request $request)
@@ -162,10 +192,18 @@ if ($W !=0)
 
     public function enablePackage(Request $request)
     {
+
         $input =  $request->get('package_id');
+       $profile = Auth::user()->profile->id;
+       $profile = Profile::findOrFail($profile);
+
+
         $request['user_id'] = Auth::id();
+        $request['is_active'] = "Active";
+
         $package = Package::findOrFail($input);
         $request['Debit'] = $package->amount;
+        $time = $package->time;
         $request['Type'] = 'Enable '.$package->name;
         $userPayment = Payment::whereUser_id(Auth::id());
 
@@ -173,14 +211,40 @@ if ($W !=0)
         $CreditSum = $userPayment->sum('Credit');
         $balance = $CreditSum - $DebitSum-$package->amount;
         $request['Balance'] = $balance;
+
+        $discontinued = carbon::now()->addDays($time);
+        $request['discontinued'] = $discontinued;
+
+
+
         if($balance>=0){
+            $profile->update($request->all());
+
+            Auth::user()->is_active = $request->is_active;
+            Auth::user()->save();
+
             Payment::create($request->all());
+
             Session::flash('packagedone','Payment');
             return redirect('/payment');
         }else{
             Session::flash('packageFail','packagecng');
             return redirect('/payment');
         }
+
+
+
+
+    }
+
+
+
+
+    public  function chat(Request $request){
+        $request['name']=Auth::user()->name;
+        $message =  $request->all();
+       Chat::create($message);
+        return redirect('/profile');
 
 
 

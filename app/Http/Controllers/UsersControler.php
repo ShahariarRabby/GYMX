@@ -132,7 +132,7 @@ class UsersControler extends Controller
 
          $user ->update($input);
          $profile ->update($input);
-           return $input;
+           return redirect('/profile');
 
     }
 

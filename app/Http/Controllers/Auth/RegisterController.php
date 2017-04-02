@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Profile;
 use App\User;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -64,8 +65,14 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
+        $discontinued = carbon::now()->addDays(3);
+
+
+
         $profile= Profile::create([
             'role' =>'User',
+            'package_id' =>'1',
+            'discontinued'=>$discontinued
         ]);
         $data['profile_id'] = $profile->id;
         return User::create([
