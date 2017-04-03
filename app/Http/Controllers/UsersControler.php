@@ -22,7 +22,8 @@ class UsersControler extends Controller
     public function index()
     {
         //
-        return view('users.index');
+//        return view('users.index');
+        return view('errors.404');
     }
 
     /**
@@ -32,11 +33,12 @@ class UsersControler extends Controller
      */
     public function create()
     {
+        return view('errors.404');
         //
-        $user = Profile::findOrFail(5);
-
-         $users = $user->user->id;
-   return      $users = User::findOrfail($users);
+//        $user = Profile::findOrFail(5);
+//
+//         $users = $user->user->id;
+//   return      $users = User::findOrfail($users);
 
       //  $user = $user->id;
      //   $profile =
@@ -72,6 +74,7 @@ class UsersControler extends Controller
     public function show($id)
     {
         //
+        return view('errors.404');
     }
 
     /**
@@ -147,5 +150,6 @@ class UsersControler extends Controller
     public function destroy($id)
     {
         //
+        return view('errors.404');
     }
 }

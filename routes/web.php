@@ -39,6 +39,8 @@ Route::group(['middleware'=>'admin'],function (){
     Route::resource('/admin/bkash','AdminBkashController');
     Route::resource('/admin/payment','AdminPaymentController');
     Route::resource('/admin/package','AdminPackegeController');
+    Route::resource('/admin/card','AdminCardControler');
+
     });
 Route::group(['middleware'=>'UserAccess'],function (){
 Route::resource('/users','UsersControler');

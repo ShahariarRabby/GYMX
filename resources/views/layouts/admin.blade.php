@@ -81,10 +81,14 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        {{--<a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>--}}
+                        <a href="{{ url('admin/users')}}"><i class="fa fa-dashboard  fa-fw"></i> User</a>
+
                     </li>
                     <li>
-                        <a href="/admin"><i class="fa fa-wrench fa-fw"></i> Users<span class="fa arrow"></span></a>
+
+                        <a href="{{ url('admin/users/')}}"><i class="fa fa-wrench fa-fw"></i> User<span class="fa arrow"></span>
+                        </a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{ url('admin/users/')}}">All Users</a>
@@ -96,36 +100,88 @@
                         <!-- /.nav-second-level -->
                     </li>
 
-
-
+{{--=============Multilable=========================--}}
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Bkash<span class="fa arrow"></span></a>
+
+
+
+                        <a href="{{route('payment.index')}}"><i class="fa fa-money fa-fw"></i>
+
+                            Payments<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
+
                             <li>
-                                <a href="{{ url('admin/bkash')}}">Bkash</a>
+                                <a href="{{route('payment.index')}}"><i class="fa fa-money" aria-hidden="true"></i>
+
+                                    Payments<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="{{route('payment.index')}}">All Payments</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('payment.create')}}">Create Payment</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-third-level -->
                             </li>
                             <li>
-                                <a href="buttons.html">Create Post</a>
+                                <a href="#">Bkash<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="{{ url('admin/bkash')}}">Bkash</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-third-level -->
                             </li>
+                            <li>
+                                <a href="#">Card<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">All Cards</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Add Card</a>
+                                    </li>
+
+                                </ul>
+                                <!-- /.nav-third-level -->
+                            </li>
+
+
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
 
 
-                    <li>
-                        <a href="{{route('payment.index')}}"><i class="fa fa-money" aria-hidden="true"></i>
+{{--============================================--}}
+                    {{--<li>--}}
+                        {{--<a href="#"><i class="fa fa-wrench fa-fw"></i>Bkash<span class="fa arrow"></span></a>--}}
+                        {{--<ul class="nav nav-second-level">--}}
+                            {{--<li>--}}
+                                {{--<a href="{{ url('admin/bkash')}}">Bkash</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="buttons.html">Create Post</a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                        {{--<!-- /.nav-second-level -->--}}
+                    {{--</li>--}}
 
-                            Payments<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{route('payment.index')}}">All Payments</a>
-                            </li>
-                            <li>
-                                <a href="{{route('payment.create')}}">Create Payment</a>
-                            </li>
-                        </ul>
-                            <!-- /.nav-second-level -->
-                    </li>
+
+                    {{--<li>--}}
+                        {{--<a href="{{route('payment.index')}}"><i class="fa fa-money" aria-hidden="true"></i>--}}
+
+                            {{--Payments<span class="fa arrow"></span></a>--}}
+                        {{--<ul class="nav nav-second-level">--}}
+                            {{--<li>--}}
+                                {{--<a href="{{route('payment.index')}}">All Payments</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="{{route('payment.create')}}">Create Payment</a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                        {{--<!-- /.nav-second-level -->--}}
+                    {{--</li>--}}
 
                     <li>
                         <a href="{{route('package.index')}}"><i class="fa fa-wrench fa-fw"></i> Packages<span class="fa arrow"></span></a>
@@ -196,6 +252,10 @@
                         <!-- /.nav-second-level -->
                     </li>
 
+
+
+
+
                     <li>
                         <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -223,9 +283,32 @@
                                 </ul>
                                 <!-- /.nav-third-level -->
                             </li>
+                            <li>
+                                <a href="#">Third Level <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">Third Level Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Item</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-third-level -->
+                            </li>
+
+
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
+
+
+
                     <li>
                         <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
