@@ -37,6 +37,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::group(['middleware'=>'admin'],function (){
     Route::resource('/admin/users','AdminUsersController');
     Route::resource('/admin/bkash','AdminBkashController');
+    Route::resource('/admin/payment','AdminPaymentController');
     });
 Route::group(['middleware'=>'UserAccess'],function (){
 Route::resource('/users','UsersControler');

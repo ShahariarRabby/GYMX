@@ -16,4 +16,8 @@ class Payment extends Model
         'bkash_id',
         'card_id',
     ];
+
+    public function user(){
+        return $this->belongsTo('App\User','user_id');
+    }
 }

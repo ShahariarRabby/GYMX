@@ -5,6 +5,7 @@
 @section('content')
 
     @include('includes.form_errors')
+    <div class="col-md-6 col-12" style="padding-bottom: 10%">
     {!! Form::open(['method'=>'POST','action'=>"AdminUsersController@store",'files'=>true]) !!}
     <div class="form-group">
         {!! Form::label('Name','Name') !!}
@@ -61,6 +62,6 @@
         {!! Form::submit('Create User',['class'=>'btn btn-primary']) !!}
 
     </div>
-
-
+{!! Form::close() !!}
+</div>
 @endsection

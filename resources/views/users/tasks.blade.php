@@ -5,6 +5,19 @@
 @section('tabs1')
 
 <div id="tabs-2">
+
+    <style>
+
+
+        #dash{
+            display: none;
+        }
+        #task{
+        display: block;
+        }
+        </style>
+
+
     <div class="container">
 
         <div class="row">

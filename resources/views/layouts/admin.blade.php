@@ -84,7 +84,7 @@
                         <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Users<span class="fa arrow"></span></a>
+                        <a href="/admin"><i class="fa fa-wrench fa-fw"></i> Users<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{ url('admin/users/')}}">All Users</a>
@@ -99,16 +99,32 @@
 
 
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Bkash<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="panels-wells.html">All Posts</a>
+                                <a href="{{ url('admin/bkash')}}">Bkash</a>
                             </li>
                             <li>
                                 <a href="buttons.html">Create Post</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
+                    </li>
+
+
+                    <li>
+                        <a href="{{route('payment.index')}}"><i class="fa fa-money" aria-hidden="true"></i>
+
+                            Payments<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('payment.index')}}">All Payments</a>
+                            </li>
+                            <li>
+                                <a href="{{route('payment.create')}}">Create Payment</a>
+                            </li>
+                        </ul>
+                            <!-- /.nav-second-level -->
                     </li>
 
                     <li>

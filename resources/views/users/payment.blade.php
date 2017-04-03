@@ -4,6 +4,16 @@
 @endsection
 @section('tabs1')
 
+    <style>
+
+
+         #dash{
+            display: none;
+        }
+        #pay{
+            display: block;
+        }
+    </style>
     <div id="tabs-4">
         <div class="container">
             <div class="row">

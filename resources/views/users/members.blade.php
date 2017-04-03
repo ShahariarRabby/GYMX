@@ -5,6 +5,15 @@
 @endsection
 @section('tabs1')
 
+    <style>
+
+        #dash{
+            display: none;
+        }
+        #mem{
+            display: block;
+        }
+    </style>
 
 <div id="tabs-3">
     <div class="container">

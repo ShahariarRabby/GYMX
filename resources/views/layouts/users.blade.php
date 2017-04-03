@@ -169,6 +169,11 @@
                         {{--}--}}
 
                     {{--</style>--}}
+                    <style>
+                        .none{
+                            display: none;
+                        }
+                    </style>
                     <ul class="tabmanu">
                         <li><a href="{{url('/home')}}"class="manuoption dash">Dashbord<span id="dash" class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
                         <li><a href="{{url('/profile')}}"class="manuoption pro">Profile<span id="pro"  class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>

@@ -3,6 +3,7 @@
     Edit User
 @endsection
 @section('content')
+    <div style="padding-bottom:10% ">
     {!! Form::model($user,['method'=>'PATCH','action'=>["AdminUsersController@update",$user->id],'files'=>true]) !!}
 
     <div class="col-sm-3 col-12" >
@@ -73,5 +74,6 @@
             {!! Form::submit('Delete User',['class'=>'btn btn-danger col-sm-11']) !!}
         </div>
         {!! Form::Close() !!}
+    </div>
     </div>
 @endsection
