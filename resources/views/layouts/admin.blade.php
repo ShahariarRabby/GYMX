@@ -128,26 +128,26 @@
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Categories<span class="fa arrow"></span></a>
+                        <a href="{{route('package.index')}}"><i class="fa fa-wrench fa-fw"></i> Packages<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="panels-wells.html">All Categories</a>
+                                <a href="{{route('package.index')}}">All Packages</a>
                             </li>
                             <li>
-                                <a href="buttons.html">Create Category</a>
+                                <a href="{{route('package.create')}}">Create Package</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Media<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Cards<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="panels-wells.html">All Media</a>
+                                <a href="panels-wells.html">All Cards</a>
                             </li>
                             <li>
-                                <a href="buttons.html">Create Media</a>
+                                <a href="buttons.html">Create Card</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

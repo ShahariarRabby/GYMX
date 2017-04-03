@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Package;
 use Illuminate\Http\Request;
 
 class AdminPackegeController extends Controller
@@ -14,6 +15,9 @@ class AdminPackegeController extends Controller
     public function index()
     {
         //
+
+        $package = Package::all();
+        return view('admin.payment.package.package',compact('package'));
     }
 
     /**
@@ -24,6 +28,7 @@ class AdminPackegeController extends Controller
     public function create()
     {
         //
+        return view('admin.payment.package.create');
     }
 
     /**
@@ -35,6 +40,10 @@ class AdminPackegeController extends Controller
     public function store(Request $request)
     {
         //
+        Package::create($request->all());
+        return redirect('admin/package');
+
+
     }
 
     /**
@@ -57,6 +66,8 @@ class AdminPackegeController extends Controller
     public function edit($id)
     {
         //
+        $package = Package::findOrFail($id);
+        return view('admin.payment.package.edit',compact('package'));
     }
 
     /**
@@ -69,6 +80,8 @@ class AdminPackegeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $package = Package::find($id)->update($request->all());
+        return redirect('admin/package');
     }
 
     /**
@@ -79,6 +92,8 @@ class AdminPackegeController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        Package::find($id)->delete();
+        return redirect('admin/package');
     }
 }
