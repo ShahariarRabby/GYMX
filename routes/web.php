@@ -40,6 +40,7 @@ Route::group(['middleware'=>'admin'],function (){
     Route::resource('/admin/payment','AdminPaymentController');
     Route::resource('/admin/package','AdminPackegeController');
     Route::resource('/admin/card','AdminCardControler');
+    Route::resource('/admin/task','AdminTaskController');
 
     });
 Route::group(['middleware'=>'UserAccess'],function (){

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\tesk;
+use App\task;
 use Illuminate\Http\Request;
 
 class AdminTaskController extends Controller
@@ -14,7 +14,8 @@ class AdminTaskController extends Controller
      */
     public function index()
     {
-        //
+       $task =Task::all();
+       return view('admin.task.index',compact('task'));
     }
 
     /**
@@ -25,6 +26,7 @@ class AdminTaskController extends Controller
     public function create()
     {
         //
+        return view('admin.task.create');
     }
 
     /**
@@ -35,16 +37,17 @@ class AdminTaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       Task::create($request->all());
+       return redirect('/admin/task');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\tesk  $tesk
+     * @param  \App\task  $task
      * @return \Illuminate\Http\Response
      */
-    public function show(tesk $tesk)
+    public function show(task $task)
     {
         //
     }
@@ -52,34 +55,38 @@ class AdminTaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\tesk  $tesk
+     * @param  \App\task  $task
      * @return \Illuminate\Http\Response
      */
-    public function edit(tesk $tesk)
+    public function edit(task $task)
     {
         //
+        $tasks = Task::findOrFail($task);
+        return view('admin.task.edit',compact('tasks'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\tesk  $tesk
+     * @param  \App\task  $task
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tesk $tesk)
+    public function update(Request $request, task $task)
     {
-        //
+       Task::findOrFail($task)->update($request->all());
+       return redirect('admin/task');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\tesk  $tesk
+     * @param  \App\task  $task
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tesk $tesk)
+    public function destroy(task $task)
     {
-        //
+        Task::findOrFail($task)->delete();
+        return redirect('admin/task');
     }
 }

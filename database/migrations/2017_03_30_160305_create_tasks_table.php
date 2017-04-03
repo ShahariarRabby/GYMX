@@ -17,6 +17,7 @@ class CreateTasksTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable();
             $table->string('details')->default("Do as your wish");
+            $table->date('endDate')->nullable();
             $table->timestamps();
         });
     }

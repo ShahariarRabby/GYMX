@@ -71,8 +71,7 @@
 
                     <td class="center">
                         <?php
-                        $date = date_create($task->created_at);
-                        $date = date_add($date, date_interval_create_from_date_string('2 days'));
+                        $date = date_create($task->endDate);
                         echo date_format($date, 'Y-m-d');
                             ?>
                     </td>
