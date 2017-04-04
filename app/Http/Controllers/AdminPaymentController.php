@@ -106,4 +106,11 @@ class AdminPaymentController extends Controller
         return redirect('admin/payment');
 
     }
+
+    public function details()
+    {
+        //
+        return 1;
+
+    }
 }
