@@ -246,9 +246,6 @@ if ($W !=0)
        Chat::create($message);
         return redirect('/profile#chat');
 
-
-
-
     }
 
 

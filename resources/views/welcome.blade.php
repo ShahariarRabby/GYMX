@@ -72,7 +72,7 @@
             <a href="{{url('/login')}}">Login</a>
             <a href="{{url('/register')}}">Register</a>
         @else
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <a href="/home" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                 {{ Auth::user()->name }} <span class="caret"></span>
             </a>
             <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a>
@@ -82,7 +82,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            Laravel
+            Shahariar
         </div>
 
         <div class="links">

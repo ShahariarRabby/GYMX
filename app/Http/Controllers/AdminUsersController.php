@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bkash;
 use App\Card;
+use App\Chat;
 use App\Http\Requests\UsersEditRequest;
 use App\Http\Requests\UsersRequest;
 use App\Package;
@@ -250,11 +251,25 @@ class AdminUsersController extends Controller
         $package = Package::all()->count();
         $task = Task::all()->count();
 
-        $bkash = Bkash::whereStatus("Approved")->sum('amount');
-        $card  = Card::whereStatus(!null)->sum('amount');
-        $amount = $card +$bkash;
+        $user1 = User::whereIs_active('Not Active')->get();
+        $notActive =  count($user1);
+        $user1 = User::whereIs_active('Active')->get();
+        $Active =  count($user1);
+        $package1 = Profile::wherePackage_id('1')->count();
+        $package2 = Profile::wherePackage_id('2')->count();
+        $package3 = Profile::wherePackage_id('3')->count();
+        $package4 = Profile::wherePackage_id('4')->count();
+        $package5 = Profile::wherePackage_id('5')->count();
 
-        return view('admin.dashbord',compact('user','amount','package','task','package3','package5','package4'));
+        $bkash = Bkash::whereStatus("Approved")->sum('amount');
+        $card  = Card::where('status','!=',null)->sum('amount');
+        $amount = $card +$bkash;
+        $card = Card::all()->count();
+        $bkash = Bkash::all()->count();
+       $chat = Chat::all()->count();
+       $payment = Payment::all()->count();
+
+        return view('admin.dashbord',compact('user','amount','payment','package','task','notActive','Active','package1','package2','package3','package4', 'card','bkash','chat'));
     }
 
 

@@ -45,8 +45,12 @@ Route::group(['middleware'=>'admin'],function (){
     Route::get('/admin/discontinued','AdminDiscontinueUser@Discontinued');
     Route::get('/admin/payments/details','AdminPaymentController@details');
     Route::get('/admin/user/details','AdminUsersController@details');
-    Route::get('/admin/home','AdminUsersController@home');
-    });
+    Route::get('/admin','AdminUsersController@home');
+    Route::get('/admin/chat','AdminMessageController@index');
+    Route::post('admin/chat','AdminMessageController@store');
+    Route::delete('/admin/chat/{id}','AdminMessageController@destroy');
+
+});
 Route::group(['middleware'=>'UserAccess'],function (){
 Route::resource('/users','UsersControler');
     ROute::get('/home','UserContant@index');
