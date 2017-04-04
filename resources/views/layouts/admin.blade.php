@@ -82,7 +82,7 @@
                     </li>
                     <li>
                         {{--<a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>--}}
-                        <a href="{{ url('/admin')}}"><i class="fa fa-dashboard  fa-fw"></i> DashBord</a>
+                        <a href="{{ url('/admin/home')}}"><i class="fa fa-dashboard  fa-fw"></i> DashBord</a>
 
 
                     </li>

@@ -35,9 +35,6 @@ Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::group(['middleware'=>'admin'],function (){
-    Route::get('/admin',function (){
-        return view('admin.index');
-    });
     Route::resource('/admin/users','AdminUsersController');
     Route::resource('/admin/bkash','AdminBkashController');
     Route::resource('/admin/payment','AdminPaymentController');
@@ -48,6 +45,7 @@ Route::group(['middleware'=>'admin'],function (){
     Route::get('/admin/discontinued','AdminDiscontinueUser@Discontinued');
     Route::get('/admin/payments/details','AdminPaymentController@details');
     Route::get('/admin/user/details','AdminUsersController@details');
+    Route::get('/admin/home','AdminUsersController@home');
     });
 Route::group(['middleware'=>'UserAccess'],function (){
 Route::resource('/users','UsersControler');

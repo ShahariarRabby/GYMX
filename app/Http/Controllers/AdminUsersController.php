@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Bkash;
+use App\Card;
 use App\Http\Requests\UsersEditRequest;
 use App\Http\Requests\UsersRequest;
 use App\Package;
@@ -9,6 +11,7 @@ use App\Payment;
 use App\Photo;
 //use App\Role;
 use App\Profile;
+use App\Task;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -234,6 +237,24 @@ class AdminUsersController extends Controller
          $package5 = Profile::wherePackage_id('5')->count();
 
         return view('admin.users.details',compact('notActive','Active','package1','package2','package3','package5','package4'));
+
+    }
+
+
+
+
+
+    public function home()
+    {
+        $user = User::all()->count();
+        $package = Package::all()->count();
+        $task = Task::all()->count();
+
+        $bkash = Bkash::whereStatus("Approved")->sum('amount');
+        $card  = Card::whereStatus(!null)->sum('amount');
+        $amount = $card +$bkash;
+
+        return view('admin.dashbord',compact('user','amount','package','task','package3','package5','package4'));
 
     }
 
