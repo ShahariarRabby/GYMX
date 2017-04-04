@@ -82,7 +82,8 @@
                     </li>
                     <li>
                         {{--<a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>--}}
-                        <a href="{{ url('admin/users')}}"><i class="fa fa-dashboard  fa-fw"></i> User</a>
+                        <a href="{{ url('/admin')}}"><i class="fa fa-dashboard  fa-fw"></i> DashBord</a>
+
 
                     </li>
                     <li>
@@ -125,7 +126,7 @@
                                 <!-- /.nav-third-level -->
                             </li>
                             <li>
-                                <a href="#">Bkash<span class="fa arrow"></span></a>
+                                <a href="{{ url('admin/bkash')}}">Bkash<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
                                     <li>
                                         <a href="{{ url('admin/bkash')}}">Bkash</a>
@@ -134,13 +135,13 @@
                                 <!-- /.nav-third-level -->
                             </li>
                             <li>
-                                <a href="#">Card<span class="fa arrow"></span></a>
+                                <a href="{{ url('admin/card')}}">Card<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="#">All Cards</a>
+                                        <a href="{{ url('admin/card')}}">All Cards</a>
                                     </li>
                                     <li>
-                                        <a href="#">Add Card</a>
+                                        <a href="{{ url('admin/card/create')}}">Add Card</a>
                                     </li>
 
                                 </ul>
@@ -197,13 +198,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Cards<span class="fa arrow"></span></a>
+                        <a href="{{ url('admin/task')}}"><i class="fa fa-wrench fa-fw"></i> Tasks<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="panels-wells.html">All Cards</a>
+                                <a href="{{ url('admin/task')}}">All Tasks</a>
                             </li>
                             <li>
-                                <a href="buttons.html">Create Card</a>
+                                <a href="{{ url('admin/task')}}">Create Task</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
