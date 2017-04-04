@@ -255,7 +255,6 @@ class AdminUsersController extends Controller
         $amount = $card +$bkash;
 
         return view('admin.dashbord',compact('user','amount','package','task','package3','package5','package4'));
-
     }
 
 
