@@ -1,46 +1,55 @@
 @extends('layouts.admin')
 @section('header')
-    <i class="fa fa-money" aria-hidden="true"></i>  Payments
+<i class="fa fa-money" aria-hidden="true"></i>  Payments Summery
 @endsection
 @section('content')
 
     <table class="table table-hover table-responsive">
         <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Credit</th>
-            <th>Debit</th>
-            <th>Balance</th>
-            <th>Type</th>
-            <th>Time</th>
+            <th>Card</th>
+            <th>Bkash</th>
+            <th>Total</th>
 
         </tr>
         </thead>
         <tbody>
-        @foreach($payment as $payment)
+
             <tr>
-                <td>{{$payment->id}}</td>
-                <td><a href="{{route('payment.edit', [$payment->id])}}">{{$payment->user->name}}</a></td>
-                <td>{{$payment->Credit}}</td>
-                <td>{{$payment->Debit}}</td>
-                <td> {{$payment->Balance}}</td>
-                <td>{{$payment->Type}}</td>
-                <td>{{$payment->updated_at->diffForHumans()}}</td>
+                <td>{{$card}}</td>
+                <td>{{$bkash}}</td>
+                <td>{{$amount}}</td>
             </tr>
-        @endforeach
+
         </tbody>
     </table>
 
 
 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
 
+        function drawChart() {
 
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Card',    {{$card}}],
+                ['bKash',    {{$bkash}}],
 
+            ]);
 
+            var options = {
+                title: 'Payment Summery'
+            };
 
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
+            chart.draw(data, options);
+        }
+    </script>
 
-
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
 
 @endsection

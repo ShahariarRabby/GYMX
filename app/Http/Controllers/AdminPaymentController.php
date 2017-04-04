@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Bkash;
+use App\Card;
 use App\Payment;
 use App\Profile;
 use App\User;
@@ -109,8 +111,10 @@ class AdminPaymentController extends Controller
 
     public function details()
     {
-        //
-        return 1;
+        $bkash = Bkash::whereStatus("Approved")->sum('amount');
+         $card  = Card::whereStatus(!null)->sum('amount');
+         $amount = $card +$bkash;
+         return view('admin.payment.details',compact('bkash','card','amount'));
 
     }
 }

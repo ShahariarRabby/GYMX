@@ -88,9 +88,12 @@
                     </li>
                     <li>
 
-                        <a href="{{ url('admin/users/')}}"><i class="fa fa-wrench fa-fw"></i> User<span class="fa arrow"></span>
+                        <a href="{{ url('admin/users')}}"><i class="fa fa-wrench fa-fw"></i> User<span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{url('admin/user/details')}}">User Summery</a>
+                            </li>
                             <li>
                                 <a href="{{ url('admin/users/')}}">All Users</a>
                             </li>
@@ -110,7 +113,9 @@
 
                             Payments<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-
+                            <li>
+                                <a href="{{url('admin/payments/details')}}">Payment Summery</a>
+                            </li>
                             <li>
                                 <a href="{{route('payment.index')}}"><i class="fa fa-money" aria-hidden="true"></i>
 

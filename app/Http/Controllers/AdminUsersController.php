@@ -217,5 +217,27 @@ class AdminUsersController extends Controller
         return redirect('admin/users');
 
     }
+
+
+
+
+    public function details()
+    {
+        $user = User::whereIs_active('Not Active')->get();
+        $user1 = User::whereIs_active('Active')->get();
+        $notActive =  count($user);
+        $Active =  count($user1);
+        $package1 = Profile::wherePackage_id('1')->count();
+        $package2 = Profile::wherePackage_id('2')->count();
+        $package3 = Profile::wherePackage_id('3')->count();
+        $package4 = Profile::wherePackage_id('4')->count();
+         $package5 = Profile::wherePackage_id('5')->count();
+
+        return view('admin.users.details',compact('notActive','Active','package1','package2','package3','package5','package4'));
+
+    }
+
+
+
 }
 
