@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -46,11 +46,11 @@ return [
 //            'database' =>'shahariar',
 //            'username' => 'shahariar',
 //            'password' =>'shahariar',
-            'host' => 'sql12.freemysqlhosting.net',
+            'host' => 'localhost',
             'port' => '3306',
-            'database' =>'sql12167672',
-            'username' => 'sql12167672',
-            'password' =>'Qb2mTzpYYS',
+            'database' =>'shahariar',
+            'username' => 'root',
+            'password' =>'',
             'unix_socket' => '',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -61,11 +61,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'ec2-23-21-204-166.compute-1.amazonaws.com'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'dbnmehqugfqhit'),
+            'username' => env('DB_USERNAME', 'ouxihrftowcbno'),
+            'password' => env('DB_PASSWORD', 'adcdbb5dd35f6cce68fa8fd6cd140f0a4b14a77a2918c0207529db156ce9fc96'),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
