@@ -53,7 +53,7 @@
 
 
                 <div class="col-12">
-                    <h6>Weight Lift</h6>
+                    <h6>Conscious</h6>
                     <div class="progress">
                         <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
@@ -61,7 +61,7 @@
 
 
                 <div class="col-12">
-                    <h6>Weight Lift</h6>
+                    <h6>Push UP</h6>
                     <div class="progress">
                         <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
@@ -69,7 +69,7 @@
 
 
                 <div class="col-12">
-                    <h6>Weight Lift1</h6>
+                    <h6>Running</h6>
                     <div class="progress">
                         <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
