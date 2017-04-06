@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Package;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminPackegeController extends Controller
 {
@@ -83,7 +84,7 @@ class AdminPackegeController extends Controller
     {
         //
         $package = Package::find($id)->update($request->all());
-        Session::flash('update', 'User Update_user');
+        Session::flash('delete', 'User Update_user');
 
         return redirect('admin/package');
     }
@@ -98,8 +99,6 @@ class AdminPackegeController extends Controller
     {
 
         Package::find($id)->delete();
-        Session::flash('delete', 'User Update_user');
-
         return redirect('admin/package');
     }
 }
