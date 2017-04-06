@@ -17,22 +17,12 @@ class AdminBkashController extends Controller
     }
 
 
-    public function create()
-    {
-
-    }
 
 
-    public function store(Request $request)
-    {
-
-    }
 
 
-    public function show($id)
-    {
 
-    }
+
 
 
     public function edit($id)
@@ -107,7 +97,7 @@ class AdminBkashController extends Controller
                 $test->delete();
             }
         }
-        Session::flash('Update_user', 'User Update_user');
+        Session::flash('update', 'User Update_user');
 
 
         return redirect('/admin/bkash');
@@ -129,6 +119,7 @@ class AdminBkashController extends Controller
 //
 //        $test = Payment::find($test);
 //    }
-
+        Session::flash('delete', 'User Update_user');
+        return redirect('/admin/bkash');
     }
 }

@@ -28,37 +28,7 @@ class AdminDiscontinueUser extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -69,6 +39,7 @@ class AdminDiscontinueUser extends Controller
     public function edit($id)
     {
         $discontinued = Profile::findOrFail($id);
+
         return view('admin.discontinued.edit',compact('discontinued'));
     }
 
@@ -90,7 +61,7 @@ class AdminDiscontinueUser extends Controller
        $profile = Profile::findOrFail($id);
        $user = User::findOrFail($profile->user->id)->update($request->all());
         Profile::findOrFail($id)->update($request->all());
-
+        Session::flash('update', 'User Update_user');
        return redirect('/admin/discontinue');
 
     }
@@ -101,9 +72,5 @@ class AdminDiscontinueUser extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-        return $id;
-    }
+
 }

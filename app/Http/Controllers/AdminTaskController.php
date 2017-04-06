@@ -53,7 +53,9 @@ class AdminTaskController extends Controller
     public function store(Request $request)
     {
        Task::create($request->all());
-       return redirect('/admin/task');
+        Session::flash('create', 'User Update_user');
+
+        return redirect('/admin/task');
     }
 
     /**
@@ -77,6 +79,8 @@ class AdminTaskController extends Controller
     {
         //
         $tasks = Task::findOrFail($task);
+        Session::flash('edit', 'User Update_user');
+
         return view('admin.task.edit',compact('tasks'));
     }
 
@@ -90,7 +94,9 @@ class AdminTaskController extends Controller
     public function update(Request $request, task $task)
     {
        Task::findOrFail($task)->update($request->all());
-       return redirect('admin/task');
+        Session::flash('update', 'User Update_user');
+
+        return redirect('admin/task');
     }
 
     /**

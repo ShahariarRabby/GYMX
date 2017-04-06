@@ -64,4 +64,7 @@
     </div>
 {!! Form::close() !!}
 </div>
+    <div class="col-4">
+        <img id="blah" style="height: 200px;width: 200px; margin-top: 50px" src="" class="img-responsive blah img-rounded">
+    </div>
 @endsection

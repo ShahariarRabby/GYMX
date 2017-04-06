@@ -58,6 +58,7 @@ class AdminCardControler extends Controller
     public function store(Request $request)
     {
       Card::create($request->all());
+      Session::flash('create', 'User Update_user');
       return redirect('admin/card');
     }
 
@@ -92,6 +93,7 @@ class AdminCardControler extends Controller
     {
         //
         Card::findOrFail($card)->update($request->all());
+        Session::flash('update', 'User Update_user');
         return redirect('admin/card');
     }
 
@@ -105,6 +107,7 @@ class AdminCardControler extends Controller
     {
         //
         Card::findOrFail($card)->delete();
+        Session::flash('delete', 'User Update_user');
         return redirect('admin/card');
     }
 }

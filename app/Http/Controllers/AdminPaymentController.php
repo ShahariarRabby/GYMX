@@ -54,6 +54,7 @@ class AdminPaymentController extends Controller
         $balance = $Credit + $CreditSum - $DebitSum-$debitForm;
         $request['Balance'] = $balance;
         Payment::create($request->all());
+        Session::flash('create', 'User Update_user');
         return redirect('admin/payment');
     }
 
@@ -91,6 +92,7 @@ class AdminPaymentController extends Controller
     {
         //
             $payment->update($request->all());
+        Session::flash('update', 'User Update_user');
 
         return redirect('admin/payment');
     }
@@ -105,6 +107,8 @@ class AdminPaymentController extends Controller
     {
         //
         $payment->delete();
+        Session::flash('delete', 'User Update_user');
+
         return redirect('admin/payment');
 
     }

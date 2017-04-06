@@ -45,6 +45,7 @@ class AdminUsersController extends Controller
     {
         $package = Package::pluck('name','id')->all();
         $roles = Profile::pluck('role','id')->all();
+
         return view('admin.users.create',compact('roles','package'));
     }
 
@@ -83,7 +84,7 @@ class AdminUsersController extends Controller
         $input['profile_id'] = $profile->id;
         User::create($input);
 
-        Session::flash('create_user','User Update_user');
+        Session::flash('create','User Update_user');
         return redirect('/admin/users');
     }
 
@@ -93,10 +94,7 @@ class AdminUsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -193,7 +191,7 @@ class AdminUsersController extends Controller
 
         $user ->update($input);
 
-        Session::flash('Update_user','User Update_user');
+        Session::flash('update','User Update_user');
 
 
         return redirect('/admin/users');
@@ -216,7 +214,7 @@ class AdminUsersController extends Controller
             $photo->delete();
         }
         $user->delete();
-        Session::flash('Delete_user','User Deleted');
+        Session::flash('delete','User Deleted');
 
         return redirect('admin/users');
 

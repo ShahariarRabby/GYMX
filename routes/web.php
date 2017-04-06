@@ -34,13 +34,12 @@ Auth::routes();
 //});
 Route::get('/logout', 'Auth\LoginController@logout');
 
-//Route::group(['middleware'=>'admin'],function (){
+Route::group(['middleware'=>'admin'],function (){
     Route::resource('/admin/users','AdminUsersController');
     Route::resource('/admin/bkash','AdminBkashController');
     Route::resource('/admin/payment','AdminPaymentController');
     Route::resource('/admin/package','AdminPackegeController');
     Route::resource('/admin/card','AdminCardControler');
-    Route::resource('/admin/cards','AdminBirdController');
     Route::resource('/admin/task','AdminTaskController');
     Route::resource('/admin/discontinue','AdminDiscontinueUser');
     Route::get('/admin/discontinued','AdminDiscontinueUser@Discontinued');
@@ -51,7 +50,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
     Route::post('admin/chat','AdminMessageController@store');
     Route::delete('/admin/chat/{id}','AdminMessageController@destroy');
 
-//});
+});
 Route::group(['middleware'=>'UserAccess'],function (){
 Route::resource('/users','UsersControler');
     ROute::get('/home','UserContant@index');

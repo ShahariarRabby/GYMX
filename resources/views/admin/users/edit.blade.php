@@ -4,14 +4,14 @@
 @endsection
 @section('content')
     <div style="padding-bottom:10% ">
-    {!! Form::model($user,['method'=>'PATCH','action'=>["AdminUsersController@update",$user->id],'files'=>true]) !!}
+    {!! Form::model($user,['method'=>'PATCH','id'=>'form1','action'=>["AdminUsersController@update",$user->id],'files'=>true]) !!}
 
     <div class="col-sm-3 col-12" >
-        <img src="{{asset($user->photo ? ("images/".($user->photo->file)):($user->role_id==1?"images/2.png":"images/1.png"))}}" class="img-responsive img-rounded">
+        <img id="blah" src="{{asset($user->photo ? ("images/".($user->photo->file)):($user->role_id==1?"images/2.png":"images/1.png"))}}" class="img-responsive img-rounded">
         {{--{!! Form::model($user,['method'=>'PATCH','action'=>["AdminUsersController@update",$user->id],'files'=>true]) !!}--}}
         <div class="form-group">
             {!! Form::label('photo_id','Edit Photo') !!}
-            {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
+            {!! Form::file('photo_id',null,['class'=>'form-control','id'=>'form1']) !!}
         </div>
         {{--{!! Form::Close() !!}--}}
 

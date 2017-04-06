@@ -137,7 +137,9 @@ class UsersControler extends Controller
 
          $user ->update($input);
          $profile ->update($input);
-           return redirect('/profile');
+        Session::flash('update', 'User Update_user');
+
+        return redirect('/profile');
 
     }
 

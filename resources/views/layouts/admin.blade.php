@@ -49,8 +49,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{url('admin')}}">Home</a>
+            <a class="navbar-brand" href="{{url('admin')}}">Dashboard</a>
         </div>
+
         <!-- /.navbar-header -->
 
         <ul class="nav navbar-top-links navbar-right">
@@ -235,7 +236,7 @@
                                 <a href="{{ url('admin/task')}}">All Tasks</a>
                             </li>
                             <li>
-                                <a href="{{ url('admin/task')}}">Create Task</a>
+                                <a href="{{ url('admin/task/create')}}">Create Task</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -246,120 +247,9 @@
                         <a href="{{ url('admin/chat')}}"><i class="fa fa-envelope fa-fw"></i> Message</a>
 
                     </li>
-
-                    {{--<li>--}}
-                        {{--<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Discountable<span class="fa arrow"></span></a>--}}
-                        {{--<ul class="nav nav-second-level">--}}
-                            {{--<li>--}}
-                                {{--<a href="{{route('discontinue.index')}}">Discountable User</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="{{url('admin/discontinued')}}">Disconnected User</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                        {{--<!-- /.nav-second-level -->--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                        {{--<a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                        {{--<a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                        {{--<a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>--}}
-                        {{--<ul class="nav nav-second-level">--}}
-                            {{--<li>--}}
-                                {{--<a href="panels-wells.html">Panels and Wells</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="buttons.html">Buttons</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="notifications.html">Notifications</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="typography.html">Typography</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="icons.html"> Icons</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="grid.html">Grid</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                        {{--<!-- /.nav-second-level -->--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                        {{--<a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>--}}
-                        {{--<ul class="nav nav-second-level">--}}
-                            {{--<li>--}}
-                                {{--<a href="#">Second Level Item</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="#">Second Level Item</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="#">Third Level <span class="fa arrow"></span></a>--}}
-                                {{--<ul class="nav nav-third-level">--}}
-                                    {{--<li>--}}
-                                        {{--<a href="#">Third Level Item</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li>--}}
-                                        {{--<a href="#">Third Level Item</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li>--}}
-                                        {{--<a href="#">Third Level Item</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li>--}}
-                                        {{--<a href="#">Third Level Item</a>--}}
-                                    {{--</li>--}}
-                                {{--</ul>--}}
-                                {{--<!-- /.nav-third-level -->--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="#">Third Level <span class="fa arrow"></span></a>--}}
-                                {{--<ul class="nav nav-third-level">--}}
-                                    {{--<li>--}}
-                                        {{--<a href="#">Third Level Item</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li>--}}
-                                        {{--<a href="#">Third Level Item</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li>--}}
-                                        {{--<a href="#">Third Level Item</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li>--}}
-                                        {{--<a href="#">Third Level Item</a>--}}
-                                    {{--</li>--}}
-                                {{--</ul>--}}
-                                {{--<!-- /.nav-third-level -->--}}
-                            {{--</li>--}}
-
-
-                        {{--</ul>--}}
-                        {{--<!-- /.nav-second-level -->--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                        {{--<a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>--}}
-                        {{--<ul class="nav nav-second-level">--}}
-                            {{--<li>--}}
-                                {{--<a href="blank.html">Blank Page</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="login.html">Login Page</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                        {{--<!-- /.nav-second-level -->--}}
-                    {{--</li>--}}
-
-
-
-
                 </ul>
             </div>
-            <!-- /.sidebar-collapse -->
         </div>
-        <!-- /.navbar-static-side -->
     </nav>
 
     <div id="page-wrapper">
@@ -383,8 +273,89 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="{{asset('js/all.js')}}"></script>
 
+<script src="{{asset('js/all.js')}}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>
+@if(Session::has('create'))
+    <script>
+        $.confirm({
+            title: 'Congratulation!',
+            content: 'Created Successfully',
+            type: 'green',
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'Thank You',
+                    btnClass: 'btn-green',
+                    action: function(){
+                    }
+                },
+                close: function () {
+                }
+            }
+        });
+    </script>
+@endif
+@if(Session::has('update'))
+    <script>
+        $.confirm({
+            title: 'Congratulation!',
+            content: 'Updated Successfully',
+            type: 'purple',
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'Thank You',
+                    btnClass: 'btn-purple',
+                    action: function(){
+                    }
+                },
+                close: function () {
+                }
+            }
+        });
+    </script>
+@endif
+@if(Session::has('delete'))
+    <script>
+        $.confirm({
+            title: 'Congratulation!',
+            content: 'delete Successfully',
+            type: 'red',
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'Thank You',
+                    btnClass: 'btn-red',
+                    action: function(){
+                    }
+                },
+                close: function () {
+                }
+            }
+        });
+    </script>
+@endif
+<script>
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#photo_id").change(function(){
+        readURL(this);
+    });
+
+</script>
 </body>
 
 </html>

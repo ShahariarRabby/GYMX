@@ -92,7 +92,7 @@
             <li class="" id="">
                 <div class="card">
                     <a href="{{url('/profile')}}">
-                        <div class="cardimg"><img class="card-img-top" src="{{asset(Auth::User()->photo ? ("images/".(Auth::User()->photo->file)):(Auth::User()->profile->gender=="Male"?"images/2.png":"images/1.png"))}}" alt="{{Auth::User()->name}}"></div>
+                        <div class="cardimg"><img id="" class="card-img-top blah" src="{{asset(Auth::User()->photo ? ("images/".(Auth::User()->photo->file)):(Auth::User()->profile->gender=="Male"?"images/2.png":"images/1.png"))}}" alt="{{Auth::User()->name}}"></div>
                     </a>
 
                 </div>
@@ -373,6 +373,27 @@
         });
     </script>
 @endif
+
+<script>
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#photo_id").change(function(){
+        readURL(this);
+    });
+
+</script>
+
 </body>
 
 </html>
