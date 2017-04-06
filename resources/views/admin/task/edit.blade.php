@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group col-sm-6">
-            {!! Form::submit('Create task',['class'=>'btn btn-primary ']) !!}
+            {!! Form::submit('Update task',['class'=>'btn btn-primary ']) !!}
         </div>
         {!! Form::Close() !!}
         {!! Form::open(['method'=>'Delete','action'=>["AdminTaskController@destroy",$tasks->id]]) !!}

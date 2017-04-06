@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group col-sm-6 ">
-            {!! Form::submit('Create card',['class'=>'btn btn-primary ']) !!}
+            {!! Form::submit('Update card',['class'=>'btn btn-primary ']) !!}
         </div>
         {!! Form::Close() !!}
 
