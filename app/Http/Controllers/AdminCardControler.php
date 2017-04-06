@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Card;
+
 use App\Bkash;
 
 use App\Chat;
@@ -19,11 +19,11 @@ use App\User;
 use Carbon\Carbon;
 use App\Card;
 use Illuminate\Http\Request;
-use App\Card;
+
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use App\Card;
+
 
 class AdminCardControler extends Controller
 {
