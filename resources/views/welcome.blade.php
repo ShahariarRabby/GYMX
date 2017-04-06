@@ -77,7 +77,7 @@
             <button class="btns signin" id="signin">Sign In</button>
             <a href="" class="btnl">Free Trial</a>
         </div>
-        <div class="join"><a href="" id="content" class="joinnow ">Join<br>Now</a></div>
+        <div class="join"><a href="{{url('/register')}}" id="content" class="joinnow ">Join<br>Now</a></div>
     </div>
 
 
