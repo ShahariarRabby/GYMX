@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Bkash;
+use App\Bird;
 use App\card;
-use App\User;
 use Illuminate\Http\Request;
 
 class AdminCardControler extends Controller
@@ -18,7 +17,7 @@ class AdminCardControler extends Controller
     {
         //
 
-      return  $card = User::all();
+      return  $card = Bird::all();
       //  return view('admin.payment.card.index',compact('card'));
     }
 
