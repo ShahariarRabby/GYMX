@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('header')
-<i class="fa fa-money" aria-hidden="true"></i>  Payments Summery
+    <i class="fa fa-line-chart" aria-hidden="true"></i>
+  Payments Summery
 @endsection
 @section('content')
 

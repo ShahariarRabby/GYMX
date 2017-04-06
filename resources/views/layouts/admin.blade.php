@@ -11,11 +11,21 @@
 
     <title>Admin</title>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/fav/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" href="{{asset('images/fav/favicon-32x32.png')}}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{asset('images/fav/favicon-16x16.png')}}" sizes="16x16">
+    <link rel="manifest" href="{{asset('images/fav/manifest.json')}}">
+    <link rel="mask-icon" href="{{asset('images/fav/safari-pinned-tab.svg')}}" color="#5bbad5">
+    <link rel="shortcut icon" href="{{asset('images/fav/favicon.ico')}}">
+    <meta name="msapplication-config" content="{{asset('images/fav/browserconfig.xml')}}">
+    <meta name="theme-color" content="#ffffff">
+
+
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/all.css')}}" rel="stylesheet">
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
-
+    <script src="https://use.fontawesome.com/db83305422.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -89,23 +99,29 @@
                     {{--</li>--}}
                     <li>
 
-                        <a href="{{ url('admin/users')}}"><i class="fa fa-wrench fa-fw"></i> User<span class="fa arrow"></span>
+                        <a href="{{ url('admin/users')}}"><i class="fa fa-users" aria-hidden="true"></i>
+                            Users<span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{url('admin/user/details')}}">User Summery</a>
+                                <a href="{{url('admin/user/details')}}"><i class="fa fa-pie-chart" aria-hidden="true"></i>
+                                     User Summery</a>
                             </li>
                             <li>
-                                <a href="{{ url('admin/users/')}}">All Users</a>
+                                <a href="{{ url('admin/users/')}}"><i class="fa fa-address-book" aria-hidden="true"></i>
+                                     All Users</a>
                             </li>
                             <li>
-                                <a href="{{ url('admin/users/create')}}">Create User</a>
+                                <a href="{{ url('admin/users/create')}}"><i class="fa fa-id-card" aria-hidden="true"></i>
+                                     Create User</a>
                             </li>
                             <li>
-                                <a href="{{route('discontinue.index')}}">Discountable User</a>
+                                <a href="{{route('discontinue.index')}}"><i class="fa fa-frown-o" aria-hidden="true"></i>
+                                     Discountable User</a>
                             </li>
                             <li>
-                                <a href="{{url('admin/discontinued')}}">Disconnected User</a>
+                                <a href="{{url('admin/discontinued')}}"><i class="fa fa-times" aria-hidden="true"></i>
+                                     Disconnected User</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -121,7 +137,8 @@
                             Payments<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{url('admin/payments/details')}}">Payment Summery</a>
+                                <a href="{{url('admin/payments/details')}}"><i class="fa fa-pie-chart" aria-hidden="true"></i>
+                                    Payment Summery</a>
                             </li>
                             <li>
                                 <a href="{{route('payment.index')}}"><i class="fa fa-money" aria-hidden="true"></i>
@@ -141,13 +158,15 @@
                                 {{--<a href="{{ url('admin/bkash')}}">Bkash<span class="fa arrow"></span></a>--}}
                                 {{--<ul class="nav nav-third-level">--}}
                                     <li>
-                                        <a href="{{ url('admin/bkash')}}">Bkash</a>
+                                        <a href="{{ url('admin/bkash')}}"><img src="{{asset('images/bkash.jpg')}}" style="height: 15px" aria-hidden="true"></img>
+                                            Bkash</a>
                                     </li>
                                 {{--</ul>--}}
                                 {{--<!-- /.nav-third-level -->--}}
                             {{--</li>--}}
                             <li>
-                                <a href="{{ url('admin/card')}}">Card<span class="fa arrow"></span></a>
+                                <a href="{{ url('admin/card')}}"><i class="fa fa-credit-card" aria-hidden="true"></i>
+                                    Card<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
                                     <li>
                                         <a href="{{ url('admin/card')}}">All Cards</a>
@@ -197,7 +216,7 @@
                     {{--</li>--}}
 
                     <li>
-                        <a href="{{route('package.index')}}"><i class="fa fa-wrench fa-fw"></i> Packages<span class="fa arrow"></span></a>
+                        <a href="{{route('package.index')}}"><i class="fa fa-sitemap fa-fw"></i> Packages<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{route('package.index')}}">All Packages</a>
@@ -210,7 +229,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ url('admin/task')}}"><i class="fa fa-wrench fa-fw"></i> Tasks<span class="fa arrow"></span></a>
+                        <a href="{{ url('admin/task')}}"><i class="fa fa-tasks fa-fw"></i> Tasks<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{ url('admin/task')}}">All Tasks</a>
@@ -224,15 +243,8 @@
 
 
                     <li>
-                        <a href="{{ url('admin/task')}}"><i class="fa fa-wrench fa-fw"></i> Tasks<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{ url('admin/task')}}">All Tasks</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('admin/task')}}">Create Task</a>
-                            </li>
-                        </ul>
+                        <a href="{{ url('admin/chat')}}"><i class="fa fa-envelope fa-fw"></i> Message</a>
+
                     </li>
 
                     {{--<li>--}}

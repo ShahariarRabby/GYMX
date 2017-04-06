@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('header')
-    Create Card
+    Edit  Card
 @endsection
 @section('content')
     {!! Form::model($cards,['method'=>'PATCH','action'=>["AdminCardControler@update",$cards->id]]) !!}

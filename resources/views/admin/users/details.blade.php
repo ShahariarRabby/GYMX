@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('header')
-    <i class="fa fa-money" aria-hidden="true"></i>  Users Summery
+    <i class="fa fa-users" aria-hidden="true"></i>
+    Users Summery
 @endsection
 @section('content')
 
