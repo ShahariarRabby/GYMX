@@ -8,7 +8,7 @@ class Package extends Model
 {
     //
     protected $fillable=[
-        'name','amount','time',
+      'id' , 'name','amount','time',
 
         ];
 }
