@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bird;
+use App\Payment;
 use Illuminate\Http\Request;
 
 class AdminBirdController extends Controller
@@ -16,7 +17,10 @@ class AdminBirdController extends Controller
     {
         //
         //$card = Bird::all();
-        return view('admin.payment.card.index',compact('card'));
+        $payment  = Payment::all();
+     //   return view('admin.payment.payments',compact('card'));
+        return view('admin.payment.card.index',compact('payment'));
+
     }
 
     /**
