@@ -180,6 +180,10 @@
                         <li><a href="{{url('/task')}}"class="manuoption task">Tasks<span id="task" class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
                         <li><a href="{{url('/members')}}" class="manuoption mem">Membes<span id="mem" class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
                         <li><a href="{{url('/payment')}}"class="manuoption pay">Payment Hisory<span id="pay" class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
+                        @if(\Illuminate\Support\Facades\Auth::user()->profile->role == 'Admin')
+                        <li><a href="{{url('/admin')}}"class="manuoption pay">Admin<span id="" class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
+                        @endif
+
                     </ul>
 
                     @yield('tabs1')
@@ -414,7 +418,4 @@
         });
     </script>
 @endif
-
-</body>
-
 </html>

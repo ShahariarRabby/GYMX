@@ -85,11 +85,10 @@ class UserContant extends Controller
 
             $M =($h1 * .3048) +($i * .254);
             $BMI = 0;
-if ($W !=0)
-{
-    $BMI = $W/($M*$M);
-
-}
+            if ($W !=0)
+            {
+             $BMI = $W/($M*$M);
+            }
             $BMI = number_format($BMI, 2, '.', '');
 //            if ($BMI < 18.5){
 //               $msg = "" ;
