@@ -55,7 +55,7 @@ class AdminTaskController extends Controller
        Task::create($request->all());
         Session::flash('create', 'User Update_user');
 
-        return redirect('/admin/task');
+        return redirect('admin/task');
     }
 
     /**
@@ -78,6 +78,7 @@ class AdminTaskController extends Controller
     public function edit(task $task)
     {
         //
+        $task= $task->id;
         $tasks = Task::findOrFail($task);
         Session::flash('edit', 'User Update_user');
 
@@ -93,6 +94,7 @@ class AdminTaskController extends Controller
      */
     public function update(Request $request, task $task)
     {
+        $task = $task->id;
        Task::findOrFail($task)->update($request->all());
         Session::flash('update', 'User Update_user');
 
@@ -107,7 +109,9 @@ class AdminTaskController extends Controller
      */
     public function destroy(task $task)
     {
+        $task = $task->id;
         Task::findOrFail($task)->delete();
+        Session::flash('delete', 'User Update_user');
         return redirect('admin/task');
     }
 }

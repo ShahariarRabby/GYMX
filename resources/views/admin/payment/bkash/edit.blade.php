@@ -36,7 +36,7 @@
 
 
         <div class="form-group  col-sm-6">
-            {!! Form::submit('Update User',['class'=>'btn btn-primary   col-sm-11']) !!}
+            {!! Form::submit('Update bKash',['class'=>'btn btn-primary   col-sm-11']) !!}
         </div>
 
 
@@ -47,7 +47,7 @@
 
 
         <div class="form-group  col-sm-6">
-            {!! Form::submit('Delete User',['class'=>'btn btn-danger col-sm-11']) !!}
+            {!! Form::submit('Delete bKash',['class'=>'btn btn-danger col-sm-11']) !!}
         </div>
         {!! Form::Close() !!}
 

@@ -34,7 +34,7 @@
 
 
         <div class="form-group  col-sm-6">
-            {!! Form::submit('Create Package',['class'=>'btn btn-primary   col-sm-11']) !!}
+            {!! Form::submit('Update  Package',['class'=>'btn btn-primary   ']) !!}
         </div>
 
 
