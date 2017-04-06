@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 
-use App\Card;
+
 use Illuminate\Http\Request;
 
 
@@ -21,7 +21,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-
+use App\Card;
 class AdminCardControler extends Controller
 {
     /**
