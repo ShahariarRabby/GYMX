@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Bkash;
-use App\Card;
+
 use App\Chat;
 use App\Http\Requests\UsersEditRequest;
 use App\Http\Requests\UsersRequest;
@@ -17,6 +17,7 @@ use App\Profile;
 use App\Task;
 use App\User;
 use Carbon\Carbon;
+use App\Card;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
