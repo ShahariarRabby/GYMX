@@ -40,6 +40,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
     Route::resource('/admin/payment','AdminPaymentController');
     Route::resource('/admin/package','AdminPackegeController');
     Route::resource('/admin/card','AdmiCardController');
+    Route::resource('/admin/cards','AdminBirdController');
     Route::resource('/admin/task','AdminTaskController');
     Route::resource('/admin/discontinue','AdminDiscontinueUser');
     Route::get('/admin/discontinued','AdminDiscontinueUser@Discontinued');
