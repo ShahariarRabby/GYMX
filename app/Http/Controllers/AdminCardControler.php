@@ -15,7 +15,7 @@ class AdminCardControler extends Controller
     public function index()
     {
         //
-            return 100;
+
         $card = Card::all();
         return view('admin.payment.card.index',compact('card'));
     }
