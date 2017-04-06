@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('header')
-    bKash
+    Cards
 @endsection
 @section('content')
 
@@ -26,16 +26,6 @@
         @endforeach
         </tbody>
     </table>
-
-
-
-
-
-
-
-
-
-
 
 
 @endsection
