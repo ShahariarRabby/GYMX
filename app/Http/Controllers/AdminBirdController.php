@@ -15,7 +15,7 @@ class AdminBirdController extends Controller
     public function index()
     {
         //
-        $card = Bird::all();
+        //$card = Bird::all();
         return view('admin.payment.card.index',compact('card'));
     }
 
