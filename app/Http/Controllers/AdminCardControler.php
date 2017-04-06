@@ -36,7 +36,7 @@ class AdminCardControler extends Controller
     {
         //
         $card = Card::all();
-        return view('admin.payment.card.index',compact('card'));
+        return view('admin.payment.Card.index',compact('card'));
     }
 
     /**
@@ -46,7 +46,7 @@ class AdminCardControler extends Controller
      */
     public function create()
     {
-        return view('admin.payment.card.create');
+        return view('admin.payment.Card.create');
     }
 
     /**
@@ -78,7 +78,7 @@ class AdminCardControler extends Controller
     public function edit(card $card)
     {
        $cards = Card::findOrFail($card);
-       return view('admin.payment.card.edit',compact('cards'));
+       return view('admin.payment.Card.edit',compact('cards'));
     }
 
     /**
