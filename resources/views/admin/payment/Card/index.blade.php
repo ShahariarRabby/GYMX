@@ -1,4 +1,4 @@
-{{----}}@extends('layouts.admin')--}}
+{{----}}
 {{--@section('header')--}}
 {{--Cards--}}
 {{--@endsection--}}
