@@ -35,7 +35,6 @@ class AdminCardControler extends Controller
     public function index()
     {
         //
-
         $card = Card::all();
         return view('admin.payment.card.index',compact('card'));
     }
@@ -68,10 +67,7 @@ class AdminCardControler extends Controller
      * @param  \App\card  $card
      * @return \Illuminate\Http\Response
      */
-    public function show(card $card)
-    {
-        return redirect('admin/card');
-    }
+
 
     /**
      * Show the form for editing the specified resource.
