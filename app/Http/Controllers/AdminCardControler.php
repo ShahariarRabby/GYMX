@@ -2,8 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\card;
+
+
+use App\Card;
 use Illuminate\Http\Request;
+
+
+use App\Http\Requests\UsersEditRequest;
+use App\Http\Requests\UsersRequest;
+
+
+use App\Task;
+
+use Carbon\Carbon;
+
+
+use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
 
 class AdminCardControler extends Controller
 {
