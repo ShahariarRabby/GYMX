@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,16 +41,16 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-//            'host' => 'db4free.net',
-//            'port' => '3307',
-//            'database' =>'shahariar',
-//            'username' => 'shahariar',
-//            'password' =>'shahariar',
-            'host' => 'localhost',
-            'port' => '3306',
+            'host' => 'db4free.net',
+            'port' => '3307',
             'database' =>'shahariar',
-            'username' => 'root',
-            'password' =>'',
+            'username' => 'shahariar',
+            'password' =>'shahariar',
+//            'host' => 'localhost',
+//            'port' => '3306',
+//            'database' =>'shahariar',
+//            'username' => 'root',
+//            'password' =>'',
             'unix_socket' => '',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
