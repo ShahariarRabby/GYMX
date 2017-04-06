@@ -47,7 +47,7 @@
                 <div class="col-12">
                     <h6>Weight Lift</h6>
                     <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: {{rand(50 , 100)}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-success" role="progressbar" style="width: {{rand(70 , 100)}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
 
@@ -55,7 +55,7 @@
                 <div class="col-12">
                     <h6>Conscious</h6>
                     <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: {{rand(50 , 100)}}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: {{rand(40 , 80)}}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@
                 <div class="col-12">
                     <h6>Running</h6>
                     <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: {{rand(50 , 100)}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-info" role="progressbar" style="width: {{rand(50 , 90)}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
 
