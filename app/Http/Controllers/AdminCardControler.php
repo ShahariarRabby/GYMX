@@ -4,24 +4,26 @@ namespace App\Http\Controllers;
 
 
 
-
-use Illuminate\Http\Request;
-
-
+use App\Bkash;
+use App\Card;
+use App\Chat;
 use App\Http\Requests\UsersEditRequest;
 use App\Http\Requests\UsersRequest;
-
-
+use App\Package;
+use App\Payment;
+use App\Photo;
+//use App\Role;
+use App\Profile;
 use App\Task;
-
+use App\User;
 use Carbon\Carbon;
-
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-use App\Card;
+
 class AdminCardControler extends Controller
 {
     /**
