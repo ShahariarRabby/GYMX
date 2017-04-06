@@ -49,8 +49,8 @@ Route::group(['middleware'=>'admin'],function (){
     Route::get('/admin/chat','AdminMessageController@index');
     Route::post('admin/chat','AdminMessageController@store');
     Route::delete('/admin/chat/{id}','AdminMessageController@destroy');
-
 });
+
 Route::group(['middleware'=>'UserAccess'],function (){
 Route::resource('/users','UsersControler');
     ROute::get('/home','UserContant@index');
@@ -62,7 +62,7 @@ Route::resource('/users','UsersControler');
     ROute::post('/package','UserContant@enablePackage');
     ROute::post('/bkash','UserContant@paymentsbKash');
     ROute::post('/chat','UserContant@chat');
-    //********************************************************
+    //****************************************
     // fake route
     //****************************************
 

@@ -11,6 +11,11 @@
         @include('includes.form_errors')
 
         <div class="form-group">
+            {!! Form::label('id','Package Id: ',['style'=>'margin-right : 20px']) !!}
+            {!! Form::number('id',null,['class'=>'form-control col-2']) !!}
+        </div>
+
+        <div class="form-group">
             {!! Form::label('Name','Package Name: ',['style'=>'margin-right : 20px']) !!}
             {!! Form::text('name',null,['class'=>'form-control col-2']) !!}
         </div>
