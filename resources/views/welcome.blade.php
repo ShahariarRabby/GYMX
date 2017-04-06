@@ -80,10 +80,10 @@
 
     </div>
 
-    {{--<div class="content">--}}
-        {{--<div class="title m-b-md">--}}
-            {{--Shahariar--}}
-        {{--</div>--}}
+    <div class="content">
+        <div class="title m-b-md">
+            oooo
+        </div>
 
         {{--<div class="links">--}}
             {{--<a href="https://fb.me/shahariarrabby">Facebook</a>--}}
@@ -92,7 +92,7 @@
             {{--<a href="https://shahariarrabby.com">Email</a>--}}
             {{--<a href="https://github.com/shahariarrabby">GitHub</a>--}}
         {{--</div>--}}
-    {{--</div>--}}
+    </div>
 </div>
 </body>
 </html>
