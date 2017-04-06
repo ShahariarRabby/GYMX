@@ -2,8 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\task;
+
 use Illuminate\Http\Request;
+
+
+use App\Http\Requests\UsersEditRequest;
+use App\Http\Requests\UsersRequest;
+
+
+use App\Task;
+
+use Carbon\Carbon;
+
+
+use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
 
 class AdminTaskController extends Controller
 {
