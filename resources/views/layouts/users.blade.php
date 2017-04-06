@@ -394,6 +394,27 @@
 
 </script>
 
+@if(Session::has('update'))
+    <script>
+        $.confirm({
+            title: 'Congratulation!',
+            content: 'Updated Successfully',
+            type: 'purple',
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'Thank You',
+                    btnClass: 'btn-purple',
+                    action: function(){
+                    }
+                },
+                close: function () {
+                }
+            }
+        });
+    </script>
+@endif
+
 </body>
 
 </html>
