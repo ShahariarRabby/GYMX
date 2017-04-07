@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
 
 class AdminDiscontinueUser extends Controller
 {

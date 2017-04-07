@@ -8,6 +8,8 @@ use App\Payment;
 use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
 
 class AdminPaymentController extends Controller
 {
