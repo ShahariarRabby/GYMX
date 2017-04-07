@@ -155,28 +155,25 @@
                 "color": "#B0DE09"
             }, {
                 "country": "Package 4",
-                "visits": {{$package4}},
-                "color": "#04D215"
-            }, {
-                "country": "Card",
                 "visits": {{$card}},
+                "color": "#04D215"
+            },
+                {
+                "country": "Card",
+                "visits": {{$bkash}},
                 "color": "#0D8ECF"
             }, {
                 "country": "bKash",
-                "visits": {{$bkash}},
+                "visits": {{$payment}},
                 "color": "#0D52D1"
             }, {
                 "country": "Total Payment",
-                "visits": {{$payment}},
+                "visits": {{$task}},
                 "color": "#2A0CD0"
             }, {
                 "country": "Message",
                 "visits": {{$chat}},
                 "color": "#8A0CCF"
-            }, {
-                "country": "Task",
-                "visits": {{$task}},
-                "color": "#CD0D74"
             }],
             "valueAxes": [{
                 "axisAlpha": 0,
