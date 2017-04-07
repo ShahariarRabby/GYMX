@@ -43,7 +43,7 @@
 
 
         <div class="form-group">
-            {!! Form::label('role_id','Status') !!}
+            {!! Form::label('role_id','Role') !!}
             {!! Form::select('role_id',array(''=>'Choose option','Admin'=>'Admin','User'=>'User'),$roles,['class'=>'form-control']) !!}
         </div>
 
@@ -56,6 +56,10 @@
         <div class="form-group">
             {!! Form::label('is_active','Status') !!}
             {!! Form::select('is_active',array('Active'=>'Active','Not Active'=>'Not Active'),null,['class'=>'form-control']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('confirmed','Confirmed') !!}
+            {!! Form::select('confirmed',array('0'=>'No','1'=>'Yes'),null,['class'=>'form-control']) !!}
         </div>
         <div class="form-group  col-sm-6">
             {!! Form::submit('Update User',['class'=>'btn btn-primary   col-sm-11']) !!}

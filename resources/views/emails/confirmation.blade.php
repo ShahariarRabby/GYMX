@@ -50,6 +50,11 @@
             </tr>
             <tr>
                 <td colspan="2" style="padding:30px 0 0 0;border-top:1px solid #e9edee;color:#9b9fa5">
+                    or copy paste link to confirm this email address: <a style="color:#666d74;text-decoration:none;" href="{{route('confirmation',$token) }}" target="_blank">{{route('confirmation',$token) }}</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding:30px 0 0 0;border-top:1px solid #e9edee;color:#9b9fa5">
                     If you have any questions you can contact us at <a style="color:#666d74;text-decoration:none;" href="mailto:shahariarrabby1@gmail.com" target="_blank">shahariarrabby1@gmail.com</a>
                 </td>
             </tr>

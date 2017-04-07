@@ -42,7 +42,7 @@
     {{--</div>--}}
 
     <div class="form-group">
-        {!! Form::label('role_id','Status') !!}
+        {!! Form::label('role_id','Role') !!}
         {!! Form::select('role_id',array('Admin'=>'Admin','User'=>'User'),'User',['class'=>'form-control']) !!}
     </div>
 

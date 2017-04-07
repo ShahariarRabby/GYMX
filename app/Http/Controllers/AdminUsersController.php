@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use phpDocumentor\Reflection\Types\Null_;
 
 class AdminUsersController extends Controller
 {
@@ -63,8 +64,10 @@ class AdminUsersController extends Controller
         $discontinued = carbon::now()->addDays($time);
         $profile= Profile::create([
             'role' => $request['role_id'],
-            'package_id' =>'1',
+            'package_id' =>$input,
             'discontinued'=>$discontinued,
+            'discontinued'=>$discontinued,
+
         ]);
 
 
@@ -82,6 +85,8 @@ class AdminUsersController extends Controller
         }
         $input['password'] = bcrypt($request->password);
         $input['profile_id'] = $profile->id;
+        $input['confirmed'] = 1;
+        $input['token'] = " ";
         User::create($input);
 
         Session::flash('create','User Update_user');
@@ -207,6 +212,8 @@ class AdminUsersController extends Controller
     {
         //
         $user = User::findOrFail($id);
+        $profile = $user->profile_id;
+        $profile = Profile::findOrFail($profile);
         if($user->photo_id !=""){
            unlink(public_path().'/images/'.$user->photo->file);
 
@@ -214,6 +221,7 @@ class AdminUsersController extends Controller
             $photo->delete();
         }
         $user->delete();
+        $profile->delete();
         Session::flash('delete','User Deleted');
 
         return redirect('admin/users');
