@@ -34,7 +34,7 @@ Auth::routes();
 //});
 Route::get('/logout', 'Auth\LoginController@logout');
 
-Route::group(['middleware'=>'admin'],function (){
+//Route::group(['middleware'=>'admin'],function (){
     Route::resource('/admin/users','AdminUsersController');
     Route::resource('/admin/bkash','AdminBkashController');
     Route::resource('/admin/payment','AdminPaymentController');
@@ -49,7 +49,7 @@ Route::group(['middleware'=>'admin'],function (){
     Route::get('/admin/chat','AdminMessageController@index');
     Route::post('admin/chat','AdminMessageController@store');
     Route::delete('/admin/chat/{id}','AdminMessageController@destroy');
-});
+//});
 
 Route::group(['middleware'=>'UserAccess'],function (){
 Route::resource('/users','UsersControler');
