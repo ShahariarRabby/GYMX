@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('photo_id')->nullable();
             $table->string('is_active')->default('Not Active');
+            $table->boolean('verified')->default(false);
+            $table->string('token', 40)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
