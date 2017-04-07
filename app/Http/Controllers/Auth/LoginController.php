@@ -42,7 +42,7 @@ class LoginController extends Controller
 
     protected function credentials(Request $request)
     {
-        return $request->only($this->username(), 'password') + ['confirmed'=> true];
+        return $request->only($this->username(), 'password') + ['confirmed'=> false];
     }
 
 }
