@@ -24,6 +24,7 @@ Route::get('/name', function () {
    // return dd($pro);
     return dd($user);
 });
+Route::get('users/confirm/{token}','Auth\RegisterController@Confirmation')->name('confirmation');
 
 
 Auth::routes();

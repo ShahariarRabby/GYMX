@@ -89,24 +89,63 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function register(Request $request)
-    {
-        $this->validator($request->all())->validate();
+//    public function register(Request $request)
+//    {
+//        $this->validator($request->all())->validate();
+//
+//        event(new Registered($user = $this->create($request->all())));
+//
+//        Mail::to($user->email)->send(new ConfirmationAccount($user));
+//
+//        return back()->with('status', 'Please confirm your email address.');
+//
+//        // $this->guard()->login($user);
+//        // return redirect($this->redirectPath());
+//    }
+//
+//    public function confirmEmail($token)
+//    {
+//        User::whereToken($token)->firstOrFail()->hasVerified();
+//
+//        return redirect('login')->with('status', 'You are now confirmed. Please login.');
+//    }
 
-        event(new Registered($user = $this->create($request->all())));
+    protected function register(Request $request){
+        $input = $request->all();
+        $validator = $this->validator($input);
+        if ($validator->passes()){
 
-        Mail::to($user->email)->send(new ConfirmationAccount($user));
+            $data = $this->create($input)->toArray();
+            $data['token'] = str_random(25);
+            $user = User::find($data['id']);
+            $user->token = $data['token'];
+            $user->save();
+            Mail::send('emails.confirmation',$data,function ($message) use($data){
+                $message->to($data['email']);
+                $message->subject('GYMX  Account Confirmation Mail');
+            });
+            return redirect(route('login'))->with('status', 'Please confirm your email address.');
+        }
+        // return redirect(route('register'))->with('errors',$validator->errors());
+        return back()->with('errors',$validator->errors());
 
-        return back()->with('status', 'Please confirm your email address.');
-
-        // $this->guard()->login($user);
-        // return redirect($this->redirectPath());
     }
 
-    public function confirmEmail($token)
+    public function Confirmation($token)
     {
-        User::whereToken($token)->firstOrFail()->hasVerified();
+//        User::whereToken($token)->firstOrFail()->hasVerified();
+//
+//        return redirect('login')->with('status', 'You are now confirmed. Please login.');
+        $user= User::whereToken($token)->first();
 
-        return redirect('login')->with('status', 'You are now confirmed. Please login.');
+        if (!is_null($user)){
+            $user->confirmed = 1;
+            $user->token = "";
+            $user->save();
+            return redirect('login')->with('status', 'You are now confirmed. Please login.');
+        }
+
+        return redirect('login')->with('status', 'Something is wrong');
     }
+
 }
