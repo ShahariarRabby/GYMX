@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -48,7 +48,7 @@ return [
 //            'password' =>'shahariar',
             'host' => 'localhost',
             'port' => '3306',
-            'database' =>'shahariar',
+            'database' =>'shahariar1',
             'username' => 'root',
             'password' =>'',
             'unix_socket' => '',
