@@ -148,7 +148,7 @@
                                                 <img src="{{asset('images/click.jpg')}}" width="56" height="60" border="0" />
                                             </a>
                                         </td>
-                                        <td width="359" align="left" valign="middle" style="font-size: 21px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; color:#FFFFFF;">to check your <strong>FREE</strong> subscriptions</td>
+                                        <td width="359" align="left" valign="middle" style="font-size: 21px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; color:#FFFFFF;">to active your <strong>GYMX</strong> account</td>
                                     </tr>
                                 </table>
                                 <table width="540" bgcolor="#57BFBA" border="0" align="center" cellpadding="0" cellspacing="0">
