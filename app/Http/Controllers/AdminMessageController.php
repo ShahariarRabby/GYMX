@@ -22,7 +22,7 @@ class AdminMessageController extends Controller
         $request['name']='Admin';
         $message =  $request->all();
         Chat::create($message);
-        Session::flash('create', 'User Update_user');
+        //Session::flash('create', 'User Update_user');
         return redirect('/admin/chat');
     }
 
