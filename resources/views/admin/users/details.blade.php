@@ -39,7 +39,6 @@
                 ['Not Active',  {{$notActive}}],
                 ['{{\App\Package::find(2)->name}}',  {{$package2}}],
                 ['{{\App\Package::find(3)->name}}',  {{$package3}}],
-
             ]);
 
             var options = {

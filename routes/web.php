@@ -24,6 +24,13 @@ Route::get('/name', function () {
    // return dd($pro);
     return dd($user);
 });
+Route::get('/mail', function () {
+
+
+   // $pro = $user->profile->all();
+   // return dd($pro);
+    return view('emails.pass');
+});
 Route::get('users/confirm/{token}','Auth\RegisterController@Confirmation')->name('confirmation');
 
 
