@@ -39,8 +39,6 @@
                 ['Not Active',  {{$notActive}}],
                 ['{{\App\Package::find(2)->name}}',  {{$package2}}],
                 ['{{\App\Package::find(3)->name}}',  {{$package3}}],
-                ['{{\App\Package::find(4)->name}}',  {{$package4}}],
-                ['Upcoming Pack',  {{$package5}}]
 
             ]);
 
