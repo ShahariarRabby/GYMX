@@ -158,6 +158,7 @@
                         <label style="font-size: small">
                             <input type="checkbox" name="remember"> Remember
                         </label>
+
                     </div>
                 </div>
             </div>
@@ -168,7 +169,7 @@
                     </button>
                 <button type="submit" class="btnl signin col">Cancel</button>
                     {{--<a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>--}}
-
+                <a class="btn btn-link"  style="font-size: small;color: whitesmoke" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
             </div>
             {{--<div class="form-group row">--}}
                 {{--<button type="submit" class="btns col"><a href="https://facebook.com">Sign in</a></button>--}}
