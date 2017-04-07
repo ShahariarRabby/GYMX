@@ -165,14 +165,14 @@
                             <td width="115" height="40" align="center" valign="middle">
                                 <img src="{{asset('images/welcome/logoblk.png')}}" width="100%" height="32" border="0" />
                             </td>
-                            <td width="485" align="center" style="font-family: Arial, Helvetica, sans-serif; color: #333333; font-weight: bold; font-size: 10px; padding: 15px">If you are unable to see the image click the link bellow to active your account
+                            <td width="485" align="center" style="font-family: Arial, Helvetica, sans-serif; color: #333333; font-weight: bold; font-size: 10px; padding: 15px">If you are unable to see the image click Or paste the link bellow into your browser to active your account
                                 <br><a style="color:#666d74;text-decoration:none;" href="{{route('confirmation',$token) }}" target="_blank">{{route('confirmation',$token) }}</a>
                         </tr>
                     </table>
                     <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
                         <tr>
                             <td height="27" align="center" style="font-family: Arial, Helvetica, sans-serif; color: #333333; font-weight: bold; font-size: 10px; padding: 15px">This message was sent to {{$email}}; We hope you found it relevant. However, if you think this is a mistake, then please ignore this Email. Click
-                                <a href="{{url('/')}}" target="_blank">here</a> for get more information about GYMX.
+                                <a href="{{url('/')}}" target="_blank">here</a> to get more information about GYMX.
                             </td>
                         </tr>
                         <tr>
