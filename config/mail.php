@@ -86,7 +86,7 @@ return [
 
     'username' => 'shahariarrabby1@gmail.com',
 
-    'password' => 'rabby.ml',
+    'password' => 'rabby.ml1',
 
     /*
     |--------------------------------------------------------------------------
