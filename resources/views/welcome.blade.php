@@ -44,22 +44,45 @@
                     <a class="" href="#headerhome">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="">
-                    <a class="" href="#howworks">Fitness</a>
+                    <a class="" href="{{url('#howworks')}}">Fitness</a>
                 </li>
                 <li class="">
-                    <a class="" href="#">CLASSES</a>
+                    <a class="" href="#Gallery">Gallery</a>
                 </li>
                 <li class="">
-                    <a class="" href="#">SCHEDULE</a>
+                    <a class="" href="#testimonial">Opinion</a>
+                </li>
+                {{--<li class="">--}}
+                    {{--<a class="" href="#trial">registration</a>--}}
+                {{--</li>--}}
+                <li class="">
+                    <a class="" href="#Packages">Packages</a>
                 </li>
                 <li class="">
-                    <a class="" href="#">ELEMENTS</a>
+                    <a class="" href="#aboutus">About Us</a>
                 </li>
+                    @if (Auth::guest())
+                    <li class="">
+                        <a href="{{url('/login')}}">Login</a>
+                    </li>
+                    <li class="">
+                        <a href="#trial">Register</a>
+                    </li>
+                    @else
+                    <li class="">
+                        <a href="/home" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a>
+                    </li>
+                    @endif
+
+
                 <li class="">
-                    <a class="" href="#">FEATURES</a>
-                </li>
-                <li class="">
-                    <a class="signin " id="navnone" href="#">Sign in</a>
+
+                    <a class=" " id="" href="{{url('/login')}}">Sign in</a>
                 </li>
             </ul>
         </div>
@@ -82,7 +105,13 @@
             {{ csrf_field() }}
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} row">
                 {{--<label for="email" class="col-md-4 control-label">E-Mail Address</label>--}}
-
+                <style>
+                    /* Change the white to any color ;) */
+                    input:-webkit-autofill {
+                        -webkit-box-shadow: 0 0 0px 1000px #1E222C inset;
+                        -webkit-text-fill-color: white !important;
+                    }
+                </style>
                 {{--<div class="col-md-6">--}}
                     {{--<input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">--}}
                     <input type="email" required class="col-12" id="inputEmail3" name="email" value="{{ old('email') }}" placeholder="Email">
@@ -210,7 +239,7 @@
     </div>
 </section>
 <!--**************************************************************************************-->
-<section class="howworks">
+<section id="howworks" class="howworks">
     <div class="row">
         <div class="col-lg-6 col-12 picbox" style=""><img src="{{asset('images/welcome/fitness-about.png')}}" class="pic  animated bounceInUp" alt="">
             <div class="rt-fitness">All <span style="font-weight: 600">About</span>
@@ -268,7 +297,7 @@
 
     <div>
         <h5 class="photoline"><i class="fa fa-smile-o" aria-hidden="true"></i>
-            <br>Test More Then It Looks
+            <br>Works More Then It Looks
             <br>
         </h5>
     </div>
@@ -287,7 +316,7 @@
 
                 <blockquote>
                     xt of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-                    <cite><img src="{{asset('images/welcome/g3.jpg')}}" alt="">Alberto Duncan</cite>
+                    <cite><img src="{{asset('images/welcome/g3.jpg')}}" alt="">Ema Watson</cite>
                 </blockquote>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-12">
@@ -295,14 +324,14 @@
 
                 <blockquote>
                     g Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look lpsum as their default m
-                    <cite><img src="{{asset('images/welcome/1.jpg')}}" alt="">Joana Silva</cite>
+                    <cite><img src="{{asset('images/welcome/1.jpg')}}" alt="">Iffat Ali</cite>
                 </blockquote>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-12">
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                 <blockquote>
                     majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passaext. All the Lorem Ipsum generators on the Internet tend to repe
-                    <cite><img src="{{asset('images/welcome/2.jpg')}}" alt="">Milton Chapman</cite>
+                    <cite><img src="{{asset('images/welcome/2.jpg')}}" alt="">Shakib Khan</cite>
                 </blockquote>
             </div>
         </div>
@@ -312,7 +341,7 @@
 
 <!---**************************************************-->
 
-<section class="trial">
+<section id="trial" class="trial">
     <div class="container">
         <div class="row bgimg">
             <div class="col-lg-6 col-12 bgimg1"></div>
@@ -340,13 +369,18 @@
     </div>
 </section>
 <!--*************************************************-->
-<section>
+<section id="Packages">
     <div class="container-flud">
         <div class="row">
             <div class="col-12">
-
+                <style>
+                    #Packages a:active{
+                        color: white;
+                        text-decoration: none;
+                    }
+                </style>
                 <div class="memebership">
-                    <h3 class="title-separator title " s><span>MEMBERSHIP</span></h3></div>
+                    <h3 class="title-separator title " s><span>PACKAGES</span></h3></div>
 
             </div>
         </div>
@@ -355,11 +389,11 @@
 
                 <div class="row ">
                     <div class="col-lg-6 col-12 card animated pulse">
-                        <h1>$48.99</h1>
+                        <h1>&#2547; 3000</h1>
                         <div class="card-block">
                             <h4 class="card-title">PER MONTH</h4>
                             <p class="card-text">Smajority have isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repe</p>
-                            <a href="#" class="">LEARN MORE</a>
+                            <a href="{{url('/register')}}" class="">REGISTER NOW</a>
                         </div>
                     </div>
                 </div>
@@ -368,11 +402,11 @@
 
                 <div class="row ">
                     <div class="col-lg-6 col-12 card ">
-                        <h1>$178.99</h1>
+                        <h1>&#2547; 15000</h1>
                         <div class="card-block">
                             <h4 class="card-title">PER YEAR</h4>
                             <p class="card-text">majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are </p>
-                            <a href="#" class="">LEARN MORE</a>
+                            <a href="{{url('/register')}}" class="">REGISTER NOW</a>
                         </div>
                     </div>
                 </div>
@@ -383,7 +417,7 @@
 </section>
 <!--*****************************************************************-->
 
-<section class="aboutus">
+<section id="aboutus" class="aboutus">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12">
