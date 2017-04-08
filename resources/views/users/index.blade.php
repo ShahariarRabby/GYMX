@@ -2,6 +2,9 @@
 @section('title')
     Home
 @endsection
+@section('userSummery')
+    @include('users.userSummery')
+@endsection
 @section('tabs1')
     <div id="tabs-5">
 

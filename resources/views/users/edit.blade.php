@@ -2,7 +2,15 @@
 @section('title')
     Update Profile
 @endsection
+@section('userSummery')
+    @include('users.userSummery')
+@endsection
 @section('tabs1')
+    <style>
+        #dash{
+            display: none;
+        }
+    </style>
     <div id="tabs-1">
     {!! Form::model($profile,['class'=>"container about",'method'=>'PATCH','action'=>["UsersControler@update",$user->id],'files'=>true]) !!}
 
@@ -56,7 +64,7 @@
                             Height:
                         </lable>
                         <div class="col-7">
-                            {!! Form::number('height',null,['class'=>'form-control','required','step'=>"any"]) !!}
+                            {!! Form::number('height',null,['class'=>'form-control','required','step'=>"any",'placeholder'=>'in Meter']) !!}
 
                             {{--<input class="form-control" type="number_format" name="height" value="" id="" required>--}}
                         </div>
@@ -68,7 +76,7 @@
                             Weight:
                         </lable>
                         <div class="col-7">
-                            {!! Form::number('weight',null,['class'=>'form-control','required','step'=>"any"]) !!}
+                            {!! Form::number('weight',null,['class'=>'form-control','required','step'=>"any",'placeholder'=>'in Kg']) !!}
 
                             {{--<input class="form-control" type="number" name="weight" value="" id="" required>--}}
                         </div>
@@ -88,11 +96,7 @@
                             Gender:
                         </lable>
                         <div class="col-7">
-                            <select class="form-control" name="gender" id="exampleSelect1">
-                                <option value="0">I don't know</option>
-                                <option value="Female">Female</option>
-                                <option value="Male">Male</option>
-                            </select>
+                            {!! Form::select('gender',array('0'=>'Other','Female'=>'Female','Male'=>'Male'),null,['class'=>'form-control']) !!}
                         </div>
                     </div>
 

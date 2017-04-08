@@ -7,6 +7,7 @@ use App\Http\Requests\ProfileEditReques;
 use App\Profile;
 use App\User;
 use App\Photo;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -75,7 +76,52 @@ class UsersControler extends Controller
     public function show($id)
     {
         //
-        return view('errors.404');
+        $user = User::find($id);
+        if($user){
+
+            $dob = $user->profile->dob;
+
+            $today = new DateTime();
+            $birthdate = new DateTime($dob);
+            $interval = $today->diff($birthdate);
+            $age =  $interval->format('%y');
+
+
+
+
+            $H = $user->profile->height;
+            $W = $user->profile->weight;
+            $h1 = floor($H);
+            $i = $H -$h1;
+            $i = $i*100;
+
+            $M =($h1 * .3048) +($i * .0254);
+            $BMI = 0;
+            if ($W !=0)
+            {
+                $BMI = $W/($M*$M);
+            }
+            $BMI = number_format($BMI, 2, '.', '');
+//            if ($BMI < 18.5){
+//               $msg = "" ;
+//            }
+            /// return $BMI . $H . $W;
+            //  return  $IdealWeight =(0.5 * $BMI +11.5)*$M*$M;
+            // return $IdealWeight =$BMI * $M*$M;
+            //   $Calorie_Needs_per_Day =66.67+(13.75*$W)+(5*$H)-(6.76*$age);
+
+//            $H = $user->profile->height;
+//            $W = $user->profile->weight;
+//            $BMI = $W/($H*$H);
+//            $IdealWeight =(0.5 * $BMI +11.5)*$H*$H;
+            //  $Calorie_Needs_per_Day =66.67+(13.75*$W)+(5*$H)-(6.76*$age);
+            // return $height.'<br>'.$weight;
+            return view('users.userprofile',compact('user','age','BMI'));
+
+
+        }
+        return 10;
+
     }
 
     /**

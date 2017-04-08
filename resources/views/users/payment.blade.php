@@ -2,6 +2,9 @@
 @section('title')
     Payments
 @endsection
+@section('userSummery')
+    @include('users.userSummery')
+@endsection
 @section('tabs1')
 
     <style>

@@ -404,5 +404,39 @@ nav:hover {
 #sidebar .sidebarmanu .sub-menu {
   display: none;
 }
+.tabManuMoveToNav{
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */
+
+
+/*media query*/
+
+@media only screen and (max-width: 767px) {
+  #sidebar,#userprofile,.marquee{
+  display: none;
+}
+
+}
+@media only screen and (max-width: 480px) {
+  #tabmanus {
+    display: none;
+  }
+
+  .tabManuMoveToNav {
+    display: block;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  #sidebar{
+    display: none;
+  }
+
+  .userprofile .usersummery .spacer .usersmr .userimg:hover {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+}

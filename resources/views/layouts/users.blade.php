@@ -47,18 +47,19 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="/"><img src="{{asset('/images/welcome/logoblk.png')}}" alt=""></a>
+        <a class="navbar-brand"  href="/"><img  src="{{asset('/images/welcome/logoblk.png')}}" alt=""></a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Link</a>
-                </li>
-
-
+                <li class="nav-item tabManuMoveToNav">
+                    <a href="{{url('/home')}}"class="nav-link">Dashbord</a></li>
+                <li class="nav-item tabManuMoveToNav"><a href="{{url('/profile')}}"class="nav-link">Profile</a></li>
+                <li class="nav-item tabManuMoveToNav"><a href="{{url('/task')}}"class="nav-link">Tasks</a></li>
+                <li class="nav-item tabManuMoveToNav"><a href="{{url('/members')}}" class="nav-link">Membes</a></li>
+                <li class="nav-item tabManuMoveToNav"><a href="{{url('/payment')}}"class="nav-link">Payment Hisory</a></li>
+                @if(\Illuminate\Support\Facades\Auth::user()->profile->role == 'Admin')
+                    <li class="nav-item tabManuMoveToNav"><a href="{{url('/admin')}}"class="nav-link">Admin</a></li>
+                @endif
             </ul>
             {{--<form class="form-inline my-2 my-lg-0">--}}
                 {{--<input class="form-control mr-sm-2" type="text" placeholder="Search">--}}
@@ -68,11 +69,11 @@
             <ul class=" form-inline my-2 my-lg-0" style="list-style: none" >
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li ><a href="{{ url('/login') }}" class="nav-link">Login</a></li>
+                    <li><a class="nav-link" href="{{ url('/register') }}">Register</a></li>
                 @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <li class="dropdown nav-item">
+                        <a href="/profile" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
@@ -156,7 +157,7 @@
 <div class="container">
     {{--<div class="row userprofile">--}}
     @yield('userSummery')
-    @include('users.userSummery')
+
         <div class="col-lg-9 col-md-8 col-12" id="usercotent">
             <div class="spacer">
                 <div id="tabs">
@@ -174,7 +175,7 @@
                             display: none;
                         }
                     </style>
-                    <ul class="tabmanu">
+                    <ul id="tabmanus" class="tabmanu">
                         <li><a href="{{url('/home')}}"class="manuoption dash">Dashbord<span id="dash" class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
                         <li><a href="{{url('/profile')}}"class="manuoption pro">Profile<span id="pro"  class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>
                         <li><a href="{{url('/task')}}"class="manuoption task">Tasks<span id="task" class="menu-active none"><i class="fa fa-caret-up"></i></span></a></li>

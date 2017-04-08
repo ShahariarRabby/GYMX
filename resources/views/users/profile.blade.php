@@ -2,6 +2,9 @@
 @section('title')
     {{$user->name}}
 @endsection
+@section('userSummery')
+    @include('users.userSummery')
+@endsection
 @section('tabs1')
 
 <div id="tabs-1">
@@ -22,6 +25,9 @@
         #pro{
             display: block;
         }
+       #userprofile{
+               display: block;
+           }
     </style>
 
 

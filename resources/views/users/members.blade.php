@@ -3,6 +3,9 @@
 @section('title')
     Members
 @endsection
+@section('userSummery')
+    @include('users.userSummery')
+@endsection
 @section('tabs1')
 
     <style>
@@ -22,7 +25,7 @@
         <div class="row">
             @foreach($members as $members)
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-2 membercard">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12 membercard">
                 <div class="member">
                     <ul class="">
 
@@ -31,10 +34,9 @@
                         <li>
 
 
-                            <a href="#">
+                            <a href="{{url('/users',$members->id)}}" style="text-decoration: none;color: black">
                                 <span class="menu-icon"><img src="{{asset($members->photo ? ("images/".($members->photo->file)):($members->profile->role=="Admin"?"images/2.png":"images/1.png"))}}" alt="{{$members->name}}" >
                                 </span>
-                            </a>
                             <span class="menu-text"> {{$members->name}}
                                                             <span class="menu-info">
                                                                 <span class="menu-action">
@@ -48,6 +50,7 @@
                                                                 </span>
                                                             </span>
                                                         </span>
+                            </a>
                         </li>
 
 
@@ -58,6 +61,7 @@
 
 
             </div>
+
             @endforeach
 
 
