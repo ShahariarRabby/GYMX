@@ -122,7 +122,7 @@
                     <div class="form-group row">
                         {!! Form::label('password','Password',['class' => 'col-5 col-form-label']) !!}
                         <div class="col-7">
-                            {!!  Form::password('password', ['class' => 'form-control','id'=>'password','required']) !!}
+                            {!!  Form::password('password', ['class' => 'form-control','id'=>'password']) !!}
 
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                         {!! Form::label('password','Confirm Password',['class' => 'col-5 col-form-label']) !!}
                         <div class="col-7">
 
-                            {!!  Form::password('confirm_password', ['class' => 'form-control','id'=>'confirm_password','required']) !!}
+                            {!!  Form::password('confirm_password', ['class' => 'form-control','id'=>'confirm_password']) !!}
 
                         </div>
                         <spam id="message"></spam>

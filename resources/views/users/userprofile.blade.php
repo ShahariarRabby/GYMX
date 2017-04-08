@@ -10,7 +10,7 @@
             <div class="spacer">
                 <div class="row usersmr">
                     <div class="col-12 img">
-                        <img class="userimg blah" id="blah"   src="{{asset($user->photo ? ("images/".($user->photo->file)):$user->profile->gender=="Male"?"images/2.png":"images/1.png")}}" alt="{{$user->name}}">
+                        <img class="userimg blah" id="blah"   src="{{asset($user->photo ? ("images/".($user->photo->file)):($user->profile->role=="Admin"?"images/2.png":"images/1.png"))}}" alt="{{$user->name}}">
                     </div>
                 </div>
 
@@ -94,7 +94,7 @@
             <div class="row userhead">
 
                 <div class="htag">
-                    <h3 class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{$user->name}}</h3>
+                    <h3 class=""><i class="fa fa-user-circle-o" aria-hidden="true"></i>{{$user->name}}</h3>
                 </div>
             </div>
             <div class="row userdetails">

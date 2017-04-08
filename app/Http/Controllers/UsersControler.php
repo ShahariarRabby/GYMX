@@ -155,26 +155,32 @@ class UsersControler extends Controller
      */
     public function update(ProfileEditReques $request, $id)
     {
-        //
-//$request->all();
+        $user = User::findOrFail($id);
 
-         $user = User::findOrFail($id);
-        $profile= Profile::findOrFail($user->profile_id);
+        $profile = Profile::findOrFail($user->profile_id);
 
 
+
+        if(trim($request->password )==""){
+            $input = $request->except('password');
+
+        }else{
             $input = $request->all();
-
             $input['password'] = bcrypt($request->password);
+
+        }
+
+
+
+
+
         if ($file = $request->file('photo_id')){
             if($user->photo_id !=""){
-               unlink(public_path().'/images/'.$user->photo->file);
+                unlink(public_path().'/images/'.$user->photo->file);
                 $photo = Photo::findOrFail($user->photo_id);
                 $photo->delete();
             }
 
-
-
-            //  $input = $request->all();
 
             $name = time() . $file->getClientOriginalName();
             $file->move('images',$name);
@@ -182,8 +188,41 @@ class UsersControler extends Controller
             $input['photo_id'] = $photo->id;
         }
 
-         $user ->update($input);
-         $profile ->update($input);
+
+        $user ->update($input);
+        $input = $request->except('photo_id');
+        $profile->update($input);
+
+
+
+        //
+//$request->all();
+        //         $user = User::findOrFail($id);
+//        $profile= Profile::findOrFail($user->profile_id);
+//
+//
+//            $input = $request->all();
+//
+//            $input['password'] = bcrypt($request->password);
+//             if ($file = $request->file('photo_id')){
+//            if($user->photo_id !=""){
+//               unlink(public_path().'/images/'.$user->photo->file);
+//                $photo = Photo::findOrFail($user->photo_id);
+//                $photo->delete();
+//            }
+//
+//
+//
+//            //  $input = $request->all();
+//
+//            $name = time() . $file->getClientOriginalName();
+//            $file->move('images',$name);
+//            $photo=Photo::create(['file'=>$name]);
+//            $input['photo_id'] = $photo->id;
+//        }
+//
+//         $user ->update($input);
+//         $profile ->update($input);
         Session::flash('update', 'User Update_user');
 
         return redirect('/profile');
