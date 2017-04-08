@@ -529,6 +529,7 @@ i {
     /*animation-delay: 10s;*/
 }
 .sticky{
+
     position: fixed;
     top: 0;
     left: 0;

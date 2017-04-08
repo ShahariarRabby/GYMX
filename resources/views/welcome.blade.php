@@ -40,7 +40,7 @@
 
 <body>
 <header id="headerhome">
-    <nav class="sticky">
+    <nav class="">
         <a class="logo " >
             <img class="w" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
             <img class="ww" src="{{asset('images/welcome/gymx_logo_3.png')}}" alt="">
