@@ -54,7 +54,7 @@
             <tbody>
             <tr>
                 <td align="center" class="vervelogoplaceholder" height="143" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;height:143px;vertical-align:middle;" valign="middle"><span class="sg-image" data-imagelibrary="%7B%22width%22%3A%22160%22%2C%22height%22%3A34%2C%22alt_text%22%3A%22Verve%20Wine%22%2C%22alignment%22%3A%22%22%2C%22border%22%3A0%2C%22src%22%3A%22https%3A//marketing-image-production.s3.amazonaws.com/uploads/79d8f4f889362f0c7effb2c26e08814bb12f5eb31c053021ada3463c7b35de6fb261440fc89fa804edbd11242076a81c8f0a9daa443273da5cb09c1a4739499f.png%22%2C%22link%22%3A%22%23%22%2C%22classes%22%3A%7B%22sg-image%22%3A1%7D%7D">
-                        <a href="{{route('/')}}" target="_blank">
+                        <a href="{{url('/')}}" target="_blank">
                             <img alt="Verve Wine" height="34" src="{{asset('/images/welcome/logoblk.png')}}" style="border-width: 0px; width: 160px; height: 34px;" width="160"></a></span></td>
             </tr>
             <!-- Start of Email Body-->
