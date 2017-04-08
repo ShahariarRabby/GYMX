@@ -17,6 +17,11 @@
 
 body::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
+}
+body::-webkit-scrollbar-track-piece{
+    background: none;
+    color: transparent;
 }
 body::-webkit-scrollbar-thumb {
     background: -webkit-linear-gradient(top, #ee8B00, #FB5B21);
