@@ -104,7 +104,7 @@
         <div class="middeltext">
             <h1 >CHALLENGE <br>YOURSELF</h1>
             <span class="dash"></span>
-            <p>Challenge yourself at gym x with your daily dose of fitness using functional movements performed at high intensity. It time to go beyond your limits and discover your personal potential now </p>
+            <p id="content">Challenge yourself at gym x with your daily dose of fitness using functional movements performed at high intensity. It time to go beyond your limits and discover your personal potential now </p>
             <button class="btns signin" id="signin">Sign In</button>
             <a href="#trial" class="btnl">Free Trial</a>
         </div>
