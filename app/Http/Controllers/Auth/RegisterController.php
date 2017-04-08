@@ -124,7 +124,7 @@ class RegisterController extends Controller
                 $message->to($data['email']);
                 $message->subject('GYMX  Account Confirmation Mail');
             });
-            return redirect(route('login'))->with('status', 'Please confirm your email address.');
+            return redirect(route('login'))->with('statusConfirm', 'Please confirm your email address.');
         }
         // return redirect(route('register'))->with('errors',$validator->errors());
         return back()->with('errors',$validator->errors());
@@ -142,7 +142,7 @@ class RegisterController extends Controller
             $user->confirmed = 1;
             $user->token = "";
             $user->save();
-            return redirect('login')->with('status', 'You are now confirmed. Please login.');
+            return redirect('login')->with('statusVerified', 'You are now confirmed. Please login.');
         }
 
         return redirect('login')->with('status', 'Something is wrong');
