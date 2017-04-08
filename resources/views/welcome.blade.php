@@ -10,8 +10,14 @@
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous">
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>--}}
+    {{--<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>--}}
+    {{--<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>--}}
+    {{--<script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>--}}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -27,19 +33,142 @@
     {{--<link rel="stylesheet" href="sass/style.css">--}}
     {!! Html::style( asset('css/animation.css')) !!}
     {!! Html::style( asset('css/style.css')) !!}
+    <style>
+        .opacity{
+            opacity: 0;
+        }
+         .animated.opacity{
+            opacity: 1!important;
 
+            /*animation-delay: 10s;*/
+        }
+        .animated.yearmoney{
+
+            animation-duration: 3s;
+            /*animation-delay: 10s;*/
+        }
+        .sticky{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, .8);
+            box-shadow: 0 4px 53px #e3e3e3;
+            z-index: 9999;
+        }
+        .sticky .main-nav { margin-top: 18px; }
+
+        .sticky .main-nav li a:link,
+        .sticky .main-nav li a:visited {
+            padding: 16px 0;
+            color: #555;
+        }
+        .sticky .logo { display: none; }
+        .sticky .logo-black { display: block;
+
+
+        }
+        .sticky .main-nav { margin-top: 0px;
+        padding: 0}
+        .sticky ul a:hover{
+
+            text-decoration: none;
+            padding-bottom: 10%;
+            border-bottom: 2px solid #FB5B21;
+            color: white;
+        }
+        .sticky ul a{
+
+            text-decoration: none;
+            padding-bottom: 0;
+
+        }
+        .sticky ul.main-nav{
+
+
+            margin-bottom: 12px;
+
+        }
+
+        .logo-black .ww{
+            display: inline-block;
+            width: auto;
+            height: 20px ;
+            margin: 1.5% 0 0 2%;
+            float: left; }
+
+        .mobile-nav-icon {
+            float: right !important;
+            margin-top: 30px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .mobile-nav-icon i {
+            font-size: 150%;
+
+        }
+
+
+        @media only screen and (max-width: 767px){
+
+            .joinnow{
+                display: none;
+            }
+
+
+            .main-nav { display: none; }
+            .mobile-nav-icon {display: inline-block;}
+
+            .main-nav {
+                float: left;
+                margin-top: 30px;
+                margin-left: 25px;
+            }
+
+            .main-nav li {
+                display: block;
+            }
+
+            .main-nav li a:link,
+            .main-nav li a:visited {
+                display: block;
+                border: 0;
+
+            }
+
+            .sticky .main-nav { margin-top: 10px; }
+
+            .sticky .main-nav li a:link,
+            .sticky .main-nav li a:visited { padding: 10px 0; }
+            .sticky .mobile-nav-icon { margin-top: 10px; }
+            .sticky .mobile-nav-icon i { margin-right: 40px }
+
+
+
+
+        }
+
+        .CHALLENGE .middeltext  span{
+           display: none;
+        }
+
+    </style>
 </head>
 
 <body>
 <header id="headerhome">
-    <nav class="">
+    <nav class="sticky">
         <a class="logo " >
             <img class="w" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
             <img class="ww" src="{{asset('images/welcome/gymx_logo_3.png')}}" alt="">
             <img class="www" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
         </a>
+        <a class="logo-black " >
+            <img class="ww" src="{{asset('images/welcome/logoblk.png')}}" alt="">
+        </a>
         <div class="" id="">
-            <ul class="">
+            <ul class="main-nav js--main-nav">
                 <li class="">
                     <a class="" href="#headerhome">Home<span class="sr-only">(current)</span></a>
                 </li>
@@ -85,15 +214,17 @@
                     {{--<a class=" " id="" href="{{url('/login')}}">Sign in</a>--}}
                 {{--</li>--}}
             </ul>
+            <a class="mobile-nav-icon js--nav-icon"><i class="fa fa-bars" aria-hidden="true"></i></a>
         </div>
     </nav>
 
-    <div class="" id="none">
+    <div  class="CHALLENGE" id="none">
         <div class="middeltext">
-            <h1>CHALLENCGE <br>YOURSELF</h1><span class="dash"></span>
+            <h1 >CHALLENGE <br>YOURSELF</h1>
+            <span class="dash"></span>
             <p>Challenge yourself at gym x with your daily dose of fitness using functional movements performed at high intensity. It time to go beyond your limits and discover your personal potential now </p>
             <button class="btns signin" id="signin">Sign In</button>
-            <a href="" class="btnl">Free Trial</a>
+            <a href="#trial" class="btnl">Free Trial</a>
         </div>
         <div class="join"><a href="{{url('/register')}}" id="content" class="joinnow ">Join<br>Now</a></div>
     </div>
@@ -204,16 +335,16 @@
 </header>
 <!--*************************************************************************************************-->
 
-<section class="container sndpage ">
+<section id="sticky" class="container sndpage ">
     <div class="card-deck">
         <div class="card">
 
             <div class="card-block">
                 <div class="cardlink">
                     <a class="" href=""><img class="card-img-top" src="{{asset('images/welcome/card1.jpg')}}" alt="Card image cap">
-                        <h4 class="card-title">Cycling & Cardio</h4></a>
+                        <h4 class="card-title">CYCLING & CARDIO</h4></a>
                 </div>
-                <p class="card-text">majority have sufered ion in some form, by inj alteranjected humour,in the middle of text. All the Lorem Ipsum generators rnet tend to repe</p>
+                <p class="card-text">majority have sufered ion in some form, by inj alteranjected form, by inj alteranjected humour,in the middle of text. All the Lorem Ipsum generators rnet tend to repe</p>
             </div>
         </div>
         <div class="card">
@@ -221,7 +352,7 @@
             <div class="card-block">
                 <div class="cardlink">
                     <a class="" href=""><img class="card-img-top" src="{{asset('images/welcome/card2.jpg')}}" alt="Card image cap">
-                        <h4 class="card-title">Card title</h4></a>
+                        <h4 class="card-title">KETTLEBELLS</h4></a>
                 </div>
                 <p class="card-text">majority have suffered alteration in some form, by injected humour, or randomised words ing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repe</p>
             </div>
@@ -231,7 +362,7 @@
             <div class="card-block">
                 <div class="cardlink">
                     <a class="" href=""><img class="card-img-top" src="{{asset('images/welcome/card3.jpg')}}" alt="Card image cap">
-                        <h4 class="card-title">Card title</h4></a>
+                        <h4 class="card-title">BODY PUMP</h4></a>
                 </div>
                 <p class="card-text">majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are gInternet tend to repe</p>
             </div>
@@ -241,7 +372,7 @@
 <!--**************************************************************************************-->
 <section id="howworks" class="howworks">
     <div class="row">
-        <div class="col-lg-6 col-12 picbox" style=""><img src="{{asset('images/welcome/fitness-about.png')}}" class="pic  animated bounceInUp" alt="">
+        <div class="col-lg-6 col-12 picbox" style=""><img src="{{asset('images/welcome/fitness-about.png')}}" class="pic opacity" alt="">
             <div class="rt-fitness">All <span style="font-weight: 600">About</span>
                 <br> Fitness</div>
         </div>
@@ -388,7 +519,7 @@
             <div class="col-lg-6 col-12  month">
 
                 <div class="row ">
-                    <div class="col-lg-6 col-12 card animated pulse">
+                    <div class="col-lg-6 col-12 card ">
                         <h1>&#2547; 3000</h1>
                         <div class="card-block">
                             <h4 class="card-title">PER MONTH</h4>
@@ -401,7 +532,7 @@
             <div class=" col-lg-6 col-12 year">
 
                 <div class="row ">
-                    <div class="col-lg-6 col-12 card ">
+                    <div class="col-lg-6 col-12 card yearmoney opacity">
                         <h1>&#2547; 15000</h1>
                         <div class="card-block">
                             <h4 class="card-title">PER YEAR</h4>
@@ -493,7 +624,7 @@
 
                     <h3 class="contact">CONTACT</h3>
                     <h4><i class="fa fa-phone" aria-hidden="true"></i>
-                        08000 99911122</h4>
+                        015000 00000</h4>
                     <span>Hotline available 24 hours</span>
                     <div class="row">
                         <div class="col-6"><i class="fa fa-facebook-official" aria-hidden="true"></i><span> Facebook</span>
@@ -510,7 +641,7 @@
     </div>
 
     <div class="cent">
-        <p>Copyright &copy; Shahariar Rabby</p>
+        {{--<p>Copyright &copy; Shahariar Rabby</p>--}}
     </div>
 </footer>
 
@@ -529,7 +660,71 @@
         }
     });
 
+    $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 900);
+                    return false;
+                }
+            }
+        });
+    });
 
+    $('#sticky').waypoint(function(direction) {
+        if (direction == "down") {
+            $('nav').addClass('sticky');
+        } else {
+            $('nav').removeClass('sticky');
+        }
+    }, {
+        offset: '60px;'
+    });
+
+
+    $('.pic').waypoint(function(direction) {
+        $('.pic').addClass('animated bounceInUp');
+    }, {
+        offset: '50%'
+    });
+//
+    $('.yearmoney').waypoint(function(direction) {
+        $('.yearmoney').addClass('animated pulse');
+    }, {
+        offset: '50%'
+    });
+
+    $('.js--nav-icon').click(function() {
+        var nav = $('.js--main-nav');
+        var icon = $('.js--nav-icon i');
+
+        nav.slideToggle(200);
+
+        if (icon.hasClass('fa-times')) {
+            icon.addClass('fa-bars');
+            icon.removeClass('fa-times');
+        } else {
+            icon.addClass('fa-times');
+            icon.removeClass('fa-bars');
+        }
+    });
+
+//
+//    $('.js--wp-3').waypoint(function(direction) {
+//        $('.js--wp-3').addClass('animated fadeIn');
+//    }, {
+//        offset: '50%'
+//    });
+//
+//    $('.js--wp-4').waypoint(function(direction) {
+//        $('.js--wp-4').addClass('animated pulse');
+//    }, {
+//        offset: '50%'
+//    });
 
 </script>
 </body>
