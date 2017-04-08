@@ -14,9 +14,7 @@
     * a:hover {
       text-decoration: none;
       color: #FB5B21; }
-body{
-    overflow-x: hidden;
-}
+
 body::-webkit-scrollbar {
     width: 5px;
 }
