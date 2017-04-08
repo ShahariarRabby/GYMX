@@ -82,8 +82,9 @@ class UserContant extends Controller
             $W = $user->profile->weight;
             $h1 = floor($H);
             $i = $H -$h1;
+            $i = $i*100;
 
-            $M =($h1 * .3048) +($i * .254);
+            $M =($h1 * .3048) +($i * .0254);
             $BMI = 0;
             if ($W !=0)
             {
