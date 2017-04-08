@@ -6,12 +6,7 @@
     <meta name="description" content="The Best Gym Website in online">
     <meta name="keywords" content="web, design, html, css, html5, css3, javascript, jquery, bootstrap, development">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="img/favicon/manifest.json">
-    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -36,9 +31,9 @@
 </head>
 
 <body>
-<header>
+<header id="headerhome">
     <nav class="">
-        <a class="logo " href="index.html">
+        <a class="logo " >
             <img class="w" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
             <img class="ww" src="{{asset('images/welcome/gymx_logo_3.png')}}" alt="">
             <img class="www" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
@@ -46,10 +41,10 @@
         <div class="" id="">
             <ul class="">
                 <li class="">
-                    <a class="" href="#">Home<span class="sr-only">(current)</span></a>
+                    <a class="" href="#headerhome">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="">
-                    <a class="" href="#">TRAINER</a>
+                    <a class="" href="#howworks">Fitness</a>
                 </li>
                 <li class="">
                     <a class="" href="#">CLASSES</a>
