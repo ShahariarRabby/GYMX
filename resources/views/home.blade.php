@@ -25,7 +25,7 @@ use App\Chat;
 $message = Chat::orderBy('updated_at','desc')->get();
 
 $date = Carbon::now();
-$date->modify('-5 minutes');
+$date->modify('-1500 minutes');
 $result = DB::table('chats')->where('updated_at','<=',$date)->get();
 
 foreach ($result as $result){

@@ -74,7 +74,7 @@
                         <h5 class="col-5">Current Balance: {{$balance}} Taka</h5>
 
                         <div class="form-group col-5" style="padding-right: 0px">
-                            {!! Form::select('package_id',array(''=>'Choose option','2'=>'Starter (1month - 700 taka)','3'=>'Intermediate (6 month - 4000tk)','4'=>'Professional (1year - 7000tk)'),null,['class'=>'form-control','style'=>'height: 45px','required']) !!}
+                            {!! Form::select('package_id',array(''=>'Choose option','2'=>'Starter (1month - 3000 taka)','3'=>'Super Saver (1 Year - 15,000tk)'),null,['class'=>'form-control','style'=>'height: 45px','required']) !!}
 
                             {{--{!! Form::select('package_id',[''=>'Choose Option']+$package,null,['class'=>'form-control','style'=>'height: 45px','required'])!!}--}}
 

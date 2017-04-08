@@ -11,7 +11,16 @@
     <title>
         @yield('title')
     </title>
-
+    <link rel="apple-touch-icon" sizes="120x120" href="images/welcome/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="images/welcome/fav/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/welcome/fav/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="images/welcome/fav/manifest.json">
+    <link rel="mask-icon" href="images/welcome/fav/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="images/welcome/fav/favicon.ico">
+    <meta name="msapplication-config" content="images/welcome/fav/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
