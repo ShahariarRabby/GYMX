@@ -446,13 +446,12 @@ background-color: #1d2227;
 
 .aboutus {
   /*height: 100%;*/
-  background-image: url(../images/welcome/img-about-1.jpg);
-  background-size: cover;
+    background-size: cover;
   /*height: 120vh;*/
     min-height: 100vh;
     padding-bottom: 100px;
-  background-attachment: fixed;
-  background-position: center;}
+    background: url(../images/welcome/img-about-1.jpg) fixed center;
+}
   .aboutus .container {
     top: 15vh; }
     .aboutus .container h1 {
@@ -514,4 +513,128 @@ i {
 .none {
   display: none; }
 
-/*# sourceMappingURL=style.css.map */
+/* added extra */
+
+.opacity{
+    opacity: 0;
+}
+.animated.opacity{
+    opacity: 1!important;
+
+    /*animation-delay: 10s;*/
+}
+.animated.yearmoney{
+
+    animation-duration: 3s;
+    /*animation-delay: 10s;*/
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .8);
+    box-shadow: 0 4px 20px #000;
+    z-index: 9999;
+}
+.sticky .main-nav { margin-top: 18px; }
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 16px 0;
+    color: #555;
+}
+.sticky .logo { display: none; }
+.sticky .logo-black { display: block;
+
+
+}
+.sticky .main-nav { margin-top: 0px;
+    padding: 0}
+.sticky ul a:hover{
+
+    text-decoration: none;
+    padding-bottom: 10%;
+    border-bottom: 2px solid #FB5B21;
+    color: white;
+}
+.sticky ul a{
+
+    text-decoration: none;
+    padding-bottom: 0;
+
+}
+.sticky ul.main-nav{
+
+
+    margin-bottom: 12px;
+
+}
+
+.logo-black .ww{
+    display: inline-block;
+    width: auto;
+    height: 20px ;
+    margin: 1.5% 0 0 2%;
+    float: left; }
+
+.mobile-nav-icon {
+    float: right !important;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav-icon i {
+    font-size: 150%;
+
+}
+
+
+@media only screen and (max-width: 767px){
+
+    .joinnow{
+        display: none;
+    }
+
+
+    .main-nav { display: none; }
+    .mobile-nav-icon {display: inline-block;}
+
+    .main-nav {
+        float: left;
+        margin-top: 30px;
+        margin-left: 25px;
+    }
+
+    .main-nav li {
+        display: block;
+    }
+
+    .main-nav li a:link,
+    .main-nav li a:visited {
+        display: block;
+        border: 0;
+
+    }
+
+    .sticky .main-nav { margin-top: 10px; }
+
+    .sticky .main-nav li a:link,
+    .sticky .main-nav li a:visited { padding: 10px 0; }
+    .sticky .mobile-nav-icon { margin-top: 10px; }
+    .sticky .mobile-nav-icon i { margin-right: 40px }
+    .CHALLENGE .middeltext  span{
+        display: none;
+    }
+
+.aboutus {
+
+    background: #fff none;
+}
+
+nav .logo{
+    width: 200px !important;
+}
+}
+
