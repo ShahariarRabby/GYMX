@@ -196,7 +196,6 @@
 
 {{--</html>--}}
 
-
         <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -411,7 +410,7 @@
                                 <li style="font-size: 18px; font-weight: 400; margin: 0px; padding: 0px; line-height: 1.5; -webkit-font-smoothing: antialiased; color: rgb(90, 90, 90) !important;">Database: <strong>postgresql</strong></li>
                             </ul>
                             <a target="_blank" style="-webkit-font-smoothing: antialiased;text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;line-height: 150%;color: #4EB9E7;">
-                                <img align="none" src="/images/tech.jpg" style="width: 100% !important;max-width: 500px !important;height: auto !important;margin: 0;padding: 0;outline: none;border: 0;line-height: 100%;text-decoration: none;-ms-interpolation-mode: bicubic;"
+                                <img align="none" src="{{asset('/images/tech.jpg')}}" style="width: 100% !important;max-width: 500px !important;height: auto !important;margin: 0;padding: 0;outline: none;border: 0;line-height: 100%;text-decoration: none;-ms-interpolation-mode: bicubic;"
                                      width="300">
                             </a>
                             <p style="font-size: 18px;margin: 0px;padding: 0px;line-height: 1.5;-webkit-font-smoothing: antialiased;color: rgb(90, 90, 90) !important;text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
