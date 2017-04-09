@@ -122,8 +122,7 @@ class RegisterController extends Controller
             $user->save();
             Mail::send('emails.confirmation',$data,function ($message) use($data){
                 $message->to($data['email']);
-//                $message->subject('GYMX  Account Confirmation Mail');
-                $message->subject('Thanks Giving');
+                $message->subject('GYMX  Account Confirmation Mail');
             });
             return redirect(route('login'))->with('statusConfirm', 'Please confirm your email address.');
         }
