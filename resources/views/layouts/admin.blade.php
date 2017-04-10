@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/fav/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" href="{{asset('images/fav/favicon-32x32.png')}}" sizes="32x32">
@@ -32,249 +26,279 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Bootstrap -->
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
+    <!-- Flat UI -->
+    <link href="{{asset('css/flat-ui.css')}}" rel="stylesheet">
+
+    <!-- Custom Style -->
+    <link href="{{asset('css/styleadmin.css')}}" rel="stylesheet">
+
+    <!-- Sidebar Css -->
+    <link href="{{asset('css/plugins/sidebar.css')}}" rel="stylesheet">
+
+    <!--     Fonts and icons     -->
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Flat" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    {{--<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->--}}
+    {{--<!--[if lt IE 9]>--}}
+    {{--<script src="plugins/html5shiv.js"></script>--}}
+    {{--<script src="js/plugins/respond.min.js"></script>--}}
+    {{--<![endif]-->--}}
 </head>
+<body>
+<style>
 
-<body id="admin-page">
+    ul.sub-menu {
+        display:none;
+    }
+    .sub-menu{
+        list-style: none;
+    }
+</style>
 
-<div id="wrapper">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin: 0;">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{url('admin')}}">Dashboard</a>
-        </div>
+<div id="wrapper" class="">
 
-        <!-- /.navbar-header -->
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
 
-        <ul class="nav navbar-top-links navbar-right">
+            {{--<li class="sidebar-brand">--}}
+                {{--<a href="#">--}}
 
+                {{--</a>--}}
+            {{--</li>--}}
+            <li class="dropdown">
+                <a href="#"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> &nbsp;&nbsp;Dashboard</a>
+            </li>
             <li class="dropdown">
 
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                         <i class="fa fa-user fa-fw"></i>
-                         {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                <ul class="dropdown-menu dropdown-user">
-                    <li><a href="{{url('/home')}}"><i class="fa fa-user fa-fw"></i> View as user</a>
+                <a href="{{ url('admin/users')}}"><i class="fa fa-users" aria-hidden="true"></i>
+                  &nbsp;  Users<span class="fa fa-caret-down"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="{{url('admin/user/details')}}">
+                            User Summery</a>
                     </li>
-                    <li><a href="{{url('/')}}"><i class="fa fa-gear fa-fw"></i> Go to Site</a>
+                    <li>
+                        <a href="{{ url('admin/users/')}}">
+                            All Users</a>
                     </li>
-                    <li class="divider"></li>
-                    <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li>
+                        <a href="{{ url('admin/users/create')}}">
+                            Create User</a>
+                    </li>
+                    <li>
+                        <a href="{{route('discontinue.index')}}">
+                            Discountable User</a>
+                    </li>
+                    <li>
+                        <a href="{{url('admin/discontinued')}}">
+                            Disconnected User</a>
                     </li>
                 </ul>
-                <!-- /.dropdown-user -->
+                <!-- /.nav-second-level -->
             </li>
-            <!-- /.dropdown -->
-        </ul>
-        <!-- /.navbar-top-links -->
 
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav navbar-collapse">
-                <ul class="nav" id="side-menu">
-                    {{--<li class="sidebar-search">--}}
-                        {{--<div class="input-group custom-search-form">--}}
-                            {{--<input type="text" class="form-control" placeholder="Search...">--}}
-                            {{--<span class="input-group-btn">--}}
-                                {{--<button class="btn btn-default" type="button">--}}
-                                    {{--<i class="fa fa-search"></i>--}}
-                                {{--</button>--}}
-                            {{--</span>--}}
-                        {{--</div>--}}
-                        {{--<!-- /input-group -->--}}
-                    {{--</li>--}}
-                    {{--<li>--}}
-                        {{--<a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>--}}
-                        {{--<a href="{{ url('/admin/home')}}"><i class="fa fa-dashboard  fa-fw"></i> DashBord</a>--}}
+            <li class="dropdown">
+                <a href="{{route('payment.index')}}"><i class="fa fa-money" aria-hidden="true"></i>
 
+                    &nbsp;    Payments<span class="fa fa-caret-down"></span></a>
+                <ul class="sub-menu">
+                    <li class="dropdown">
+                        <a href="{{route('payment.index')}}">
 
-                    {{--</li>--}}
-                    <li>
-
-                        <a href="{{ url('admin/users')}}"><i class="fa fa-users" aria-hidden="true"></i>
-                            Users<span class="fa arrow"></span>
-                        </a>
-                        <ul class="nav nav-second-level">
+                            Payments<span class="fa fa-caret-down"></span></a>
+                        <ul class="sub-menu">
                             <li>
-                                <a href="{{url('admin/user/details')}}"><i class="fa fa-pie-chart" aria-hidden="true"></i>
-                                     User Summery</a>
+                                <a href="{{route('payment.index')}}">All Payments</a>
                             </li>
                             <li>
-                                <a href="{{ url('admin/users/')}}"><i class="fa fa-address-book" aria-hidden="true"></i>
-                                     All Users</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('admin/users/create')}}"><i class="fa fa-id-card" aria-hidden="true"></i>
-                                     Create User</a>
-                            </li>
-                            <li>
-                                <a href="{{route('discontinue.index')}}"><i class="fa fa-frown-o" aria-hidden="true"></i>
-                                     Discountable User</a>
-                            </li>
-                            <li>
-                                <a href="{{url('admin/discontinued')}}"><i class="fa fa-times" aria-hidden="true"></i>
-                                     Disconnected User</a>
+                                <a href="{{route('payment.create')}}">Create Payment</a>
                             </li>
                         </ul>
-                        <!-- /.nav-second-level -->
+                        <!-- /.nav-third-level -->
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/bkash')}}"><img src="{{asset('images/bkash.jpg')}}" style="height: 15px" aria-hidden="true"></img>
+                            Bkash</a>
                     </li>
 
-{{--=============Multilable=========================--}}
-                    <li>
-
-
-
-                        <a href="{{route('payment.index')}}"><i class="fa fa-money fa-fw"></i>
-
-                            Payments<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
+                    <li class="dropdown">
+                        <a href="{{ url('admin/card')}}">
+                            Card<span class="fa fa-caret-down"></span></a>
+                        <ul class="sub-menu">
                             <li>
-                                <a href="{{url('admin/payments/details')}}"><i class="fa fa-pie-chart" aria-hidden="true"></i>
-                                    Payment Summery</a>
+                                <a href="{{ url('admin/card')}}">All Cards</a>
                             </li>
                             <li>
-                                <a href="{{route('payment.index')}}"><i class="fa fa-money" aria-hidden="true"></i>
-
-                                    Payments<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="{{route('payment.index')}}">All Payments</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('payment.create')}}">Create Payment</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-third-level -->
+                                <a href="{{ url('admin/card/create')}}">Add Card</a>
                             </li>
-                            {{--<li>--}}
-                                {{--<a href="{{ url('admin/bkash')}}">Bkash<span class="fa arrow"></span></a>--}}
-                                {{--<ul class="nav nav-third-level">--}}
-                                    <li>
-                                        <a href="{{ url('admin/bkash')}}"><img src="{{asset('images/bkash.jpg')}}" style="height: 15px" aria-hidden="true"></img>
-                                            Bkash</a>
-                                    </li>
-                                {{--</ul>--}}
-                                {{--<!-- /.nav-third-level -->--}}
-                            {{--</li>--}}
-                            <li>
-                                <a href="{{ url('admin/card')}}"><i class="fa fa-credit-card" aria-hidden="true"></i>
-                                    Card<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="{{ url('admin/card')}}">All Cards</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('admin/card/create')}}">Add Card</a>
-                                    </li>
-
-                                </ul>
-                                <!-- /.nav-third-level -->
-                            </li>
-
 
                         </ul>
-                        <!-- /.nav-second-level -->
+                        <!-- /.nav-third-level -->
                     </li>
 
 
-{{--============================================--}}
-                    {{--<li>--}}
-                        {{--<a href="#"><i class="fa fa-wrench fa-fw"></i>Bkash<span class="fa arrow"></span></a>--}}
-                        {{--<ul class="nav nav-second-level">--}}
-                            {{--<li>--}}
-                                {{--<a href="{{ url('admin/bkash')}}">Bkash</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="buttons.html">Create Post</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                        {{--<!-- /.nav-second-level -->--}}
-                    {{--</li>--}}
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
 
-
-                    {{--<li>--}}
-                        {{--<a href="{{route('payment.index')}}"><i class="fa fa-money" aria-hidden="true"></i>--}}
-
-                            {{--Payments<span class="fa arrow"></span></a>--}}
-                        {{--<ul class="nav nav-second-level">--}}
-                            {{--<li>--}}
-                                {{--<a href="{{route('payment.index')}}">All Payments</a>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<a href="{{route('payment.create')}}">Create Payment</a>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                        {{--<!-- /.nav-second-level -->--}}
-                    {{--</li>--}}
-
+            <li class="dropdown">
+                <a href="{{route('package.index')}}"><i class="fa fa-sitemap fa-fw"></i>
+                    &nbsp;  &nbsp;  &nbsp; Packages<span class="fa fa-caret-down"></span></a>
+                <ul class="sub-menu">
                     <li>
-                        <a href="{{route('package.index')}}"><i class="fa fa-sitemap fa-fw"></i> Packages<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{route('package.index')}}">All Packages</a>
-                            </li>
-                            <li>
-                                <a href="{{route('package.create')}}">Create Package</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
+                        <a href="{{route('package.index')}}">All Packages</a>
                     </li>
-
                     <li>
-                        <a href="{{ url('admin/task')}}"><i class="fa fa-tasks fa-fw"></i> Tasks<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{ url('admin/task')}}">All Tasks</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('admin/task/create')}}">Create Task</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-
-
-                    <li>
-                        <a href="{{ url('admin/chat')}}"><i class="fa fa-envelope fa-fw"></i> Message</a>
-
+                        <a href="{{route('package.create')}}">Create Package</a>
                     </li>
                 </ul>
-            </div>
-        </div>
-    </nav>
+                <!-- /.nav-second-level -->
+            </li>
 
-    <div id="page-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        @yield('header')
-                    </h1>
-                    @yield('content')
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-        </div>
 
+
+            <li class="dropdown">
+                <a href="{{ url('admin/task')}}"><i class="fa fa-tasks fa-fw"></i> &nbsp;  &nbsp;  &nbsp; Tasks<span class="fa fa-caret-down"></span></a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="{{ url('admin/task')}}">All Tasks</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/task/create')}}">Create Task</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+
+            <li>
+                <a href="{{ url('admin/chat')}}"><i class="fa fa-envelope"></i> &nbsp;  Message</a>
+            </li>
+            {{--<li>--}}
+                {{--<a href="#"><span class="glyphicon glyphicon-calendar" aria-hidden="true">&nbsp;</span>Calendar</a>--}}
+            {{--</li>--}}
+
+
+        </ul>
     </div>
-    <!-- /#page-wrapper -->
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+
+
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" id="logo" href="{{url('/admin')}}">GYMX</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                                              <form class="navbar-form navbar-left" action="#" role="search">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+                                    <span class="input-group-btn">
+                                                      <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+                                                    </span>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <li><a href="http://www.jefcorp.com/" data-toggle="tooltip" data-placement="bottom" title="Visit Site" target="_blank"><i class="material-icons">home</i></a></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Message"><i class="material-icons">message</i><span class="navbar-new">2</span></a></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Notification"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="navbar-new">5</span></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+
+
+
+
+
+
+
+
+
+        <a href="#menu-toggle" id="menu-toggle"><i class="material-icons">menu</i></a>
+@yield('content')
+    </div>
+    <!-- /#page-content-wrapper -->
+
+
+
+
+
+
 
 </div>
 <!-- /#wrapper -->
 
-<!-- jQuery -->
 
-<script src="{{asset('js/all.js')}}"></script>
+
+
+<!-- Bootstrap JS -->
+{{--<script src="{{asset('js/bootstrap.min.js')}}"></script>--}}
+<script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+<!-- Jasny Bootstrap JS
+<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+-->
+<!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+<script src="{{asset('js/plugins/jquery.min.js')}}"></script>
+{{--<script src="{{asset('js/all.js')}}"></script>--}}
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+{{--<script src="{{asset('js/plugins/video.js')}}"></script>--}}
+<script src="{{asset('js/flat-ui.min.js')}}"></script>
+
+<!-- JQuery Pie Chart -->
+{{--<script src="{{asset('js/plugins/jquery.easypiechart.min.js')}}s"></script>--}}
+
+<script src="{{asset('js/script.js')}}"></script>
+
+{{--<script src="{{asset('js/all.js')}}"></script>--}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>
 @if(Session::has('create'))
@@ -354,8 +378,16 @@
     $("#photo_id").change(function(){
         readURL(this);
     });
-
+    $(document).ready(function() {
+        $( '.dropdown' ).hover(
+            function(){
+                $(this).children('.sub-menu').slideDown(200);
+            },
+            function(){
+                $(this).children('.sub-menu').slideUp(200);
+            }
+        );
+    });
 </script>
 </body>
-
 </html>
