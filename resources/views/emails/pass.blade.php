@@ -205,9 +205,9 @@
                     <td align="left" valign="top" style="border-collapse: collapse;border-spacing: 0;margin: 0;padding: 0;padding-left: 6.25%;padding-right: 6.25%;width: 87.5%;font-size: 14px;font-weight: 400;line-height: 1.5 !important;text-align: left !important;padding-top: 30px;-webkit-font-smoothing: antialiased;text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
                         <p style="font-size: 18px;font-weight: 400;margin: 0px;padding: 0px;line-height: 1.5;-webkit-font-smoothing: antialiased;color: rgb(90, 90, 90) !important;text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Hey&nbsp;Sir!</p>
                         <p style="font-size: 18px;font-weight: 400;margin: 0px;padding: 0px;line-height: 1.5;-webkit-font-smoothing: antialiased;color: rgb(90, 90, 90) !important;text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                            <br>Thanks for staying with us! With your guidance our Database Project is done and now that's pretty awesome.
+                            <br>Thanks for staying with us!
                             <br>
-                            <br>We wanted to invite you to&nbsp;become the First user of <strong>GYMX</strong> and<strong>&nbsp;</strong>live the #HealthyLife with exclusive content&nbsp;and perks such as:</p>
+                            <br>We wanted to invite you to&nbsp;become a user of <strong>GYMX</strong> and<strong>&nbsp;</strong>live the #HealthyLife with exclusive content&nbsp;and perks such as:</p>
                         <ul>
                             {{--<li style="font-size: 18px; font-weight: 400; margin: 0px; padding: 0px; line-height: 1.5; -webkit-font-smoothing: antialiased; color: rgb(90, 90, 90) !important;">Access to premium content like&nbsp;our&nbsp;Free Chat--}}
                             {{--</li>--}}
@@ -239,7 +239,7 @@
                                         <tr>
                                             <td bgcolor="#38B069" style="border-top-left-radius: 3px;border-top-right-radius: 3px;border-bottom-right-radius: 3px;border-bottom-left-radius: 3px;-webkit-font-smoothing: antialiased;text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;line-height: 150%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;border-collapse: collapse !important;">
                                                 <a href="{{url('/')}}" style="font-size: 16px;font-family: Helvetica, Arial, sans-serif;color: #ffffff;text-decoration: none;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;padding: 12px 18px;border: 1px solid #38B069;display: block;-webkit-font-smoothing: antialiased;text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;line-height: 150%;"
-                                                   target="_blank">Become The First User &rarr;</a>
+                                                   target="_blank">Become a User &rarr;</a>
                                             </td>
                                         </tr>
                                         </tbody>
