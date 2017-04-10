@@ -57,10 +57,14 @@
 <body>
 <style>
 
-    ul.sub-menu {
-        display:none;
-    }
-    .sub-menu{
+   .sub-menu {
+             display:none;
+         }
+   .recharges{
+       display: none;
+       list-style: none;
+   }
+    ul{
         list-style: none;
     }
 </style>
@@ -70,7 +74,8 @@
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
+        <ul class="sidebar-nav" id="MainMenu">
+
 
             {{--<li class="sidebar-brand">--}}
                 {{--<a href="#">--}}
@@ -78,12 +83,12 @@
                 {{--</a>--}}
             {{--</li>--}}
             <li class="dropdown">
-                <a href="#"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> &nbsp;&nbsp;Dashboard</a>
+                <a href="{{url('/admin')}}"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> &nbsp;&nbsp;Dashboard</a>
             </li>
             <li class="dropdown">
 
-                <a href="{{ url('admin/users')}}"><i class="fa fa-users" aria-hidden="true"></i>
-                  &nbsp;  Users<span class="fa fa-caret-down"></span>
+                <a><i class="fa fa-users" aria-hidden="true"></i>
+                  &nbsp;  Users<span class="fa "></span>
                 </a>
                 <ul class="sub-menu">
                     <li>
@@ -111,39 +116,35 @@
             </li>
 
             <li class="dropdown">
-                <a href="{{route('payment.index')}}"><i class="fa fa-money" aria-hidden="true"></i>
+                <a><i class="fa fa-money" aria-hidden="true"></i>
 
-                    &nbsp;    Payments<span class="fa fa-caret-down"></span></a>
-                <ul class="sub-menu">
-                    <li class="dropdown">
-                        <a href="{{route('payment.index')}}">
+                    &nbsp;    Payments<span class="fa "></span></a>
+                <ul class="sub-menu none">
 
-                            Payments<span class="fa fa-caret-down"></span></a>
-                        <ul class="sub-menu">
                             <li>
                                 <a href="{{route('payment.index')}}">All Payments</a>
                             </li>
                             <li>
                                 <a href="{{route('payment.create')}}">Create Payment</a>
                             </li>
-                        </ul>
+
                         <!-- /.nav-third-level -->
-                    </li>
-                    <li>
-                        <a href="{{ url('admin/bkash')}}"><img src="{{asset('images/bkash.jpg')}}" style="height: 15px" aria-hidden="true"></img>
-                            Bkash</a>
                     </li>
 
                     <li class="dropdown">
-                        <a href="{{ url('admin/card')}}">
-                            Card<span class="fa fa-caret-down"></span></a>
-                        <ul class="sub-menu">
+                        <a >
+                            Recharges<span class="fa "></span></a>
+                        <ul class="">
                             <li>
                                 <a href="{{ url('admin/card')}}">All Cards</a>
                             </li>
                             <li>
                                 <a href="{{ url('admin/card/create')}}">Add Card</a>
                             </li>
+                            <li>
+                                <a href="{{ url('admin/bkash')}}">Bkash</a>
+                            </li>
+
 
                         </ul>
                         <!-- /.nav-third-level -->
@@ -155,8 +156,8 @@
             </li>
 
             <li class="dropdown">
-                <a href="{{route('package.index')}}"><i class="fa fa-sitemap fa-fw"></i>
-                    &nbsp;  &nbsp;  &nbsp; Packages<span class="fa fa-caret-down"></span></a>
+                <a ><i class="fa fa-sitemap fa-fw"></i>
+                    &nbsp;  &nbsp;  &nbsp; Packages<span class="fa "></span></a>
                 <ul class="sub-menu">
                     <li>
                         <a href="{{route('package.index')}}">All Packages</a>
@@ -171,7 +172,7 @@
 
 
             <li class="dropdown">
-                <a href="{{ url('admin/task')}}"><i class="fa fa-tasks fa-fw"></i> &nbsp;  &nbsp;  &nbsp; Tasks<span class="fa fa-caret-down"></span></a>
+                <a><i class="fa fa-tasks fa-fw"></i> &nbsp;  &nbsp;  &nbsp; Tasks<span class="fa "></span></a>
                 <ul class="sub-menu">
                     <li>
                         <a href="{{ url('admin/task')}}">All Tasks</a>
@@ -378,16 +379,36 @@
     $("#photo_id").change(function(){
         readURL(this);
     });
-    $(document).ready(function() {
-        $( '.dropdown' ).hover(
-            function(){
-                $(this).children('.sub-menu').slideDown(200);
-            },
-            function(){
-                $(this).children('.sub-menu').slideUp(200);
-            }
-        );
+
+    $(function() {
+        $('#MainMenu > li').click(function(e) {
+            e.stopPropagation();
+            var $el = $('ul',this);
+            $('#MainMenu > li > ul').not($el).slideUp();
+            $el.stop(true, true).slideToggle(400);
+            $.toggleClass('sub-menu');
+        });
+        $('#MainMenu > li > ul > li').click(function(e) {
+            e.stopPropagation();
+            var $el = $('ul',this);
+            $('#MainMenu > li > ul > li >ul').not($el).slideUp();
+            $el.stop(true, true).slideToggle(400);
+            $.toggleClass('recharges');
+        });
+        $('#MainMenu > li > ul > li').click(function(e) {
+            e.stopImmediatePropagation();
+        });
     });
+//    $(document).ready(function() {
+//        $( '.dropdown' ).hover(
+//            function(){
+//                $(this).children('.sub-menu').slideDown(200);
+//            },
+//            function(){
+//                $(this).children('.sub-menu').slideUp(200);
+//            }
+//        );
+//    });
 </script>
 </body>
 </html>
