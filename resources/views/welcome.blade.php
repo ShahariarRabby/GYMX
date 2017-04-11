@@ -47,7 +47,7 @@
 
 <body>
 <header id="headerhome">
-    <nav class="">
+    <nav>
         <a class="logo " >
             <img class="w" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
             <img class="ww" src="{{asset('images/welcome/gymx_logo_3.png')}}" alt="">
@@ -56,38 +56,38 @@
         <a class="logo-black " >
             <img class="ww" src="{{asset('images/welcome/logoblk.png')}}" alt="">
         </a>
-        <div class="" id="">
+        <div>
             <ul class="main-nav js--main-nav">
-                <li class="">
-                    <a class="" href="#headerhome">Home<span class="sr-only">(current)</span></a>
+                <li >
+                    <a  href="#headerhome">Home<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="">
-                    <a class="" href="{{url('#howworks')}}">Fitness</a>
+                <li >
+                    <a  href="{{url('#howworks')}}">Fitness</a>
                 </li>
-                <li class="">
-                    <a class="" href="#Gallery">Gallery</a>
+                <li>
+                    <a href="#Gallery">Gallery</a>
                 </li>
-                <li class="">
-                    <a class="" href="#testimonial">Opinion</a>
+                <li>
+                    <a  href="#testimonial">Opinion</a>
                 </li>
                 {{--<li class="">--}}
                     {{--<a class="" href="#trial">registration</a>--}}
                 {{--</li>--}}
-                <li class="">
-                    <a class="" href="#Packages">Packages</a>
+                <li >
+                    <a  href="#Packages">Packages</a>
                 </li>
-                <li class="">
-                    <a class="" href="#aboutus">About Us</a>
+                <li >
+                    <a  href="#aboutus">About Us</a>
                 </li>
                     @if (Auth::guest())
-                    <li class="">
+                    <li>
                         <a href="#trial">Register</a>
                     </li>
-                    <li class="">
+                    <li >
                         <a href="{{url('/login')}}">Login</a>
                     </li>
                     @else
-                    <li class="">
+                    <li >
                         <a href="/home" >
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
@@ -119,7 +119,7 @@
     </div>
 
 
-    <div class="none" id="formsingin" style="">
+    <div class="none" id="formsingin">
         <form class="singinform" role="form" method="POST" action="{{ url('/login') }}">
         {{--<form class="singinform ">--}}
             {{ csrf_field() }}
@@ -230,7 +230,7 @@
 
             <div class="card-block">
                 <div class="cardlink">
-                    <a class="" href=""><img class="card-img-top" src="{{asset('images/welcome/card1.jpg')}}" alt="Card image cap">
+                    <a><img class="card-img-top" src="{{asset('images/welcome/card1.jpg')}}" alt="Card image cap">
                         <h4 class="card-title">CYCLING & CARDIO</h4></a>
                 </div>
                 <p class="card-text">majority have sufered ion in some form, by inj alteranjected form, by inj alteranjected humour,in the middle of text. All the Lorem Ipsum generators rnet tend to repe</p>
@@ -240,7 +240,7 @@
 
             <div class="card-block">
                 <div class="cardlink">
-                    <a class="" href=""><img class="card-img-top" src="{{asset('images/welcome/card2.jpg')}}" alt="Card image cap">
+                    <a><img class="card-img-top" src="{{asset('images/welcome/card2.jpg')}}" alt="Card image cap">
                         <h4 class="card-title">KETTLEBELLS</h4></a>
                 </div>
                 <p class="card-text">majority have suffered alteration in some form, by injected humour, or randomised words ing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repe</p>
@@ -250,7 +250,7 @@
 
             <div class="card-block">
                 <div class="cardlink">
-                    <a class="" href=""><img class="card-img-top" src="{{asset('images/welcome/card3.jpg')}}" alt="Card image cap">
+                    <a ><img class="card-img-top" src="{{asset('images/welcome/card3.jpg')}}" alt="Card image cap">
                         <h4 class="card-title">BODY PUMP</h4></a>
                 </div>
                 <p class="card-text">majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are gInternet tend to repe</p>
@@ -261,21 +261,21 @@
 <!--**************************************************************************************-->
 <section id="howworks" class="howworks">
     <div class="row">
-        <div class="col-lg-6 col-12 picbox" style=""><img src="{{asset('images/welcome/fitness-about.png')}}" class="pic opacity" alt="">
+        <div class="col-lg-6 col-12 picbox"><img src="{{asset('images/welcome/fitness-about.png')}}" class="pic opacity" alt="">
             <div class="rt-fitness">All <span style="font-weight: 600">About</span>
                 <br> Fitness</div>
         </div>
         <div class="col-lg-6 col-12 textbox">
             <div>
-                <h3><i class="fa fa-arrows-v" aria-hidden="true" style="font-size: 28px; "></i><a href="">Weight Lifting</a></h3>
+                <h3><i class="fa fa-arrows-v" aria-hidden="true" style="font-size: 28px; "></i><a>Weight Lifting</a></h3>
                 <p>Weightlifting, also called Olympic weightlifting, is an athletic discipline in the modern Olympic programme in which the athlete attempts a maximum-weight single lift of a barbell loaded with weight plates.</p>
             </div>
             <div>
-                <h3><i class="fa fa-wheelchair-alt" aria-hidden="true" style="font-size: 28px;"></i><a href="">Running</a></h3>
+                <h3><i class="fa fa-wheelchair-alt" aria-hidden="true" style="font-size: 28px;"></i><a>Running</a></h3>
                 <p>Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. Running is a type of gait characterized by an aerial phase in which all feet…</p>
             </div>
             <div>
-                <h3><i class="fa fa-female" aria-hidden="true" style="font-size: 28px;"></i><a href="">Yoga</a></h3>
+                <h3><i class="fa fa-female" aria-hidden="true" style="font-size: 28px;"></i><a>Yoga</a></h3>
                 <p>Yoga, is a meditative means of discovering dysfunctional perception and cognition, as well as overcoming it for release from suffering, inner peace and salvation</p>
             </div>
         </div>
@@ -284,8 +284,8 @@
 
 <!--************************************************************************************************************************-->
 <section id="Gallery" class="section-meals container-fluid">
-    1
-    <ul class="">
+
+    <ul >
         <li class="item " >
             <figure><img src="{{asset('images/welcome/g1.jpg')}}" alt=""></figure>
         </li>
@@ -413,7 +413,7 @@
                         <div class="card-block">
                             <h4 class="card-title">PER MONTH</h4>
                             <p class="card-text">Smajority have isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repe</p>
-                            <a href="{{url('/register')}}" class="">REGISTER NOW</a>
+                            <a href="{{url('/register')}}">REGISTER NOW</a>
                         </div>
                     </div>
                 </div>
@@ -426,7 +426,7 @@
                         <div class="card-block">
                             <h4 class="card-title">PER YEAR</h4>
                             <p class="card-text">majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are </p>
-                            <a href="{{url('/register')}}" class="">REGISTER NOW</a>
+                            <a href="{{url('/register')}}">REGISTER NOW</a>
                         </div>
                     </div>
                 </div>

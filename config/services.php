@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+        'client_id' => '756870734487565',
+        'client_secret' => 'eaabded4427953c1c84be84c002ac16a',
+        'redirect' => 'http://intense-scrubland-37151.herokuapp.com/auth/facebook/callback',
+    ],
+
 ];
