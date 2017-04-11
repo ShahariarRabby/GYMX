@@ -201,24 +201,19 @@
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-
+        <style>
+            .navbar-default .navbar-toggle:before {
+                display: none;
+            }
+        </style>
 
 
 
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <style>
-
-                    #btntog{
-                        float: right;
-                        background: none;
-                        border: none;
-                        padding: 10px;
-                    }
-                </style>
                 <div class="navbar-header">
-                    <button type="button" id="btntog" class=" collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
 
                     </button>
@@ -231,16 +226,16 @@
 
                     <ul class="nav navbar-nav navbar-right">
 
-                                              <form class="navbar-form navbar-left" action="#" role="search">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
-                                    <span class="input-group-btn">
-                                                      <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
-                                                    </span>
-                                </div>
-                            </div>
-                        </form>
+                                              {{--<form class="navbar-form navbar-left" action="#" role="search">--}}
+                            {{--<div class="form-group">--}}
+                                {{--<div class="input-group">--}}
+                                    {{--<input class="form-control" id="navbarInput-01" type="search" placeholder="Search">--}}
+                                    {{--<span class="input-group-btn">--}}
+                                                      {{--<button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>--}}
+                                                    {{--</span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</form>--}}
 
 
                         <li><a href="{{url('/')}}" data-toggle="tooltip" data-placement="bottom" title="Visit Site" target="_blank"><i class="material-icons">home</i></a></li>
