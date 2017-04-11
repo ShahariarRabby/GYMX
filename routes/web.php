@@ -37,7 +37,8 @@ Route::get('/mail', function () {
 });
 Route::get('users/confirm/{token}','Auth\RegisterController@Confirmation')->name('confirmation');
 
-
+Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index');
