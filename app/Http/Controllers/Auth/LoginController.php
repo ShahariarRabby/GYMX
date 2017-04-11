@@ -64,7 +64,8 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('facebook')->user();
+        $user = Socialite::driver('facebook')->stateless()->user();
+
 
         // $user->token;
         return $user->getEmail();
