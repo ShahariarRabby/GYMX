@@ -39,6 +39,8 @@
     <link href="{{asset('css/plugins/sidebar.css')}}" rel="stylesheet">
 
     <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,800" rel="stylesheet">
+
     <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Flat" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -82,7 +84,7 @@
 
                 {{--</a>--}}
             {{--</li>--}}
-            <li class="dropdown">
+            <li class="dropdown" style="margin-top: 25px" >
                 <a href="{{url('/admin')}}"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> &nbsp;&nbsp;Dashboard</a>
             </li>
             <li class="dropdown">
@@ -206,14 +208,21 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
+                <style>
+
+                    #btntog{
+                        float: right;
+                        background: none;
+                        border: none;
+                        padding: 10px;
+                    }
+                </style>
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                    <button type="button" id="btntog" class=" collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+
                     </button>
-                    <a class="navbar-brand" id="logo" href="{{url('/admin')}}">GYMX</a>
+                    <a class="navbar-brand" style="font-family: 'Montserrat'; font-weight: 800" id="logo" href="{{url('/admin')}}">GYMX</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -234,19 +243,20 @@
                         </form>
 
 
-                        <li><a href="http://www.jefcorp.com/" data-toggle="tooltip" data-placement="bottom" title="Visit Site" target="_blank"><i class="material-icons">home</i></a></li>
-                        <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Message"><i class="material-icons">message</i><span class="navbar-new">2</span></a></li>
-                        <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Notification"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="navbar-new">5</span></a></li>
+                        <li><a href="{{url('/')}}" data-toggle="tooltip" data-placement="bottom" title="Visit Site" target="_blank"><i class="material-icons">home</i></a></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Visit User"><i class="material-icons"><i class="fa fa-user" aria-hidden="true"></i>
+                                </i></a></li>
+                        {{--<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Notification"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="navbar-new">5</span></a></li>--}}
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="{{url('/profile')}}">{{\Illuminate\Support\Facades\Auth::user()->name}}</a></li>
+                                <li><a href="{{url('/logout')}}">logout</a></li>
+                                {{--<li><a href="#">Something else here</a></li>--}}
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><a href="{{url('/home')}}">View as user</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="{{url('/')}}">Visit site</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -264,7 +274,7 @@
 
 
         <a href="#menu-toggle" id="menu-toggle"><i class="material-icons">menu</i></a>
-@yield('content')
+            @yield('content')
     </div>
     <!-- /#page-content-wrapper -->
 
