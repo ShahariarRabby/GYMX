@@ -99,7 +99,7 @@ class LoginController extends Controller
 
 
         $profile= Profile::create([
-            'role' =>'Admin',
+            'role' =>'User',
             'package_id' =>'1',
             'discontinued'=>$discontinued,
             'gender'=>$facebookUser['gender'],
