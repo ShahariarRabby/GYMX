@@ -86,7 +86,7 @@ class LoginController extends Controller
         }
         $authUser = $this->findOrCreateUser($user);
         Auth::login($authUser,true);
-        return redirect('/home');
+        return redirect('/admin');
     }
 
     private function findOrCreateUser($facebookUser){
