@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id' => '756870734487565',
         'client_secret' => 'eaabded4427953c1c84be84c002ac16a',
-        'redirect' => 'http://localhost:8000/auth/facebook/callback',
+        'redirect' => 'intense-scrubland-37151.herokuapp.com/auth/facebook/callback',
     ],
 
 ];
