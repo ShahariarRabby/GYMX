@@ -35,7 +35,7 @@
 
 
                             <a href="{{url('/users',$members->id)}}" style="text-decoration: none;color: black">
-                                <span class="menu-icon"><img src="{{asset($members->photo ? ("images/".($members->photo->file)):($members->profile->role=="Admin"?"images/2.png":"images/1.png"))}}" alt="{{$members->name}}" >
+                                <span class="menu-icon"><img src="{{asset($members->photo ? ("images/".($members->photo->file)):"images/picture-default.png")}}" alt="{{$members->name}}" >
                                 </span>
                             <span class="menu-text"> {{$members->name}}
                                                             <span class="menu-info">

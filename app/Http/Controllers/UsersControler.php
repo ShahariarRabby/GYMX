@@ -176,7 +176,7 @@ class UsersControler extends Controller
 
         if ($file = $request->file('photo_id')){
             if($user->photo_id !=""){
-                unlink(public_path().'/images/'.$user->photo->file);
+              $unlink =    unlink(public_path().'/images/'.$user->photo->file);
                 $photo = Photo::findOrFail($user->photo_id);
                 $photo->delete();
             }

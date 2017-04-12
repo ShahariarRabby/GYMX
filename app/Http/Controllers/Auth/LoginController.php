@@ -5,9 +5,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 //use App\Http\Requests\Request;
+use App\Profile;
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request ;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
+use Mockery\Exception;
 
 class LoginController extends Controller
 {
@@ -62,12 +67,53 @@ class LoginController extends Controller
      *
      * @return Response
      */
+//    public function handleProviderCallback()
+//    {
+//        $user = Socialite::driver('facebook')->stateless()->user();
+//
+//
+//        // $user->token;
+//        return $user->getEmail();
+//    }
+
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('facebook')->stateless()->user();
-
-
-        // $user->token;
-        return $user->getEmail();
+        try{
+       $user = Socialite::driver('facebook')->stateless()->user()->user;
+//            return   dd($user['id']);
+        } catch (Exception $e){
+            return redirect('auth/facebook');
+        }
+        $authUser = $this->findOrCreateUser($user);
+        Auth::login($authUser,true);
+        return redirect('/home');
     }
+
+    private function findOrCreateUser($facebookUser){
+        $authUser = User::where('facebook_id',$facebookUser['id'])->first();
+        if ($authUser){
+            return $authUser;
+        }
+        $discontinued = carbon::now()->addDays(3);
+
+
+
+        $profile= Profile::create([
+            'role' =>'Admin',
+            'package_id' =>'1',
+            'discontinued'=>$discontinued,
+            'gender'=>$facebookUser['gender'],
+        ]);
+        $facebookUser['profile_id'] = $profile->id;
+        return User::create([
+           'name' => $facebookUser['name'],
+            'email' => $facebookUser['email'],
+            'facebook_id' => $facebookUser['id'],
+            'confirmed' => $facebookUser['verified'],
+            'token' =>null,
+            'profile_id' => $facebookUser['profile_id'],
+        ]);
+
+    }
+
 }

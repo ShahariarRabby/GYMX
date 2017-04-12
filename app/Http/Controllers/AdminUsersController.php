@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Mockery\Exception;
 use phpDocumentor\Reflection\Types\Null_;
 
 class AdminUsersController extends Controller
@@ -178,14 +179,15 @@ class AdminUsersController extends Controller
 
         if ($file = $request->file('photo_id')){
             if($user->photo_id !=""){
-                unlink(public_path().'/images/'.$user->photo->file);
+                try{
+                    unlink(public_path().'/images/'.$user->photo->file);
+                }catch (Exception $exception){
+
+                }
+
                 $photo = Photo::findOrFail($user->photo_id);
                 $photo->delete();
             }
-
-
-
-
 
             $name = time() . $file->getClientOriginalName();
             $file->move('images',$name);

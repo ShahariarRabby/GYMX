@@ -21,7 +21,7 @@ $user = Auth::User();
         <div class="spacer">
             <div class="row usersmr">
                 <div class="col-12 img">
-                    <img class="userimg blah" id="blah"   src="{{asset(Auth::User()->photo ? ("images/".(Auth::User()->photo->file)):(Auth::User()->profile->gender=="Male"?"images/2.png":"images/1.png"))}}" alt="{{Auth::User()->name}}">
+                    <img class="userimg blah" id="blah"   src="{{asset(Auth::user()->photo ? ("images/".(Auth::user()->photo->file)):"images/picture-default.png")}}" alt="{{Auth::User()->name}}">
                 </div>
                 <div class="col-12 buttons">
                     <a href="{{url('users/'.$user->id.'/edit')}}"><button class="" id="edit">Edit</button></a>
