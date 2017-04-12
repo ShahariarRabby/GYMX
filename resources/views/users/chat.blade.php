@@ -33,7 +33,14 @@
                     </div>
                 </div>
                 {!! Form::open(['method'=>'POST','action'=>"UserContant@chat"]) !!}
-                <input class="form-control" type="text" autocomplete="off" required value="" id="" name="message"  placeholder="Type a message">
+<div class="row">
+
+                <input class="form-control col-11" type="text" autocomplete="off" required value="" i name="message"  placeholder="Type a message">
+                <button class="col-1" style="background: none;border: none;color: #1fae66;" type="submit">
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                </button>
+
+</div>
                 {!! Form::close() !!}
 
 
