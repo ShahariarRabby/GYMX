@@ -408,7 +408,7 @@
 
                 <div class="row ">
                     <div class="col-lg-6 col-12 card yearmoney opacity">
-                        <h1>&#2547; 15000</h1>
+                        <h1>&#2547; 30000</h1>
                         <div class="card-block">
                             <h4 class="card-title">PER YEAR</h4>
                             <p class="card-text">majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are </p>
