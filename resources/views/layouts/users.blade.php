@@ -266,6 +266,8 @@
     {{--});--}}
 {{--</script>--}}
 <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
     $('#password, #confirm_password').on('keyup', function () {
         if ($('#password').val() != "" || $('#confirm_password').val() !="") {
             if ($('#password').val() == $('#confirm_password').val()) {
