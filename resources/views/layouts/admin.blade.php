@@ -311,7 +311,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>
 @if(Session::has('create'))
     <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
 
         $.confirm({
             title: 'Congratulation!',
@@ -372,6 +371,8 @@
     </script>
 @endif
 <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
     function readURL(input) {
 
         if (input.files && input.files[0]) {
