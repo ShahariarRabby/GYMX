@@ -414,7 +414,7 @@ nav:hover {
 /*media query*/
 
 @media only screen and (max-width: 767px) {
-  #sidebar,.userprofile,.marquee{
+  #sidebar,.usersummery,.marquee{
   display: none;
 }
 

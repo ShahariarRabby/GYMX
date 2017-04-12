@@ -25,7 +25,7 @@
         #pro{
             display: block;
         }
-       #userprofile{
+       .usersummery{
                display: block;
            }
     </style>
