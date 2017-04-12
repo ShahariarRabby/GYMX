@@ -167,44 +167,30 @@
 
                     <input id="inputPassword3" type="password" class="form-control" placeholder="Password" required name="password">
 
-                    {{--@if ($errors->has('password'))--}}
-
-                        {{--<script>--}}
-                        {{--$.confirm({--}}
-                            {{--title: 'Encountered an error!',--}}
-                            {{--content: '<span style="color: black;">Something went downhill, this may be serious</span>',--}}
-                            {{--type: 'red',--}}
-                            {{--typeAnimated: true,--}}
-                            {{--buttons: {--}}
-                                {{--tryAgain: {--}}
-                                    {{--text: 'Try again',--}}
-                                    {{--btnClass: 'btn-red',--}}
-                                    {{--action: function(){--}}
-                                    {{--}--}}
-                                {{--},--}}
-                                {{--close: function () {--}}
-                                {{--}--}}
-                            {{--}--}}
-                        {{--});--}}
-
-                    {{--</script>--}}
-                    {{--@endif--}}
-
             </div>
             {{--<div class="form-group row">--}}
                 {{--<input type="password" class="col-12" id="inputPassword3" placeholder="Password">--}}
 
             {{--</div>--}}
 
-            <div class="form-group">
-                <div class="col-md-6 col-md-offset-4">
+            <div class="form-group row">
+                <div class="col-md-6">
                     <div class="checkbox">
                         <label style="font-size: small">
                             <input type="checkbox" name="remember"> Remember
                         </label>
 
                     </div>
+                </div>     <div class="col-md-6">
+                    <div class="checkbox">
+                        <a href="{{url('auth/facebook')}}"> <label style="font-size: small">
+                          Login with  <i class="fa fa-facebook-official" aria-hidden="true" style="font-size: x-large;color: #3b5998"></i>
+
+                        </label></a>
+
+                    </div>
                 </div>
+
             </div>
             <div class="form-group row">
 

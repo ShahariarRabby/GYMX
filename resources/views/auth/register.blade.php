@@ -90,6 +90,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-user"></i> Register
                                 </button>
+                                <a href='{{url('auth/facebook')}}' class="btn btn-primary">
+                                    Register with  &nbsp;<i class="fa fa-facebook-official" aria-hidden="true" style="font-size: large;color: #fff"></i>
+                                </a>
                             </div>
                         </div>
                     </form>
