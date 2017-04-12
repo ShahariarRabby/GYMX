@@ -5,6 +5,7 @@
 @section('content')
 
     @include('includes.form_errors')
+  <div>
     <div class="col-md-6 col-12" style="padding-bottom: 10%">
     {!! Form::open(['method'=>'POST','action'=>"AdminUsersController@store",'files'=>true]) !!}
     <div class="form-group">
@@ -63,7 +64,7 @@
 
     </div>
 {!! Form::close() !!}
-</div>
+</div></div>
     <div class="col-4">
         <img id="blah" style="height: 200px;width: 200px; margin-top: 50px" src="" class="img-responsive blah img-rounded">
     </div>

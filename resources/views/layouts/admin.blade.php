@@ -131,7 +131,6 @@
                             </li>
 
                         <!-- /.nav-third-level -->
-                    </li>
 
                     <li class="dropdown">
                         <a >
