@@ -69,6 +69,21 @@
                                     </span>
                                 @endif
                             </div>
+
+                        </div>
+                        <style>
+                            .none{
+                                display: none;
+                            }
+                            .none2{
+                                display: block !important;
+                            }
+                        </style>
+                        <div class="row">
+                            <label  class="col-md-4 control-label "></label>
+                            <div class="col-md-6">
+                                <span id="message" ></span>
+                            </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
@@ -84,7 +99,20 @@
                                 @endif
                             </div>
                         </div>
+                        <script>
+                            $('#password, #password-confirm').on('keyup', function () {
+                                if ($('#password').val() != "" || $('#password-confirm').val() !="") {
+                                    if ($('#password').val() == $('#password-confirm').val()) {
+                                        $('#message').html('Password must contain at least six character').css('color', 'black');
+                                    } else
+                                        $('#message').html('<span style="color: black" >Password must contain at least six character</span><br>Not Matching').css('color', 'red');
+                                }
+                                else{
 
+                                }
+
+                            });
+                        </script>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
