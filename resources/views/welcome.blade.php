@@ -3,7 +3,7 @@
 
 <head>
     <title>GYMX</title>
-    <meta name="description" content="The Best Gym Website is here, so it's time to Challenge yourself at gym x with your daily dose of fitness using functional movements performed at high intensity. It time to go beyond your limits and discover your personal potential now">
+    <meta name="description" content="The Best Gym Website is here, so it's time to Challenge yourself.">
     <meta name="keywords" content="gym, gymx, best gym tips,gym workout, gym membership,world gym, body gym,gym near me, boy gym, boys gym, boy's gym, girl gym, girls gym, the gym, best gym, best online gym, low cost gym, Banglashi gym, Gym BD, gym for body building">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="120x120" href="images/welcome/fav/apple-touch-icon.png">
