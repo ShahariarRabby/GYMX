@@ -124,6 +124,9 @@
                 <ul class="sub-menu none">
 
                             <li>
+                                <a href="{{url('admin/payments/details')}}">Payment Summery</a>
+                            </li>
+                    <li>
                                 <a href="{{route('payment.index')}}">All Payments</a>
                             </li>
                             <li>
