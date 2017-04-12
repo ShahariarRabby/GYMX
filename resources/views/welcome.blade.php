@@ -465,31 +465,31 @@
                         <tbody>
                         <tr>
                             <td>Friday</td>
-                            <td>07:00-17:00</td>
+                            <td>07:00-23:00</td>
                         </tr>
                         <tr>
                             <td>Saturday</td>
-                            <td>07:00-17:00</td>
+                            <td>07:00-23:00</td>
                         </tr>
                         <tr>
                             <td>Sunday</td>
-                            <td>07:00-17:00</td>
+                            <td>07:00-23:00</td>
                         </tr>
                         <tr>
                             <td>Thursday</td>
-                            <td>07:00-17:00</td>
+                            <td>07:00-23:00</td>
                         </tr>
                         <tr>
                             <td>Wednesday</td>
-                            <td>07:00-17:00</td>
+                            <td>07:00-23:00</td>
                         </tr>
                         <tr>
                             <td>Tuesday</td>
-                            <td>07:00-17:00</td>
+                            <td>07:00-23:00</td>
                         </tr>
                         <tr>
                             <td>Monday</td>
-                            <td>07:00-17:00</td>
+                            <td>07:00-23:00</td>
                         </tr>
                         </tbody>
                     </table>
