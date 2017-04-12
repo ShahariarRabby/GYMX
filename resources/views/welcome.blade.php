@@ -523,6 +523,8 @@
 
 
 <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
     $(".signin").click(function () {
         if ($('#none').hasClass('none')) {
             $('#none').removeClass('none');
