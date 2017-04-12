@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <title>GYMX </title>
-    <meta name="description" content="The Best Gym Website in online">
-    <meta name="keywords" content="web, design, html, css, html5, css3, javascript, jquery, bootstrap, development">
+    <title>GYMX</title>
+    <meta name="description" content="The Best Gym Website is here">
+    <meta name="keywords" content="gym, gymx, best, online, best gym, best online gym, low cost gym, Banglashi gym, Gym BD, gym for body building">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="120x120" href="images/welcome/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="images/welcome/fav/favicon-32x32.png" sizes="32x32">
