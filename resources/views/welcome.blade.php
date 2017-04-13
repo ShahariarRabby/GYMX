@@ -532,7 +532,7 @@
                 </div></div>
         </div>
 
-        <div class="row" style="padding-top: 50px">
+        <div class="row" style="padding-top: 57px">
             <div class="col-md-4 col-12 offset-md-4 offset-0">
 
                 <a href="http://gymxx.rabby.ml/andoid/gymx.apk"><img id="download" src="{{asset('images/welcome/download.png')}}" alt="Download For Android" ></a>
