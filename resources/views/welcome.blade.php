@@ -4,7 +4,7 @@
 <head>
     <title>GYMX</title>
     <meta name="description" content="The Best Gym Website is here, so it's time to Challenge yourself.">
-    <meta name="keywords" content="gym, gymx, best gym tips,gym workout, gym membership,world gym, body gym,gym near me, boy gym, boys gym, boy's gym, girl gym, girls gym, the gym, best gym, best online gym, low cost gym, Banglashi gym, Gym BD, gym for body building">
+    <meta name="keywords" content="gym, gymx, best gym tips,gym workout, gym membership,world gym, body gym,gym near me, boy gym, boys gym, boy's gym, girl gym, girls gym, the gym, best gym, best online gym, low cost gym, Bangladeshi gym, Gym BD, gym for body building">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="120x120" href="images/welcome/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="images/welcome/fav/favicon-32x32.png" sizes="32x32">
@@ -16,7 +16,8 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>--}}
     {{--<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>--}}
@@ -26,8 +27,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
@@ -48,70 +53,72 @@
 <body>
 <header id="headerhome">
     <nav>
-        <a class="logo " >
+        <a class="logo ">
             <img class="w" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
             <img class="ww" src="{{asset('images/welcome/gymx_logo_3.png')}}" alt="">
             <img class="www" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
         </a>
-        <a class="logo-black " >
+        <a class="logo-black ">
             <img class="ww" src="{{asset('images/welcome/logoblk.png')}}" alt="">
         </a>
         <div>
             <ul class="main-nav js--main-nav">
-                <li >
-                    <a  href="#headerhome">Home<span class="sr-only">(current)</span></a>
+                <li>
+                    <a href="#headerhome">Home<span class="sr-only">(current)</span></a>
                 </li>
-                <li >
-                    <a  href="{{url('#howworks')}}">Fitness</a>
+                <li>
+                    <a href="{{url('#howworks')}}">Fitness</a>
                 </li>
                 <li>
                     <a href="#Gallery">Gallery</a>
                 </li>
                 <li>
-                    <a  href="#testimonial">Opinion</a>
+                    <a href="#testimonial">Opinion</a>
                 </li>
                 {{--<li class="">--}}
-                    {{--<a class="" href="#trial">registration</a>--}}
+                {{--<a class="" href="#trial">registration</a>--}}
                 {{--</li>--}}
-                <li >
-                    <a  href="#Packages">Packages</a>
+                <li>
+                    <a href="#Packages">Packages</a>
                 </li>
-                <li >
-                    <a  href="#aboutus">About Us</a>
+                <li>
+                    <a href="#aboutus">About Us</a>
                 </li>
-                    @if (Auth::guest())
+                @if (Auth::guest())
                     <li>
                         <a href="#trial">Register</a>
                     </li>
-                    <li >
+                    <li>
                         <a href="{{url('/login')}}">Login</a>
                     </li>
-                    @else
-                    <li >
-                        <a href="/home" >
+                @else
+                    <li>
+                        <a href="/home">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                     </li>
-                <li>
+                    <li>
                         <a href="{{ url('/logout') }}">Logout</a>
                     </li>
-                    @endif
+                @endif
 
 
                 {{--<li class="">--}}
 
-                    {{--<a class=" " id="" href="{{url('/login')}}">Sign in</a>--}}
+                {{--<a class=" " id="" href="{{url('/login')}}">Sign in</a>--}}
                 {{--</li>--}}
             </ul>
             <a class="mobile-nav-icon js--nav-icon"><i class="fa fa-bars" aria-hidden="true"></i></a>
         </div>
     </nav>
 
-    <div  class="CHALLENGE" id="none">
+    <div class="CHALLENGE" id="none">
         <div class="middeltext">
-            <h1 >CHALLENGE <br>YOURSELF</h1>
+            <h1>CHALLENGE <br>YOURSELF</h1>
             <span class="dash"></span>
-            <p id="content">Challenge yourself at gym x with your daily dose of fitness using functional movements performed at high intensity. It time to go beyond your limits and discover your personal potential now </p>
+            <p id="content">Challenge yourself at gym x with your daily dose of fitness using functional movements
+                performed at high intensity. It time to go beyond your limits and discover your personal potential
+                now </p>
             <button class="btns signin" id="signin">Sign In</button>
             <a href="#trial" class="btnl">Free Trial</a>
         </div>
@@ -121,7 +128,7 @@
 
     <div class="none" id="formsingin">
         <form class="singinform" role="form" method="POST" action="{{ url('/login') }}">
-        {{--<form class="singinform ">--}}
+            {{--<form class="singinform ">--}}
             {{ csrf_field() }}
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} row">
                 {{--<label for="email" class="col-md-4 control-label">E-Mail Address</label>--}}
@@ -133,9 +140,10 @@
                     }
                 </style>
                 {{--<div class="col-md-6">--}}
-                    {{--<input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">--}}
-                    <input type="email" required class="col-12" id="inputEmail3" name="email" value="{{ old('email') }}" placeholder="Email">
-                    @if ($errors->has('email') || $errors->has('password'))
+                {{--<input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">--}}
+                <input type="email" required class="col-12" id="inputEmail3" name="email" value="{{ old('email') }}"
+                       placeholder="Email">
+                @if ($errors->has('email') || $errors->has('password'))
                     <script>
                         $.confirm({
                             title: '<span style="color: orangered;">Sorry!</span>',
@@ -146,7 +154,7 @@
                                 tryAgain: {
                                     text: 'Try again',
                                     btnClass: 'btn-red',
-                                    action: function(){
+                                    action: function () {
                                     }
                                 },
                                 close: function () {
@@ -154,22 +162,22 @@
                             }
                         });
                     </script>
-                    @endif
+                @endif
                 {{--</div>--}}
             </div>
 
             {{--<div class="form-group row">--}}
-                {{--<input type="email" class="col-12" id="inputEmail3" placeholder="Email">--}}
+            {{--<input type="email" class="col-12" id="inputEmail3" placeholder="Email">--}}
             {{--</div>--}}
             <div class="form-group row{{ $errors->has('password') ? ' has-error' : '' }}">
 
 
-
-                    <input id="inputPassword3" type="password" class="form-control" placeholder="Password" required name="password">
+                <input id="inputPassword3" type="password" class="form-control" placeholder="Password" required
+                       name="password">
 
             </div>
             {{--<div class="form-group row">--}}
-                {{--<input type="password" class="col-12" id="inputPassword3" placeholder="Password">--}}
+            {{--<input type="password" class="col-12" id="inputPassword3" placeholder="Password">--}}
 
             {{--</div>--}}
 
@@ -181,12 +189,14 @@
                         </label>
 
                     </div>
-                </div>     <div class="col-md-6">
+                </div>
+                <div class="col-md-6">
                     <div class="checkbox">
                         <a href="{{url('auth/facebook')}}"> <label style="font-size: small">
-                          Login with  <i class="fa fa-facebook-official" aria-hidden="true" style="font-size: x-large;color: #3b5998"></i>
+                                Login with <i class="fa fa-facebook-official" aria-hidden="true"
+                                              style="font-size: x-large;color: #3b5998"></i>
 
-                        </label></a>
+                            </label></a>
 
                     </div>
                 </div>
@@ -194,16 +204,17 @@
             </div>
             <div class="form-group row">
 
-                    <button type="submit" class="btns col">
-                      Sign in
-                    </button>
+                <button type="submit" class="btns col">
+                    Sign in
+                </button>
                 <button type="submit" class="btnl signin col">Cancel</button>
-                    {{--<a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>--}}
-                <a class="btn btn-link"  style="font-size: small;color: whitesmoke" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                {{--<a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>--}}
+                <a class="btn btn-link" style="font-size: small;color: whitesmoke" href="{{ url('/password/reset') }}">Forgot
+                    Your Password?</a>
             </div>
             {{--<div class="form-group row">--}}
-                {{--<button type="submit" class="btns col"><a href="https://facebook.com">Sign in</a></button>--}}
-                {{--<button type="submit" class="btnl signin col">Cancel</button>--}}
+            {{--<button type="submit" class="btns col"><a href="https://facebook.com">Sign in</a></button>--}}
+            {{--<button type="submit" class="btnl signin col">Cancel</button>--}}
             {{--</div>--}}
         </form>
     </div>
@@ -220,7 +231,9 @@
                         <h4 class="card-title">CYCLING & CARDIO</h4></a>
                 </div>
                 <p class="card-text">
-                    Cycling  & Cardio helps your heart, blood vessels and lungs all get a workout. You will breathe deeper, perspire and experience increased body temperature, which will improve your overall fitness level. The health benefits of regular cycling include: increased cardiovascular fitness.                </p>
+                    Cycling & Cardio helps your heart, blood vessels and lungs all get a workout. You will breathe
+                    deeper, perspire and experience increased body temperature, which will improve your overall fitness
+                    level. The health benefits of regular cycling include: increased cardiovascular fitness. </p>
             </div>
         </div>
         <div class="card">
@@ -231,8 +244,12 @@
                         <h4 class="card-title">KETTLEBELLS</h4></a>
                 </div>
                 <p class="card-text">
-                    The reason for the surge in kettlebell training is that it gets back to basic training that requires functional, whole body fitness… a great way to get a whole body workout in a relatively short period of time.
-                    <br> &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+                    The reason for the surge in kettlebell training is that it gets back to basic training that requires
+                    functional, whole body fitness… a great way to get a whole body workout in a relatively short period
+                    of time.
+                    <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 </p>
             </div>
         </div>
@@ -240,11 +257,13 @@
 
             <div class="card-block">
                 <div class="cardlink">
-                    <a ><img class="card-img-top" src="{{asset('images/welcome/card3.jpg')}}" alt="Card image cap">
+                    <a><img class="card-img-top" src="{{asset('images/welcome/card3.jpg')}}" alt="Card image cap">
                         <h4 class="card-title">BODY PUMP</h4></a>
                 </div>
                 <p class="card-text">
-                    Resistance training with weights is a great calorie burner and excellent way to build muscle. As muscles repair from the workouts your body's metabolism is increased. This means that calories are burned by BodyPump at an increased rate long after you finish the Body Pump class.                </p>
+                    Resistance training with weights is a great calorie burner and excellent way to build muscle. As
+                    muscles repair from the workouts your body's metabolism is increased. This means that calories are
+                    burned by BodyPump at an increased rate long after you finish the Body Pump class. </p>
             </div>
         </div>
     </div>
@@ -252,22 +271,29 @@
 <!--**************************************************************************************-->
 <section id="howworks" class="howworks">
     <div class="row">
-        <div class="col-lg-6 col-12 picbox"><img src="{{asset('images/welcome/fitness-about.png')}}" class="pic opacity" alt="">
+        <div class="col-lg-6 col-12 picbox"><img src="{{asset('images/welcome/fitness-about.png')}}" class="pic opacity"
+                                                 alt="">
             <div class="rt-fitness">All <span style="font-weight: 600">About</span>
-                <br> Fitness</div>
+                <br> Fitness
+            </div>
         </div>
         <div class="col-lg-6 col-12 textbox">
             <div>
-                <h3><i class="fa fa-arrows-v" aria-hidden="true" style="font-size: 28px; "></i><a>Weight Lifting</a></h3>
-                <p>Weightlifting, also called Olympic weightlifting, is an athletic discipline in the modern Olympic programme in which the athlete attempts a maximum-weight single lift of a barbell loaded with weight plates.</p>
+                <h3><i class="fa fa-arrows-v" aria-hidden="true" style="font-size: 28px; "></i><a>Weight Lifting</a>
+                </h3>
+                <p>Weightlifting, also called Olympic weightlifting, is an athletic discipline in the modern Olympic
+                    programme in which the athlete attempts a maximum-weight single lift of a barbell loaded with weight
+                    plates.</p>
             </div>
             <div>
                 <h3><i class="fa fa-wheelchair-alt" aria-hidden="true" style="font-size: 28px;"></i><a>Running</a></h3>
-                <p>Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. Running is a type of gait characterized by an aerial phase in which all feet…</p>
+                <p>Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on
+                    foot. Running is a type of gait characterized by an aerial phase in which all feet…</p>
             </div>
             <div>
                 <h3><i class="fa fa-female" aria-hidden="true" style="font-size: 28px;"></i><a>Yoga</a></h3>
-                <p>Yoga, is a meditative means of discovering dysfunctional perception and cognition, as well as overcoming it for release from suffering, inner peace and salvation</p>
+                <p>Yoga, is a meditative means of discovering dysfunctional perception and cognition, as well as
+                    overcoming it for release from suffering, inner peace and salvation</p>
             </div>
         </div>
     </div>
@@ -276,11 +302,11 @@
 <!--************************************************************************************************************************-->
 <section id="Gallery" class="section-meals container-fluid">
 
-    <ul >
-        <li class="item " >
+    <ul>
+        <li class="item ">
             <figure><img src="{{asset('images/welcome/g1.jpg')}}" alt=""></figure>
         </li>
-        <li class="item " >
+        <li class="item ">
             <figure><img src="{{asset('images/welcome/g1.jpg')}}" alt=""></figure>
         </li>
         <li class="item ">
@@ -326,7 +352,9 @@
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
 
                 <blockquote>
-                    Thank you all so much for your help, encouragement, and positive attitudes throughout the year. you make the gym such a warm, inviting, and friendly place to be, and that makes all the difference in the world.                    <cite><img src="{{asset('images/welcome/g3.jpg')}}" alt="">Ema Watson</cite>
+                    Thank you all so much for your help, encouragement, and positive attitudes throughout the year. you
+                    make the gym such a warm, inviting, and friendly place to be, and that makes all the difference in
+                    the world. <cite><img src="{{asset('images/welcome/g3.jpg')}}" alt="">Ema Watson</cite>
                 </blockquote>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-12">
@@ -340,7 +368,8 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-12">
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                 <blockquote>
-                    They really make a point of getting to know you. When you’re doing something as mundane as exercise, and somebody can make it more meaningful, that’s actually quite an accomplishment.
+                    They really make a point of getting to know you. When you’re doing something as mundane as exercise,
+                    and somebody can make it more meaningful, that’s actually quite an accomplishment.
 
                     <cite><img src="{{asset('images/welcome/2.jpg')}}" alt="">Shakib Khan</cite>
                 </blockquote>
@@ -361,15 +390,16 @@
                 <div>
                     <h3>Rady to try</h3>
                     <p>
-                        A gym Membership at GYMX gives you access to incredible programs, services, and amenities that help you achieve your goals.
-                         You can workout whenever, and wherever, you want.
+                        A gym Membership at GYMX gives you access to incredible programs, services, and amenities that
+                        help you achieve your goals.
+                        You can workout whenever, and wherever, you want.
                     </p>
                 </div>
 
                 <div class="take">
                     <form class="row">
                         <style>
-                            a#freetrial:hover{
+                            a#freetrial:hover {
                                 color: white;
                             }
                         </style>
@@ -388,7 +418,7 @@
         <div class="row">
             <div class="col-12">
                 <style>
-                    #Packages a:active{
+                    #Packages a:active {
                         color: white;
                         text-decoration: none;
                     }
@@ -407,7 +437,8 @@
                         <div class="card-block">
                             <h4 class="card-title">PER MONTH</h4>
                             <p class="card-text">
-                                Starter – Enjoy the freedom and flexibility of paying month-to-month. Try out GYMX now with a 30 Day Membership. <br>(initiation fee may apply).*                            </p>
+                                Starter – Enjoy the freedom and flexibility of paying month-to-month. Try out GYMX now
+                                with a 30 Day Membership. <br>(initiation fee may apply).* </p>
                             <a href="{{url('/register')}}">REGISTER NOW</a>
                         </div>
                     </div>
@@ -421,7 +452,8 @@
                         <div class="card-block">
                             <h4 class="card-title">PER YEAR</h4>
                             <p class="card-text">
-                                Professional – Pay less for monthly dues when you commit to 12 months of membership, compared to the Starter Monthly Payment membership.
+                                Professional – Pay less for monthly dues when you commit to 12 months of membership,
+                                compared to the Starter Monthly Payment membership.
                             </p>
                             <a href="{{url('/register')}}">REGISTER NOW</a>
                         </div>
@@ -440,14 +472,19 @@
             <div class="col-lg-6 col-12">
                 <h1>About Us</h1>
                 <p>
-                    GYMX is a gym with a heart and a soul. Located just steps away from the metro, we are Cleveland Park’s favorite workout spot.
-                    Our friendly staff is approachable and our members are your neighbors, the young and the grown up folks. We believe in a holistic approach to wellness that addresses the full spectrum of health.
+                    GYMX is a gym with a heart and a soul. Located just steps away from the metro, we are Cleveland
+                    Park’s favorite workout spot.
+                    Our friendly staff is approachable and our members are your neighbors, the young and the grown up
+                    folks. We believe in a holistic approach to wellness that addresses the full spectrum of health.
                     We invite you to join our fun, warm and welcoming community.
                     <br>
                     <br>
-                    Let us help you get strong, balanced & flexible – mentally and physically. In order to help you achieve your fitness goals, GYMX offers 3 free personal training sessions and a complete selection of cardio equipment, free weights, weight machines and fitness classes.
-                    At the end of your workout, whether you’re a beginner or a seasoned exerciser, you will leave the gym with a positive vibe and an energetic presence.
-                       </p>
+                    Let us help you get strong, balanced & flexible – mentally and physically. In order to help you
+                    achieve your fitness goals, GYMX offers 3 free personal training sessions and a complete selection
+                    of cardio equipment, free weights, weight machines and fitness classes.
+                    At the end of your workout, whether you’re a beginner or a seasoned exerciser, you will leave the
+                    gym with a positive vibe and an energetic presence.
+                </p>
             </div>
 
         </div>
@@ -468,7 +505,9 @@
                 <div class="padd">
                     <img src="{{asset('images/welcome/logo_small.png')}}" alt="">
                     <p>
-                        At GYMX we believe everyone should have the opportunity to enjoy a fit and healthy lifestyle. So we have made it simple, affordable & convenient for everyone to achieve their personal health goals. Whether you're a beginner or a pro, young or old, we're here for everybody.                    </p>
+                        At GYMX we believe everyone should have the opportunity to enjoy a fit and healthy lifestyle. So
+                        we have made it simple, affordable & convenient for everyone to achieve their personal health
+                        goals. Whether you're a beginner or a pro, young or old, we're here for everybody. </p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-12 pad">
@@ -509,7 +548,8 @@
                         </tr>
                         </tbody>
                     </table>
-                </div></div>
+                </div>
+            </div>
             <div class="col-lg-4 col-md-4 col-12 con">
                 <div class="padd">
 
@@ -518,7 +558,8 @@
                         015000 00000</h4>
                     <span>Hotline available 24 hours</span>
                     <div class="row">
-                        <div class="col-6"><i class="fa fa-facebook-official" aria-hidden="true"></i><span> Facebook</span>
+                        <div class="col-6"><i class="fa fa-facebook-official"
+                                              aria-hidden="true"></i><span> Facebook</span>
                         </div>
                         <div class="col-6"><i class="fa fa-twitter" aria-hidden="true"></i><span> twitter</span>
                         </div>
@@ -527,13 +568,16 @@
                         <div class="col-6"><i class="fa fa-google-plus-official" aria-hidden="true"></i><span> Google Plus</span>
                         </div>
                     </div>
-                </div></div>
+                </div>
+            </div>
         </div>
 
         <div class="row" style="padding-top: 57px">
             <div class="col-md-4 col-12 offset-md-4 offset-0">
 
-                <a href="http://gymxx.rabby.ml/andoid/gymx.apk"><img id="download" src="{{asset('images/welcome/download.png')}}" alt="Download For Android" ></a>
+                <a href="http://gymxx.rabby.ml/andoid/gymx.apk"><img id="download"
+                                                                     src="{{asset('images/welcome/download.png')}}"
+                                                                     alt="Download For Android"></a>
             </div>
         </div>
     </div>
@@ -544,9 +588,10 @@
 </footer>
 
 
-
 <script>
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('contextmenu', event = > event.preventDefault()
+    )
+    ;
 
     $(".signin").click(function () {
         if ($('#none').hasClass('none')) {
@@ -560,11 +605,11 @@
         }
     });
 
-    $(function() {
-        $('a[href*="#"]:not([href="#"])').click(function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    $(function () {
+        $('a[href*="#"]:not([href="#"])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                 var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     $('html, body').animate({
                         scrollTop: target.offset().top
@@ -575,7 +620,7 @@
         });
     });
 
-    $('#sticky').waypoint(function(direction) {
+    $('#sticky').waypoint(function (direction) {
         if (direction == "down") {
             $('nav').addClass('sticky');
         } else {
@@ -586,19 +631,19 @@
     });
 
 
-    $('.pic').waypoint(function(direction) {
+    $('.pic').waypoint(function (direction) {
         $('.pic').addClass('animated bounceInUp');
     }, {
         offset: '50%'
     });
-//
-    $('.yearmoney').waypoint(function(direction) {
+    //
+    $('.yearmoney').waypoint(function (direction) {
         $('.yearmoney').addClass('animated pulse');
     }, {
         offset: '50%'
     });
 
-    $('.js--nav-icon').click(function() {
+    $('.js--nav-icon').click(function () {
         var nav = $('.js--main-nav');
         var icon = $('.js--nav-icon i');
 
@@ -613,18 +658,18 @@
         }
     });
 
-//
-//    $('.js--wp-3').waypoint(function(direction) {
-//        $('.js--wp-3').addClass('animated fadeIn');
-//    }, {
-//        offset: '50%'
-//    });
-//
-//    $('.js--wp-4').waypoint(function(direction) {
-//        $('.js--wp-4').addClass('animated pulse');
-//    }, {
-//        offset: '50%'
-//    });
+    //
+    //    $('.js--wp-3').waypoint(function(direction) {
+    //        $('.js--wp-3').addClass('animated fadeIn');
+    //    }, {
+    //        offset: '50%'
+    //    });
+    //
+    //    $('.js--wp-4').waypoint(function(direction) {
+    //        $('.js--wp-4').addClass('animated pulse');
+    //    }, {
+    //        offset: '50%'
+    //    });
 
 </script>
 </body>
@@ -632,106 +677,100 @@
 </html>
 
 
-
-
-
-
-
-
 {{--<!DOCTYPE html>--}}
 {{--<html lang="en">--}}
 {{--<head>--}}
-    {{--<meta charset="utf-8">--}}
-    {{--<meta http-equiv="X-UA-Compatible" content="IE=edge">--}}
-    {{--<meta name="viewport" content="width=device-width, initial-scale=1">--}}
+{{--<meta charset="utf-8">--}}
+{{--<meta http-equiv="X-UA-Compatible" content="IE=edge">--}}
+{{--<meta name="viewport" content="width=device-width, initial-scale=1">--}}
 
-    {{--<title>Laravel</title>--}}
+{{--<title>Laravel</title>--}}
 
-    {{--<!-- Fonts -->--}}
-    {{--<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">--}}
+{{--<!-- Fonts -->--}}
+{{--<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">--}}
 
-    {{--<!-- Styles -->--}}
-    {{--<style>--}}
-        {{--html, body {--}}
-            {{--background-color: #fff;--}}
-            {{--color: #636b6f;--}}
-            {{--font-family: 'Raleway', sans-serif;--}}
-            {{--font-weight: 100;--}}
-            {{--height: 100vh;--}}
-            {{--margin: 0;--}}
-        {{--}--}}
+{{--<!-- Styles -->--}}
+{{--<style>--}}
+{{--html, body {--}}
+{{--background-color: #fff;--}}
+{{--color: #636b6f;--}}
+{{--font-family: 'Raleway', sans-serif;--}}
+{{--font-weight: 100;--}}
+{{--height: 100vh;--}}
+{{--margin: 0;--}}
+{{--}--}}
 
-        {{--.full-height {--}}
-            {{--height: 100vh;--}}
-        {{--}--}}
+{{--.full-height {--}}
+{{--height: 100vh;--}}
+{{--}--}}
 
-        {{--.flex-center {--}}
-            {{--align-items: center;--}}
-            {{--display: flex;--}}
-            {{--justify-content: center;--}}
-        {{--}--}}
+{{--.flex-center {--}}
+{{--align-items: center;--}}
+{{--display: flex;--}}
+{{--justify-content: center;--}}
+{{--}--}}
 
-        {{--.position-ref {--}}
-            {{--position: relative;--}}
-        {{--}--}}
+{{--.position-ref {--}}
+{{--position: relative;--}}
+{{--}--}}
 
-        {{--.top-right {--}}
-            {{--position: absolute;--}}
-            {{--right: 10px;--}}
-            {{--top: 18px;--}}
-        {{--}--}}
+{{--.top-right {--}}
+{{--position: absolute;--}}
+{{--right: 10px;--}}
+{{--top: 18px;--}}
+{{--}--}}
 
-        {{--.content {--}}
-            {{--text-align: center;--}}
-        {{--}--}}
+{{--.content {--}}
+{{--text-align: center;--}}
+{{--}--}}
 
-        {{--.title {--}}
-            {{--font-size: 84px;--}}
-        {{--}--}}
+{{--.title {--}}
+{{--font-size: 84px;--}}
+{{--}--}}
 
-        {{--.links > a {--}}
-            {{--color: #636b6f;--}}
-            {{--padding: 0 25px;--}}
-            {{--font-size: 12px;--}}
-            {{--font-weight: 600;--}}
-            {{--letter-spacing: .1rem;--}}
-            {{--text-decoration: none;--}}
-            {{--text-transform: uppercase;--}}
-        {{--}--}}
+{{--.links > a {--}}
+{{--color: #636b6f;--}}
+{{--padding: 0 25px;--}}
+{{--font-size: 12px;--}}
+{{--font-weight: 600;--}}
+{{--letter-spacing: .1rem;--}}
+{{--text-decoration: none;--}}
+{{--text-transform: uppercase;--}}
+{{--}--}}
 
-        {{--.m-b-md {--}}
-            {{--margin-bottom: 30px;--}}
-        {{--}--}}
-    {{--</style>--}}
+{{--.m-b-md {--}}
+{{--margin-bottom: 30px;--}}
+{{--}--}}
+{{--</style>--}}
 {{--</head>--}}
 {{--<body>--}}
 {{--<div class="flex-center position-ref full-height">--}}
-    {{--<div class="top-right links">--}}
-        {{--@if (Auth::guest())--}}
-            {{--<a href="{{url('/login')}}">Login</a>--}}
-            {{--<a href="{{url('/register')}}">Register</a>--}}
-        {{--@else--}}
-            {{--<a href="/home" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">--}}
-                {{--{{ Auth::user()->name }} <span class="caret"></span>--}}
-            {{--</a>--}}
-            {{--<a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a>--}}
-        {{--@endif--}}
+{{--<div class="top-right links">--}}
+{{--@if (Auth::guest())--}}
+{{--<a href="{{url('/login')}}">Login</a>--}}
+{{--<a href="{{url('/register')}}">Register</a>--}}
+{{--@else--}}
+{{--<a href="/home" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">--}}
+{{--{{ Auth::user()->name }} <span class="caret"></span>--}}
+{{--</a>--}}
+{{--<a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a>--}}
+{{--@endif--}}
 
-    {{--</div>--}}
+{{--</div>--}}
 
-    {{--<div class="content">--}}
-        {{--<div class="title m-b-md">--}}
-            {{--oooo--}}
-        {{--</div>--}}
+{{--<div class="content">--}}
+{{--<div class="title m-b-md">--}}
+{{--oooo--}}
+{{--</div>--}}
 
-        {{--<div class="links">--}}
-            {{--<a href="https://fb.me/shahariarrabby">Facebook</a>--}}
-            {{--<a href="https://twitter.com/shahariarrabby">twitter</a>--}}
-            {{--<a href="https://plus.google.com/shahariarrabby">Plus</a>--}}
-            {{--<a href="https://shahariarrabby.com">Email</a>--}}
-            {{--<a href="https://github.com/shahariarrabby">GitHub</a>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+{{--<div class="links">--}}
+{{--<a href="https://fb.me/shahariarrabby">Facebook</a>--}}
+{{--<a href="https://twitter.com/shahariarrabby">twitter</a>--}}
+{{--<a href="https://plus.google.com/shahariarrabby">Plus</a>--}}
+{{--<a href="https://shahariarrabby.com">Email</a>--}}
+{{--<a href="https://github.com/shahariarrabby">GitHub</a>--}}
+{{--</div>--}}
+{{--</div>--}}
 {{--</div>--}}
 {{--</body>--}}
 {{--</html>--}}
