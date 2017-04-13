@@ -1,12 +1,26 @@
 @extends('layouts.app')
 @section('title')
-    Login
+    Register
 @endsection
 @section('content')
+    <style>
+        body{
+            background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)),url('{{asset('images/loginback.jpg')}}');
+            background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)), url('{{asset('images/loginback.jpg')}}');
+            background-size: cover;
+            background-color: #1d2227;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            /*background: url("");*/
+        }
+
+    </style>
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+
+    <div class="row" >
+        <div class="col-md-8 col-md-offset-2" >
+            <div class="" id="logins">
                 <div class="panel-heading">Login</div>
                 @include('partials.messages')
 
@@ -18,7 +32,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input id="email" type="email" class="form-control" required name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -32,7 +46,7 @@
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
+                                <input id="password" type="password" required class="form-control" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -46,7 +60,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> Remember Me
+                                        <input type="checkbox" checked name="remember"> Remember Me
                                     </label>
                                 </div>
                             </div>

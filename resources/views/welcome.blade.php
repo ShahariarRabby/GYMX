@@ -445,10 +445,8 @@
                     We invite you to join our fun, warm and welcoming community.
                     <br>
                     <br>
-
-                    Let us help you get strong, balanced & flexible – mentally and physically. In order to help you achieve your fitness goals, City Fitness offers 3 free personal training sessions and a complete selection of cardio equipment, free weights, weight machines and fitness classes.
+                    Let us help you get strong, balanced & flexible – mentally and physically. In order to help you achieve your fitness goals, GYMX offers 3 free personal training sessions and a complete selection of cardio equipment, free weights, weight machines and fitness classes.
                     At the end of your workout, whether you’re a beginner or a seasoned exerciser, you will leave the gym with a positive vibe and an energetic presence.
-
                        </p>
             </div>
 

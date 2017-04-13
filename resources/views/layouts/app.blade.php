@@ -8,13 +8,13 @@
     <title>
         @yield('title')
     </title>
-    <link rel="apple-touch-icon" sizes="120x120" href="images/welcome/fav/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="images/welcome/fav/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="images/welcome/fav/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="images/welcome/fav/manifest.json">
-    <link rel="mask-icon" href="images/welcome/fav/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="images/welcome/fav/favicon.ico">
-    <meta name="msapplication-config" content="images/welcome/fav/browserconfig.xml">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{asset('images/welcome/fav/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" href="{{asset('images/welcome/fav/favicon-32x32.png')}}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{asset('images/welcome/fav/favicon-16x16.png')}}" sizes="16x16">
+    <link rel="manifest" href="{{asset('images/welcome/fav/manifest.json')}}">
+    <link rel="mask-icon" href="{{asset('images/welcome/fav/safari-pinned-tab.svg')}}" color="#5bbad5">
+    <link rel="shortcut icon" href="{{asset('images/welcome/fav/favicon.ico')}}">
+    <meta name="msapplication-config" content="{{asset('images/welcome/fav/browserconfig.xml')}}">
     <meta name="theme-color" content="#ffffff">
     <!-- Fonts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -24,21 +24,55 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="{{asset('css/flat-ui.css')}}" rel="stylesheet">
 
     <style>
         body {
             font-family: 'Lato';
+            padding-top: 100px;
         }
 
         .fa-btn {
             margin-right: 6px;
         }
+        #logins,.navbar{
+            box-shadow:1px 1px 7px 1px black;
+            transition: box-shadow 1s;
+            background:linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.8))
+
+        }
+        #logins:hover,.navbar:hover{
+            box-shadow:1px 1px 2px 0px black;
+        }
+
+             /* Change the white to any color ;) */
+         input:-webkit-autofill {
+             box-shadow: 0 0 0 1000px #e9e9e9 inset;
+             background-color: rgba(255, 255, 255, 0.1);
+
+             /*-webkit-text-fill-color: transparent !important;*/
+         }
+
+        input {
+            background-color: rgba(255, 255, 255, 0.3) !important;
+            outline: none !important;
+        }
+        .form-control, .select2-search input{
+            border: none;
+        }
+
+        input:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            /*outline: 1px;*/
+            border: 2px solid;
+            /*border-bottom: 2px solid #1ABC9C !important; }*/
+        }
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -85,7 +119,12 @@
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>--}}
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+
+    <script src="{{asset('js/flat-ui.min.js')}}"></script>
+
+
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
