@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    Register
+    Login
 @endsection
 @section('content')
     <style>
