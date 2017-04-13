@@ -219,7 +219,8 @@
                     <a><img class="card-img-top" src="{{asset('images/welcome/card1.jpg')}}" alt="Card image cap">
                         <h4 class="card-title">CYCLING & CARDIO</h4></a>
                 </div>
-                <p class="card-text">majority have sufered ion in some form, by inj alteranjected form, by inj alteranjected humour,in the middle of text. All the Lorem Ipsum generators rnet tend to repe</p>
+                <p class="card-text">
+                    Cycling  & Cardio helps your heart, blood vessels and lungs all get a workout. You will breathe deeper, perspire and experience increased body temperature, which will improve your overall fitness level. The health benefits of regular cycling include: increased cardiovascular fitness.                </p>
             </div>
         </div>
         <div class="card">
@@ -229,7 +230,10 @@
                     <a><img class="card-img-top" src="{{asset('images/welcome/card2.jpg')}}" alt="Card image cap">
                         <h4 class="card-title">KETTLEBELLS</h4></a>
                 </div>
-                <p class="card-text">majority have suffered alteration in some form, by injected humour, or randomised words ing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repe</p>
+                <p class="card-text">
+                    The reason for the surge in kettlebell training is that it gets back to basic training that requires functional, whole body fitness… a great way to get a whole body workout in a relatively short period of time.
+                    <br> &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+                </p>
             </div>
         </div>
         <div class="card">
@@ -239,7 +243,8 @@
                     <a ><img class="card-img-top" src="{{asset('images/welcome/card3.jpg')}}" alt="Card image cap">
                         <h4 class="card-title">BODY PUMP</h4></a>
                 </div>
-                <p class="card-text">majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are gInternet tend to repe</p>
+                <p class="card-text">
+                    Resistance training with weights is a great calorie burner and excellent way to build muscle. As muscles repair from the workouts your body's metabolism is increased. This means that calories are burned by BodyPump at an increased rate long after you finish the Body Pump class.                </p>
             </div>
         </div>
     </div>
@@ -321,22 +326,22 @@
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
 
                 <blockquote>
-                    xt of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-                    <cite><img src="{{asset('images/welcome/g3.jpg')}}" alt="">Ema Watson</cite>
+                    Thank you all so much for your help, encouragement, and positive attitudes throughout the year. you make the gym such a warm, inviting, and friendly place to be, and that makes all the difference in the world.                    <cite><img src="{{asset('images/welcome/g3.jpg')}}" alt="">Ema Watson</cite>
                 </blockquote>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-12">
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
 
                 <blockquote>
-                    g Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look lpsum as their default m
+                    Oh! Yes!
                     <cite><img src="{{asset('images/welcome/1.jpg')}}" alt="">Iffat Ali</cite>
                 </blockquote>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-12">
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                 <blockquote>
-                    majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passaext. All the Lorem Ipsum generators on the Internet tend to repe
+                    They really make a point of getting to know you. When you’re doing something as mundane as exercise, and somebody can make it more meaningful, that’s actually quite an accomplishment.
+
                     <cite><img src="{{asset('images/welcome/2.jpg')}}" alt="">Shakib Khan</cite>
                 </blockquote>
             </div>
@@ -355,7 +360,10 @@
             <div class="col-lg-6 trialfrom">
                 <div>
                     <h3>Rady to try</h3>
-                    <p>majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightlpe</p>
+                    <p>
+                        A gym Membership at GYMX gives you access to incredible programs, services, and amenities that help you achieve your goals.
+                         You can workout whenever, and wherever, you want.
+                    </p>
                 </div>
 
                 <div class="take">
@@ -398,7 +406,8 @@
                         <h1>&#2547; 3000</h1>
                         <div class="card-block">
                             <h4 class="card-title">PER MONTH</h4>
-                            <p class="card-text">Smajority have isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repe</p>
+                            <p class="card-text">
+                                Starter – Enjoy the freedom and flexibility of paying month-to-month. Try out GYMX now with a 30 Day Membership. <br>(initiation fee may apply).*                            </p>
                             <a href="{{url('/register')}}">REGISTER NOW</a>
                         </div>
                     </div>
@@ -408,10 +417,12 @@
 
                 <div class="row ">
                     <div class="col-lg-6 col-12 card yearmoney opacity">
-                        <h1>&#2547; 30000</h1>
+                        <h1>&#2547;30000</h1>
                         <div class="card-block">
                             <h4 class="card-title">PER YEAR</h4>
-                            <p class="card-text">majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are </p>
+                            <p class="card-text">
+                                Professional – Pay less for monthly dues when you commit to 12 months of membership, compared to the Starter Monthly Payment membership.
+                            </p>
                             <a href="{{url('/register')}}">REGISTER NOW</a>
                         </div>
                     </div>
@@ -429,9 +440,16 @@
             <div class="col-lg-6 col-12">
                 <h1>About Us</h1>
                 <p>
-                    majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repe
-                    <br> majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repe
-                </p>
+                    GYMX is a gym with a heart and a soul. Located just steps away from the metro, we are Cleveland Park’s favorite workout spot.
+                    Our friendly staff is approachable and our members are your neighbors, the young and the grown up folks. We believe in a holistic approach to wellness that addresses the full spectrum of health.
+                    We invite you to join our fun, warm and welcoming community.
+                    <br>
+                    <br>
+
+                    Let us help you get strong, balanced & flexible – mentally and physically. In order to help you achieve your fitness goals, City Fitness offers 3 free personal training sessions and a complete selection of cardio equipment, free weights, weight machines and fitness classes.
+                    At the end of your workout, whether you’re a beginner or a seasoned exerciser, you will leave the gym with a positive vibe and an energetic presence.
+
+                       </p>
             </div>
 
         </div>
@@ -444,7 +462,6 @@
 
 <!--*********************************************************-->
 
-
 <footer>
 
     <div class="container">
@@ -452,7 +469,8 @@
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="padd">
                     <img src="{{asset('images/welcome/logo_small.png')}}" alt="">
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <p>
+                        At GYMX we believe everyone should have the opportunity to enjoy a fit and healthy lifestyle. So we have made it simple, affordable & convenient for everyone to achieve their personal health goals. Whether you're a beginner or a pro, young or old, we're here for everybody.                    </p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-12 pad">
@@ -512,6 +530,13 @@
                         </div>
                     </div>
                 </div></div>
+        </div>
+
+        <div class="row" style="padding-top: 50px">
+            <div class="col-md-4 col-12 offset-md-4 offset-0">
+
+                <a href="http://gymxx.rabby.ml/andoid/gymx.apk"><img id="download" src="{{asset('images/welcome/download.png')}}" alt="Download For Android" ></a>
+            </div>
         </div>
     </div>
 
