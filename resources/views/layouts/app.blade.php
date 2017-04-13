@@ -59,9 +59,9 @@
             background-color: rgba(255, 255, 255, 0.3) !important;
             outline: none !important;
         }
-        .form-control, .select2-search input{
-            border: none;
-        }
+        /*.form-control, .select2-search input{*/
+            /*border: none;*/
+        /*}*/
 
         input:focus {
             background-color: rgba(255, 255, 255, 0.2);

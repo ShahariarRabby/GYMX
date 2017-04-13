@@ -3,10 +3,23 @@
     Reset
 @endsection
 @section('content')
+    <style>
+        body{
+            background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)),url('{{asset('images/loginback.jpg')}}');
+            background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)), url('{{asset('images/loginback.jpg')}}');
+            background-size: cover;
+            background-color: #1d2227;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            /*background: url("");*/
+        }
+
+    </style>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default" id="logins">
+            <div class="panel" id="logins">
                 <div class="panel-heading">Reset Password</div>
 
                 <div class="panel-body">
