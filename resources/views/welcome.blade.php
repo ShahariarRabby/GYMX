@@ -49,12 +49,12 @@
 <header id="headerhome">
     <nav>
         <a class="logo " >
-            <img class="w" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
-            <img class="ww" src="{{asset('images/welcome/gymx_logo_3.png')}}" alt="">
-            <img class="www" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
+            <img class="w" src="{{asset('images/welcome/gymx_logo_2.png')}}" >
+            <img class="ww" src="{{asset('images/welcome/gymx_logo_3.png')}}" >
+            <img class="www" src="{{asset('images/welcome/gymx_logo_2.png')}}" >
         </a>
         <a class="logo-black " >
-            <img class="ww" src="{{asset('images/welcome/logoblk.png')}}" alt="">
+            <img class="ww" src="{{asset('images/welcome/logoblk.png')}}" >
         </a>
         <div>
             <ul class="main-nav js--main-nav">
@@ -252,7 +252,7 @@
 <!--**************************************************************************************-->
 <section id="howworks" class="howworks">
     <div class="row">
-        <div class="col-lg-6 col-12 picbox"><img src="{{asset('images/welcome/fitness-about.png')}}" class="pic opacity" alt="">
+        <div class="col-lg-6 col-12 picbox"><img src="{{asset('images/welcome/fitness-about.png')}}" class="pic opacity" >
             <div class="rt-fitness">All <span style="font-weight: 600">About</span>
                 <br> Fitness</div>
         </div>
@@ -278,31 +278,31 @@
 
     <ul >
         <li class="item " >
-            <figure><img src="{{asset('images/welcome/gallery/g1-min.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g1-min.jpg')}}" ></figure>
         </li>
         <li class="item " >
-            <figure><img src="{{asset('images/welcome/gallery/g2-min.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g2-min.jpg')}}"></figure>
         </li>
         <li class="item ">
-            <figure><img src="{{asset('images/welcome/gallery/g3-min.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g3-min.jpg')}}" ></figure>
         </li>
         <li class="item ">
-            <figure><img src="{{asset('images/welcome/gallery/g4-min.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g4-min.jpg')}}" ></figure>
         </li>
     </ul>
 
     <ul>
         <li>
-            <figure><img src="{{asset('images/welcome/gallery/g5-min.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g5-min.jpg')}}" ></figure>
         </li>
         <li>
-            <figure><img src="{{asset('images/welcome/gallery/g6-min.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g6-min.jpg')}}" ></figure>
         </li>
         <li>
-            <figure><img src="{{asset('images/welcome/gallery/g7-min.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g7-min.jpg')}}"></figure>
         </li>
         <li>
-            <figure><img src="{{asset('images/welcome/gallery/g8-min.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g8-min.jpg')}}" ></figure>
         </li>
     </ul>
 
@@ -326,7 +326,8 @@
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
 
                 <blockquote>
-                    Thank you all so much for your help, encouragement, and positive attitudes throughout the year. you make the gym such a warm, inviting, and friendly place to be, and that makes all the difference in the world.                    <cite><img src="{{asset('images/welcome/g3.jpg')}}" alt="">Ema Watson</cite>
+                    Thank you all so much for your help, encouragement, and positive attitudes throughout the year. you make the gym such a warm, inviting, and friendly place to be, and that makes all the difference in the world.
+                    <cite><img src="{{asset('images/welcome/gallery/g2-min.jpg')}}" >Ema Watson</cite>
                 </blockquote>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-12">
@@ -334,7 +335,7 @@
 
                 <blockquote>
                     Oh! Yes!
-                    <cite><img src="{{asset('images/welcome/1.jpg')}}" alt="">Iffat Ali</cite>
+                    <cite><img src="{{asset('images/welcome/1.jpg')}}">Iffat Ali</cite>
                 </blockquote>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-12">
@@ -342,7 +343,7 @@
                 <blockquote>
                     They really make a point of getting to know you. When you’re doing something as mundane as exercise, and somebody can make it more meaningful, that’s actually quite an accomplishment.
 
-                    <cite><img src="{{asset('images/welcome/2.jpg')}}" alt="">Shakib Khan</cite>
+                    <cite><img src="{{asset('images/welcome/2.jpg')}}">Shakib Khan</cite>
                 </blockquote>
             </div>
         </div>
@@ -466,7 +467,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="padd">
-                    <img src="{{asset('images/welcome/logo_small.png')}}" alt="">
+                    <img src="{{asset('images/welcome/logo_small.png')}}" >
                     <p>
                         At GYMX we believe everyone should have the opportunity to enjoy a fit and healthy lifestyle. So we have made it simple, affordable & convenient for everyone to achieve their personal health goals. Whether you're a beginner or a pro, young or old, we're here for everybody.                    </p>
                 </div>
