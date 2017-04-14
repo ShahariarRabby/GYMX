@@ -33,6 +33,7 @@
         body {
             font-family: 'Lato';
             padding-top: 100px;
+            min-height: 110vh;
         }
 
         .fa-btn {
