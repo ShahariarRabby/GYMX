@@ -134,9 +134,7 @@
 
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 <script>
-    document.addEventListener('contextmenu', event = > event.preventDefault()
-    )
-    ;
+    document.addEventListener('contextmenu', event = > event.preventDefault());
 
 </script>
 </body>

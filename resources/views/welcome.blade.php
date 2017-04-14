@@ -278,31 +278,31 @@
 
     <ul >
         <li class="item " >
-            <figure><img src="{{asset('images/welcome/g1.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g1-min.jpg')}}" alt=""></figure>
         </li>
         <li class="item " >
-            <figure><img src="{{asset('images/welcome/g1.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g2-min.jpg')}}" alt=""></figure>
         </li>
         <li class="item ">
-            <figure><img src="{{asset('images/welcome/g1.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g3-min.jpg')}}" alt=""></figure>
         </li>
         <li class="item ">
-            <figure><img src="{{asset('images/welcome/g1.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g4-min.jpg')}}" alt=""></figure>
         </li>
     </ul>
 
     <ul>
         <li>
-            <figure><img src="{{asset('images/welcome/g1.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g5-min.jpg')}}" alt=""></figure>
         </li>
         <li>
-            <figure><img src="{{asset('images/welcome/g1.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g6-min.jpg')}}" alt=""></figure>
         </li>
         <li>
-            <figure><img src="{{asset('images/welcome/g1.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g7-min.jpg')}}" alt=""></figure>
         </li>
         <li>
-            <figure><img src="{{asset('images/welcome/g1.jpg')}}" alt=""></figure>
+            <figure><img src="{{asset('images/welcome/gallery/g8-min.jpg')}}" alt=""></figure>
         </li>
     </ul>
 
