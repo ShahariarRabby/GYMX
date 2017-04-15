@@ -26,7 +26,7 @@
         float: left; }
 
     a.logo .www {
-        width: 20%;
+        width: 15%;
         -webkit-animation: bounce 2.1s linear infinite alternate;
         -moz-animation: bounce 2.1s linear infinite alternate;
         -ms-animation: bounce 2.1s linear infinite alternate;
@@ -34,7 +34,7 @@
         animation: bounce 2.1s linear infinite alternate;
     }/* this comes last */
     .logo .w {
-        width: 20%;
+        width: 15%;
         /*-webkit-animation: bounce 2.2s infinite;*/
         /*animation: bounce 2.2s infinite;*/
         -webkit-animation: bounce 2s linear infinite alternate;
@@ -49,7 +49,7 @@
 
 <body>
 <nav class="navbar">
-        <a class="logo navbar-brand" >
+        <a class="logo navbar-brand" href="{{url('/home')}}">
             <img class="w" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
             <img class="ww" src="{{asset('images/welcome/gymx_logo_3.png')}}" alt="">
             <img class="www" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
