@@ -385,7 +385,8 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-
+</script>
+<script>
     $("#photo_id").change(function(){
         readURL(this);
     });
