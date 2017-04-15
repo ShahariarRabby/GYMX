@@ -62,9 +62,9 @@
 
 </style>
 
-<body title="Click the logo for goto home">
-<nav class="navbar"  title="Click the logo for goto home" >
-        <a  title="Go to home" class="logo navbar-brand" href="{{url('/home')}}">
+<body title="Click the GYMX to go website home">
+<nav class="navbar"  title="Click the GYMX to go website home" >
+        <a  title="Home" class="logo navbar-brand" href="{{url('/home')}}">
             <img class="w" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
             <img class="ww" src="{{asset('images/welcome/gymx_logo_3.png')}}" alt="">
             <img class="www" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
