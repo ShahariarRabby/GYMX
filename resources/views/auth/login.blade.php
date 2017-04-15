@@ -64,7 +64,7 @@
                                     <button type="submit" class="btn btn-primary">
                                         <i class="fa fa-btn fa-sign-in"></i> Login
                                     </button>
-                                    <a href='{{url(' auth/facebook ')}}' class="btn btn-primary">
+                                    <a href='{{url('auth/facebook ')}}' class="btn btn-primary">
                                         Login with  &nbsp;<i class="fa fa-facebook-official" aria-hidden="true" style="font-size: large;color: #fff"></i>
                                     </a>
 

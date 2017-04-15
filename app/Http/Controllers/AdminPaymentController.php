@@ -118,7 +118,6 @@ class AdminPaymentController extends Controller
     public function details()
     {
         $bkash = Bkash::whereStatus("Approved")->sum('amount');
-
          $card  = Card::where('status','!=',null)->sum('amount');
          $amount = $card +$bkash;
          return view('admin.payment.details',compact('bkash','card','amount'));

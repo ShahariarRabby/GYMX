@@ -1,15 +1,12 @@
 <h4 class="alert-heading" style="color:red !important;">Attention!</h4>
 <span class="badge badge-danger" style="padding: 15px;width: 100%;font-size: 15px">
-                                    <?php
+<?php
     use Carbon\Carbon;
     $discontinued =  \Illuminate\Support\Facades\Auth::user()->profile->discontinued;
     $now =Carbon::now();
     $discontinued=  Carbon::parse($discontinued);
-    //
     $discontinued = $discontinued->diffInSeconds($now);
     $var = 31536000;
-
-
     $year = $discontinued/$var;
     $main = $discontinued%$var;
     $month = $main/(86400*30);
@@ -20,8 +17,6 @@
     $main = $main%(3600);
     $min = $main/(60);
     $sec = $main%(60);
-
-
     $year = floor($year);
     $month = floor($month);
     $day = floor($day);
@@ -46,5 +41,5 @@
         echo $sec . " seconds ";
     }
     ?>
-                                </span>
+ </span>
 remaining to disconnect. Please recharge account and schedule next connectivity to avoid disconnection.
