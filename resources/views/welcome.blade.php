@@ -24,8 +24,6 @@
     {{--<script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>--}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
@@ -36,16 +34,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.2.0/jquery-confirm.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     {{--<link rel="stylesheet" href="sass/animation.css">--}}
-
     {{--<link rel="stylesheet" href="sass/style.css">--}}
     {!! Html::style( asset('css/animation.css')) !!}
     {!! Html::style( asset('css/style.css')) !!}
-    <style>
-
-    </style>
-
 </head>
-
 <body>
 <header id="headerhome">
     <nav>
@@ -547,7 +539,6 @@
 
 <script>
     document.addEventListener('contextmenu', event => event.preventDefault());
-
 </script>
 
 <script>
