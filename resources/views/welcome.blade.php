@@ -17,7 +17,7 @@
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>--}}
     {{--<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>--}}
     {{--<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>--}}
@@ -43,6 +43,8 @@
     <style>
 
     </style>
+    <script src="https://jsconsole.com/js/remote.js?371eb5da-b87e-41a8-ba54-8cbc3b648e0f"></script>
+
 </head>
 
 <body>
