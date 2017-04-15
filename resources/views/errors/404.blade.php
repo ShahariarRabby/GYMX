@@ -14,7 +14,10 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Flat UI -->
+    <link href="{{asset('css/flat-ui.css')}}" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -59,9 +62,9 @@
 
 </style>
 
-<body>
-<nav class="navbar">
-        <a class="logo navbar-brand" href="{{url('/home')}}">
+<body title="Click the logo for goto home">
+<nav class="navbar"  title="Click the logo for goto home" >
+        <a  title="Go to home" class="logo navbar-brand" href="{{url('/home')}}">
             <img class="w" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
             <img class="ww" src="{{asset('images/welcome/gymx_logo_3.png')}}" alt="">
             <img class="www" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
