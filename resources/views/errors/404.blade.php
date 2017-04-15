@@ -23,8 +23,11 @@
 </head>
 <style>
     body {
-        background: url('{{asset('images/404.gif')}}') no-repeat fixed center;
+        background: url('{{asset('images/404.gif')}}') no-repeat;
+        background-position: center;
+        min-height: 100vh;
         background-color: #E9FE6F;
+
     }
 
 
