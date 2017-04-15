@@ -43,7 +43,6 @@
     <style>
 
     </style>
-    <script src="https://jsconsole.com/js/remote.js?371eb5da-b87e-41a8-ba54-8cbc3b648e0f"></script>
 
 </head>
 
@@ -549,7 +548,6 @@
 
 
 <script>
-    document.addEventListener('contextmenu', event => event.preventDefault());
 
     $(".signin").click(function () {
         if ($('#none').hasClass('none')) {
