@@ -92,9 +92,9 @@ Route::resource('/users','UsersControler');
     ROute::get('/xxx',function (){
         return view('home');
     });
-    ROute::get('/dis',function (){
-        return view('users.discontinued');
-    });
+//    ROute::get('/dis',function (){
+//        return view('users.discontinued');
+//    });
 });
 
 
