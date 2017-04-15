@@ -18,43 +18,37 @@
         background-color: #E9FE6F;
     }
 
-    div {
+
+    a.logo{
         display: inline-block;
-        margin: 0 auto;
+        width: 300px;
+        margin: 2% 0 0 2%;
+        float: left; }
+
+    a.logo .www {
+        width: 20%;
+        -webkit-animation: bounce 2.1s linear infinite alternate;
+        -moz-animation: bounce 2.1s linear infinite alternate;
+        -ms-animation: bounce 2.1s linear infinite alternate;
+        -o-animation: bounce 2.1s linear infinite alternate;
+        animation: bounce 2.1s linear infinite alternate;
+    }/* this comes last */
+    .logo .w {
+        width: 20%;
+        /*-webkit-animation: bounce 2.2s infinite;*/
+        /*animation: bounce 2.2s infinite;*/
+        -webkit-animation: bounce 2s linear infinite alternate;
+        -moz-animation: bounce 2s linear infinite alternate;
+        -ms-animation: bounce 2s linear infinite alternate;
+        -o-animation: bounce 2s linear infinite alternate;
+        animation: bounce 2s linear infinite alternate; /* this comes last */
+
     }
 
 </style>
 
 <body>
 <nav class="navbar">
-        <style>
-            a.logo{
-                display: inline-block;
-                width: 300px;
-                margin: 2% 0 0 2%;
-                float: left; }
-
-            a.logo .www {
-                width: 20%;
-                -webkit-animation: bounce 2.1s linear infinite alternate;
-                -moz-animation: bounce 2.1s linear infinite alternate;
-                -ms-animation: bounce 2.1s linear infinite alternate;
-                -o-animation: bounce 2.1s linear infinite alternate;
-                animation: bounce 2.1s linear infinite alternate;
-            }/* this comes last */
-            .logo .w {
-                width: 20%;
-                /*-webkit-animation: bounce 2.2s infinite;*/
-                /*animation: bounce 2.2s infinite;*/
-                -webkit-animation: bounce 2s linear infinite alternate;
-                -moz-animation: bounce 2s linear infinite alternate;
-                -ms-animation: bounce 2s linear infinite alternate;
-                -o-animation: bounce 2s linear infinite alternate;
-                animation: bounce 2s linear infinite alternate; /* this comes last */
-
-            }
-        </style>
-
         <a class="logo navbar-brand" >
             <img class="w" src="{{asset('images/welcome/gymx_logo_2.png')}}" alt="">
             <img class="ww" src="{{asset('images/welcome/gymx_logo_3.png')}}" alt="">
