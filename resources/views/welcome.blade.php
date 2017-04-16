@@ -534,6 +534,7 @@
 
     <div class="cent">
         {{--<p>Copyright &copy; Shahariar Rabby</p>--}}
+        <p>Copyright &copy; GYMX & Team Semicolon <span style="font-size: x-large">;</span></p>
     </div>
 </footer>
 
