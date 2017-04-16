@@ -75,6 +75,9 @@ Route::resource('/users','UsersControler');
     ROute::post('/package','UserContant@enablePackage');
     ROute::post('/bkash','UserContant@paymentsbKash');
     ROute::post('/chat','UserContant@chat');
+    ROute::get('/admins',function (){
+        return view('layouts.admin');
+    });
     //****************************************
     // fake route
     //****************************************

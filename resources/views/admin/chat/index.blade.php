@@ -61,7 +61,7 @@
 
                                 <input name="_method" type="hidden" value="DELETE">
 
-                                <a href="{{url('admin/chat/'.$message->id)}}">
+                                <a>
                                     <small><small>{{$message->created_at->diffforhumans()}}</small><button id="deletebtnchat" class="fa fa-trash-o" aria-hidden="true"></button>
                                     </small>
                             </a> <input type="hidden" name="_token" value="{{ csrf_token() }}"></form>  </h4>
@@ -76,7 +76,19 @@
             <form method="post" action="chat">
                 <input name="_method" type="hidden" value="post">
 
-                <input id="adminChat" name="message" type="text" style="width: 100%;height: 30px">
+
+                <div class="row">
+                    <div class="col-xs-11">
+                    <input id="adminChat" name="message" type="text" style="width: 100%;height: 30px">
+
+
+                    </div>
+                <div class="col-xs-1">
+                        <button  style="background: none;border: none;color: #1fae66;" type="submit">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+            </div>
+                </div>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
             </form>
         </div>
