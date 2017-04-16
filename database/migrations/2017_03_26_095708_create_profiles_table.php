@@ -26,8 +26,6 @@ class CreateProfilesTable extends Migration
             $table->decimal('weight')->nullable();
             $table->dateTime('discontinued')->nullable();
             $table->integer('package_id')->nullable()->default(1);
-            $table->integer('payment_id')->nullable();
-            $table->integer('reputation_id')->nullable();
             $table->integer('recharge_id')->nullable();
             $table->timestamps();
         });
