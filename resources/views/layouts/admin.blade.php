@@ -199,9 +199,7 @@
 
         </ul>
     </div>
-    <!-- /#sidebar-wrapper -->
 
-    <!-- Page Content -->
     <div id="page-content-wrapper">
         <style>
             .navbar-default .navbar-toggle:before {
@@ -213,7 +211,6 @@
 
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
@@ -222,7 +219,6 @@
                     <a class="navbar-brand" style="font-family: 'Montserrat'; font-weight: 800" id="logo" href="{{url('/admin')}}">GYMX</a>
                 </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 
@@ -241,7 +237,8 @@
 
 
                         <li><a href="{{url('/')}}" data-toggle="tooltip" data-placement="bottom" title="Visit Site" target="_blank"><i class="material-icons">home</i></a></li>
-                        <li><a href="{{url('/profile')}}" data-toggle="tooltip" data-placement="bottom" title="Visit User" target="_blank" style="font-size: larger"><i class="fa fa-user" aria-hidden="true"></i>
+                        <li><a href="{{url('/profile')}}" data-toggle="tooltip" data-placement="bottom" title="Visit User" target="_blank"><i class="material-icons">home</i></a></li>
+                        {{--<li><a href="{{url('/profile')}}" data-toggle="tooltip" data-placement="bottom" title="Visit User" target="_blank" style="font-size: larger"><i class="fa fa-user" aria-hidden="true"></i>--}}
                                 </a></li>
                         {{--<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Notification"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="navbar-new">5</span></a></li>--}}
                         <li class="dropdown">
