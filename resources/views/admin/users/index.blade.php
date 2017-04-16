@@ -34,10 +34,10 @@
       <th>Photo</th>
       <th>Name</th>
       <th>Email</th>
-      <th>Role</th>
+      <th>Package</th>
       <th>Status</th>
+      <th>Discontinued</th>
       <th>Created</th>
-      <th>Updated</th>
 
     </tr>
   </thead>
@@ -47,13 +47,13 @@
       <th scope="row">{{$user->id}}</th>
       <th  ><img height="50px" width="50px" class="img-circle"
                  src="{{asset($user->photo ? ("images/".($user->photo->file)):"images/picture-default.png")}}" alt="{{$user->name}}"></th>
-      <td><a href="{{ url('admin/users/' .$user->id . '/edit') }}">{{$user->name}}</a></td>
+      <td><a title="Edit User" href="{{ url('admin/users/' .$user->id . '/edit') }}">{{$user->name}}</a></td>
         {{--{{route('admin.users.edit',$user->id)}}--}}
       <td>{{$user->email}}</td>
-      <td>{{$user->profile->role}}</td>
+      <td>{{$user->profile->package->name}}</td>
       <td>{{$user->is_active}}</td>
+      <td>{{$user->profile->discontinued}}</td>
       <td>{{$user->	created_at->diffForHumans()}}</td>
-      <td>{{$user->	updated_at->diffForHumans()}}</td>
     </tr>
       @endforeach
   </tbody>

@@ -70,7 +70,19 @@
         list-style: none;
     }
 </style>
+<?php
 
+use Carbon\Carbon;$date2 = Carbon::now();
+$date2->modify('-1 seconds');
+$result2 = \App\Profile::Where('discontinued','<=',$date2)->get();
+// echo $resultaCT = \App\Profile::Where('discontinued','>=',$now)->get();
+foreach ($result2 as $result2){
+    $result3 =  $result2['id'];
+    $update['is_active']= 'Not Active';
+    $notactive = \App\User::whereProfile_id($result3)->update($update);
+}
+
+?>
 
 <div id="wrapper" class="">
 
@@ -225,15 +237,17 @@
                     <ul class="nav navbar-nav navbar-right">
 
                                               {{--<form class="navbar-form navbar-left" action="#" role="search">--}}
-                            {{--<div class="form-group">--}}
-                                {{--<div class="input-group">--}}
-                                    {{--<input class="form-control" id="navbarInput-01" type="search" placeholder="Search">--}}
-                                    {{--<span class="input-group-btn">--}}
-                                                      {{--<button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>--}}
-                                                    {{--</span>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</form>--}}
+             {!! Form::open(['method'=>'get','action'=>"AdminUsersController@blood",'class'=>'navbar-form navbar-left']) !!}
+
+                        <div class="form-group">
+                                <div class="input-group">
+                                    <input name="blood" class="form-control" id="navbarInput-01" type="search" placeholder="Blood Search">
+                                    <span class="input-group-btn">
+                                                      <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+                                                    </span>
+                                </div>
+                            </div>
+                        </form>
 
 
                         <li><a href="{{url('/')}}" data-toggle="tooltip" data-placement="bottom" title="Visit Site" target="_blank"><i class="material-icons">home</i></a></li>

@@ -3,8 +3,18 @@
 {{--{!! Form::model($user,['method'=>'PATCH','action'=>["AdminUsersController@update"],'files'=>true]) !!}--}}
 
 <?php
+use Carbon\Carbon;
 $user = Auth::User();
-        ?>
+$date2 = Carbon::now();
+$date2->modify('-1 seconds');
+$result2 = \App\Profile::Where('discontinued','<=',$date2)->get();
+// echo $resultaCT = \App\Profile::Where('discontinued','>=',$now)->get();
+foreach ($result2 as $result2){
+    $result3 =  $result2['id'];
+    $update['is_active']= 'Not Active';
+    $notactive = \App\User::whereProfile_id($result3)->update($update);
+}
+?>
 
 <style>
 

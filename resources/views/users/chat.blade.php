@@ -17,7 +17,7 @@
                         }
                         setInterval(function () {
                             loadUser();
-                        },10);
+                        },100);
 
                     </script>
 

@@ -280,6 +280,16 @@ class AdminUsersController extends Controller
         return view('admin.dashbord',compact('user','amount','payment','package','task','notActive','Active','package1','package2','package3','package4', 'card','bkash','chat'));
     }
 
+    public function blood(Request $request)
+    {
+        $blood = $request['blood'];
+        $userBlood = \App\Profile::Where('bloodGroup','like', '%'.$blood.'%')->get();
+
+        return view('admin.users.blood',compact('userBlood'));
+
+    }
+
+
 
 
 }

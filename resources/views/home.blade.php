@@ -25,8 +25,15 @@ use App\Chat;
 $message = Chat::orderBy('updated_at','desc')->get();
 
 $date = Carbon::now();
+//$now = Carbon::now();
 $date->modify('-1500 minutes');
 $result = DB::table('chats')->where('updated_at','<=',$date)->get();
+
+//foreach ($resultaCT as $result2){
+//    $result3 =  $result2['id'];
+//    $update['is_active']= 'Active';
+//    $notactive = \App\User::whereProfile_id($result3)->update($update);
+//}
 
 foreach ($result as $result){
     $result1 =  $result ->id;
@@ -43,4 +50,5 @@ foreach ($result as $result){
         <h5>{{$message->name}} <small><small><small>{{$message->created_at->diffForHumans()}}</small></small></small> </h5>
         <p>{{$message->message}}</p>
     </div>
+
 @endforeach

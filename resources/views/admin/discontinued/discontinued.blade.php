@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('header')
-    Discontinued Users
+Discontinued Users
 @endsection
 @section('content')
 
