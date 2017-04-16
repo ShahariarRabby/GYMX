@@ -170,7 +170,7 @@
                 <div class="col-md-6">
                     <div class="checkbox">
                         <label style="font-size: small">
-                            <input type="checkbox" name="remember"> Remember
+                            <input type="checkbox" checked name="remember"> Remember
                         </label>
 
                     </div>
