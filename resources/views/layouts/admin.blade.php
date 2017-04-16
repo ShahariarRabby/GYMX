@@ -89,7 +89,7 @@
             </li>
             <li class="dropdown">
 
-                <a><i class="fa fa-users" aria-hidden="true"></i>
+                <a  href="" class="preventDefault" ><i class="fa fa-users" aria-hidden="true"></i>
                   &nbsp;  Users<span class="fa "></span>
                 </a>
                 <ul class="sub-menu">
@@ -118,7 +118,7 @@
             </li>
 
             <li class="dropdown">
-                <a><i class="fa fa-money" aria-hidden="true"></i>
+                <a href="" class="preventDefault"><i class="fa fa-money" aria-hidden="true"></i>
 
                     &nbsp;    Payments<span class="fa "></span></a>
                 <ul class="sub-menu none">
@@ -136,7 +136,7 @@
                         <!-- /.nav-third-level -->
 
                     <li class="dropdown">
-                        <a >
+                        <a href="" class="preventDefault">
                             Recharges<span class="fa "></span></a>
                         <ul class="">
                             <li>
@@ -160,7 +160,7 @@
             </li>
 
             <li class="dropdown">
-                <a ><i class="fa fa-sitemap fa-fw"></i>
+                <a href="" class="preventDefault" ><i class="fa fa-sitemap fa-fw"></i>
                     &nbsp;  &nbsp;  &nbsp; Packages<span class="fa "></span></a>
                 <ul class="sub-menu">
                     <li>
@@ -176,7 +176,7 @@
 
 
             <li class="dropdown">
-                <a><i class="fa fa-tasks fa-fw"></i> &nbsp;  &nbsp;  &nbsp; Tasks<span class="fa "></span></a>
+                <a href="" class="preventDefault"><i class="fa fa-tasks fa-fw"></i> &nbsp;  &nbsp;  &nbsp; Tasks<span class="fa "></span></a>
                 <ul class="sub-menu">
                     <li>
                         <a href="{{ url('admin/task')}}">All Tasks</a>
@@ -387,7 +387,9 @@
     $("#photo_id").change(function(){
         readURL(this);
     });
-
+$('.preventDefault').click(function (e) {
+    e.preventDefault();
+});
     $(function() {
         $('#MainMenu > li').click(function(e) {
             e.stopPropagation();
