@@ -237,7 +237,7 @@
 
 
                         <li><a href="{{url('/')}}" data-toggle="tooltip" data-placement="bottom" title="Visit Site" target="_blank"><i class="material-icons">home</i></a></li>
-                        <li><a href="{{url('/profile')}}" data-toggle="tooltip" data-placement="bottom" title="Visit User" target="_blank" style="font-size: larger"><i class="fa fa-user">User</i></a></li>
+                        <li><a href="{{url('/profile')}}" data-toggle="tooltip" data-placement="bottom" title="Visit User" target="_blank" style="font-size: larger"><i class="fa fa-user"></i></a></li>
                         {{--<li><a href="{{url('/profile')}}" data-toggle="tooltip" data-placement="bottom" title="Visit User" target="_blank" style="font-size: larger"><i class="fa fa-user" aria-hidden="true"></i>--}}
                                 {{--</a></li>--}}
                         {{--<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Notification"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="navbar-new">5</span></a></li>--}}
