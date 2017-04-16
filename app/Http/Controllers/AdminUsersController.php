@@ -180,7 +180,7 @@ class AdminUsersController extends Controller
         if ($file = $request->file('photo_id')){
             if($user->photo_id !=""){
                 try{
-//                    unlink(public_path().'/images/'.$user->photo->file);
+                    unlink(public_path().'/images/'.$user->photo->file);
                 }catch (Exception $exception){
 
                 }
@@ -217,7 +217,7 @@ class AdminUsersController extends Controller
         $profile = $user->profile_id;
         $profile = Profile::findOrFail($profile);
         if($user->photo_id !=""){
-//           unlink(public_path().'/images/'.$user->photo->file);
+           unlink(public_path().'/images/'.$user->photo->file);
 
             $photo = Photo::findOrFail($user->photo_id);
             $photo->delete();
@@ -286,6 +286,16 @@ class AdminUsersController extends Controller
         $userBlood = \App\Profile::Where('bloodGroup','like', '%'.$blood.'%')->get();
 
         return view('admin.users.blood',compact('userBlood'));
+
+    }
+
+    public function photo(Request  $request)
+    {
+        $id= $request['id'];
+        $user = User::find($id);
+        $photos = Photo::Find($user->photo_id);
+        $photo['photo_id']=null;
+        $user->update($photo);
 
     }
 

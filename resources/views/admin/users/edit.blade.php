@@ -7,12 +7,13 @@
     {!! Form::model($user,['method'=>'PATCH','id'=>'form1','action'=>["AdminUsersController@update",$user->id],'files'=>true]) !!}
 
     <div class="col-sm-3 col-12" >
-        <img id="blah" src="{{asset($user->photo ? ("images/".($user->photo->file)):($user->role_id==1?"images/2.png":"images/1.png"))}}" class="img-responsive img-rounded">
+        <img id="blah" src="{{asset($user->photo ? ("images/".($user->photo->file)):"images/picture-default.png")}}" class="img-responsive img-rounded">
         {{--{!! Form::model($user,['method'=>'PATCH','action'=>["AdminUsersController@update",$user->id],'files'=>true]) !!}--}}
         <div class="form-group">
             {!! Form::label('photo_id','Edit Photo') !!}
             {!! Form::file('photo_id',null,['class'=>'form-control','id'=>'form1']) !!}
         </div>
+        <a class="btn btn-primary" href="{{url('/admin/photo?id='.$user->id)}}" >Delete Photo</a>
         {{--{!! Form::Close() !!}--}}
 
     </div>

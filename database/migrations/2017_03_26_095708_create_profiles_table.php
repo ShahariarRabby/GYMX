@@ -21,7 +21,7 @@ class CreateProfilesTable extends Migration
             $table->date('dob')->nullable();
             $table->string('bloodGroup')->nullable();;
             $table->string('phone')->nullable();;
-          $table->string('facebook')->default('https://fb.com/');
+            $table->string('facebook')->default('https://fb.com/');
             $table->decimal('height')->nullable();
             $table->decimal('weight')->nullable();
             $table->dateTime('discontinued')->nullable();

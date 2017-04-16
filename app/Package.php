@@ -7,8 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Package extends Model
 {
     //
-    protected $fillable=[
-      'id' , 'name','amount','time',
-
-        ];
+    protected $fillable=['id' , 'name','amount','time',];
 }
