@@ -360,7 +360,7 @@
 
             <div class="col-lg-6 trialfrom">
                 <div>
-                    <h3>Rady to try</h3>
+                    <h3>Ready to try</h3>
                     <p>
                         A gym Membership at GYMX gives you access to incredible programs, services, and amenities that help you achieve your goals.
                          You can workout whenever, and wherever, you want.
