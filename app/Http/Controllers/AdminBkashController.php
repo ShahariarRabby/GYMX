@@ -38,7 +38,7 @@ class AdminBkashController extends Controller
 
 
         $bkash = Bkash::findOrFail($id);
-           $amountP = $bkash->amount;
+         $amountP = $bkash->amount;
         $input = $request->all();
         $amount = $bkash->amount;
         $bkash->update($input);
