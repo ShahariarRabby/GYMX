@@ -174,14 +174,16 @@
                         </label>
 
                     </div>
-                    <style>
-                        .facebook:hover{
-                            text-decoration: underline !important;
-                        }
-                    </style>
+
                 </div>     <div class="col-md-6">
                     <div class="checkbox">
-                        <a class="facebook"  href="{{url('auth/facebook')}}"> <label style="font-size: small">
+                        <style>
+                           #facebook:hover{
+                                text-decoration: underline !important;
+                            }
+
+                        </style>
+                        <a   href="{{url('auth/facebook')}}"> <label id="facebook" style="font-size: small">
                           Login with  <i class="fa fa-facebook-official" aria-hidden="true" style="font-size: x-large;color: #3b5998"></i>
 
                         </label></a>
