@@ -314,7 +314,6 @@ class ComposerStaticInit0ecd86ba57d334dae083c1115cfd1b1d
     );
 
     public static $classMap = array (
-        'AddPaymentIdToProfiles' => __DIR__ . '/../..' . '/database/migrations/2017_04_17_144156_add_payment_id_to_profiles.php',
         'CreateBkashesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_31_191154_create_bkashes_table.php',
         'CreateCardsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_26_095722_create_cards_table.php',
         'CreateChatsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_02_010044_create_chats_table.php',

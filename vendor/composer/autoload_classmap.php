@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'AddPaymentIdToProfiles' => $baseDir . '/database/migrations/2017_04_17_144156_add_payment_id_to_profiles.php',
     'CreateBkashesTable' => $baseDir . '/database/migrations/2017_03_31_191154_create_bkashes_table.php',
     'CreateCardsTable' => $baseDir . '/database/migrations/2017_03_26_095722_create_cards_table.php',
     'CreateChatsTable' => $baseDir . '/database/migrations/2017_04_02_010044_create_chats_table.php',

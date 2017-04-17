@@ -27,6 +27,7 @@ class CreateProfilesTable extends Migration
             $table->dateTime('discontinued')->nullable();
             $table->integer('package_id')->nullable()->default(1);
             $table->integer('recharge_id')->nullable();
+            $table->integer('payment_id')->nullable();
             $table->timestamps();
         });
     }
