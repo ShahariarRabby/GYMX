@@ -37,6 +37,11 @@
     {{--<link rel="stylesheet" href="sass/style.css">--}}
     {!! Html::style( asset('css/animation.css')) !!}
     {!! Html::style( asset('css/style.css')) !!}
+    <style>
+        *{
+            outline: none !important;
+        }
+    </style>
 </head>
 <body>
 <header id="headerhome">
