@@ -21,7 +21,7 @@
         @foreach($payment as $payment)
             <tr>
                 <td>{{$payment->id}}</td>
-                <td><a href="{{route('payment.edit', [$payment->id])}}">{{$payment->profile->user->name}}</a></td>
+                <td><a href="{{route('payment.edit', [$payment->id])}}">Edit</a></td>
                 <td>{{$payment->Credit}}</td>
                 <td>{{$payment->Debit}}</td>
                 <td> {{$payment->Balance}}</td>

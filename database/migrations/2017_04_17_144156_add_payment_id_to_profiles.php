@@ -13,7 +13,7 @@ class AddPaymentIdToProfiles extends Migration
      */
     public function up()
     {
-        Schema::table('profile', function($table) {
+        Schema::table('profiles', function($table) {
             $table->integer('payment_id');
         });
     }
