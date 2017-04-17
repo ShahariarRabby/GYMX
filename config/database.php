@@ -45,7 +45,7 @@ return [
 //            'port' => '3307',
 //            'database' =>'shahariar',
 //            'username' => 'shahariar',
-//            'password' =>'shahariar',
+//            'password' =>'shahariar',-
             'host' => 'localhost',
             'port' => '3306',
             'database' =>'shahariar1',
