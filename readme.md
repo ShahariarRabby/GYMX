@@ -6,8 +6,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
-## About Project
-This is a database project for university. I edit the database file at config folder. 
+## About Project<br>
+This is a database project for university. I edit the database and mail file at config folder for some security resone. If u want to reuse- just edit that file. 
 <h1> To View this project at live demo</h1><br> <a href="http://gymx.ga" >Click Here</a><br>  <span> or http://gymx.ga</span>
 
 
