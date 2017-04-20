@@ -8,7 +8,9 @@
 </p>
 ## About Project
 This is a database project for university. I edit the database file at config folder. 
-<h1> To View this project at live demo<h1> <a href="http://gymx.ga" >Click Here</a> or <span>http://gymx.ga</span>
+<h1> To View this project at live demo</h1><br> <a href="http://gymx.ga" >Click Here</a><br>  <span> or http://gymx.ga</span>
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
